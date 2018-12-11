@@ -1,0 +1,19 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /api
+spring:
+  datasource:
+    name: mysql_test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.panda.springboot01helloworld.entity
