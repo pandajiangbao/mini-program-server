@@ -14,6 +14,26 @@ spring:
       min-idle: 1
       max-active: 20
       test-on-borrow: true
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+
+    timeout: 0ms
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.panda.springboot01helloworld.entity
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+logging:
+  file: logger/panda.log

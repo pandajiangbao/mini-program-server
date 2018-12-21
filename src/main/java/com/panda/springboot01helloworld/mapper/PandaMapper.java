@@ -1,14 +1,12 @@
-package com.panda.springboot01helloworld.dao;
+package com.panda.springboot01helloworld.mapper;
 
 import com.panda.springboot01helloworld.entity.Panda;
 import java.util.Date;
 import java.util.List;
-
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
-
 @Mapper
-public interface PandaDao {
+public interface PandaMapper {
     @Delete({
         "delete from panda",
         "where id = #{id,jdbcType=INTEGER}"

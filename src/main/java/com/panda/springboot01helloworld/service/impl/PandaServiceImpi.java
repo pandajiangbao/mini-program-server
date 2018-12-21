@@ -1,7 +1,8 @@
 package com.panda.springboot01helloworld.service.impl;
 
-import com.panda.springboot01helloworld.dao.PandaDao;
+import com.github.pagehelper.PageHelper;
 import com.panda.springboot01helloworld.entity.Panda;
+import com.panda.springboot01helloworld.mapper.PandaMapper;
 import com.panda.springboot01helloworld.service.PandaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,15 +18,15 @@ import java.util.List;
 @Service
 public class PandaServiceImpi implements PandaService {
     @Autowired
-    private PandaDao pandaDao;
+    private PandaMapper pandaMapper;
     @Override
     public List<Panda> getPandaList() {
-        return pandaDao.selectAll();
+        return pandaMapper.selectAll();
     }
 
     @Override
     public Panda getPandaById(Integer id) {
-        return pandaDao.selectByPrimaryKey(id);
+        return pandaMapper.selectByPrimaryKey(id);
     }
 
     @Transactional
@@ -34,7 +35,7 @@ public class PandaServiceImpi implements PandaService {
         if (panda.getTitle()!=null&&!"".equals(panda.getTitle())){
             panda.setDate(new Date());
             try {
-                int result =pandaDao.insert(panda);
+                int result =pandaMapper.insert(panda);
                 if (result>0){
                     return true;
                 }else {
@@ -53,7 +54,7 @@ public class PandaServiceImpi implements PandaService {
         if (panda.getId()!=null&&panda.getId()>0){
             panda.setDate(new Date());
             try {
-                int result =pandaDao.updateByPrimaryKey(panda);
+                int result =pandaMapper.updateByPrimaryKey(panda);
                 if (result>0){
                     return true;
                 }else {
@@ -71,7 +72,7 @@ public class PandaServiceImpi implements PandaService {
     public boolean deletePandaById(Integer id) {
         if (id>0){
             try {
-                int result =pandaDao.deleteByPrimaryKey(id);
+                int result =pandaMapper.deleteByPrimaryKey(id);
                 if (result>0){
                     return true;
                 }else {

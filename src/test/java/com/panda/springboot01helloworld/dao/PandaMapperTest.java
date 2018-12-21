@@ -1,6 +1,7 @@
 package com.panda.springboot01helloworld.dao;
 
 import com.panda.springboot01helloworld.entity.Panda;
+import com.panda.springboot01helloworld.mapper.PandaMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +17,14 @@ import java.util.List;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class PandaDaoTest {
+public class PandaMapperTest {
     @Autowired
-    private PandaDao pandaDao;
+    private PandaMapper pandaMapper;
     @Test
     public void deleteByPrimaryKey() {
-        int result7=pandaDao.deleteByPrimaryKey(7);
-        int result8=pandaDao.deleteByPrimaryKey(8);
-        int result9=pandaDao.deleteByPrimaryKey(9);
+        int result7=pandaMapper.deleteByPrimaryKey(7);
+        int result8=pandaMapper.deleteByPrimaryKey(8);
+        int result9=pandaMapper.deleteByPrimaryKey(9);
         System.out.println("result7 = " + result7);
         System.out.println("result8 = " + result8);
         System.out.println("result9 = " + result9);
@@ -32,24 +33,24 @@ public class PandaDaoTest {
     @Test
     public void insert() {
         Panda panda=new Panda();
-        panda.setTitle("panda12");
+        panda.setTitle("panda13");
         panda.setDate(new Date());
         panda.setUrl("/static/image/index/panda5.JPG");
         panda.setDetail("你好");
-        int result=pandaDao.insert(panda);
+        int result=pandaMapper.insert(panda);
         System.out.println("result = " + result);
         System.out.println(panda.getId());
     }
 
     @Test
     public void selectByPrimaryKey() {
-        Panda panda=pandaDao.selectByPrimaryKey(11);
+        Panda panda=pandaMapper.selectByPrimaryKey(11);
         System.out.println("panda = " + panda);
     }
 
     @Test
     public void selectAll() {
-        List<Panda> pandaList=pandaDao.selectAll();
+        List<Panda> pandaList=pandaMapper.selectAll();
         pandaList.forEach(panda -> System.out.println(panda));
     }
 
@@ -61,7 +62,7 @@ public class PandaDaoTest {
         panda.setUrl("/static/image/index/panda5.JPG");
         panda.setDate(new Date());
         panda.setDetail("你好,胖达酱!");
-        int result= pandaDao.updateByPrimaryKey(panda);
+        int result= pandaMapper.updateByPrimaryKey(panda);
         System.out.println("result = " + result);
 
     }

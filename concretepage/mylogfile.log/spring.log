@@ -1,0 +1,19 @@
+2018-12-20 22:20:16.399  INFO 17124 --- [main] c.p.s.SpringBoot01HelloworldApplication  : Starting SpringBoot01HelloworldApplication on DESKTOP-OI02010 with PID 17124 (F:\projects\spring-boot-01-helloworld\target\classes started by 胖达 in F:\projects\spring-boot-01-helloworld)
+2018-12-20 22:20:16.408  INFO 17124 --- [main] c.p.s.SpringBoot01HelloworldApplication  : No active profile set, falling back to default profiles: default
+2018-12-20 22:20:18.308  INFO 17124 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-12-20 22:20:18.313  INFO 17124 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-20 22:20:18.353  INFO 17124 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2018-12-20 22:20:19.057  INFO 17124 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$54296c56] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-20 22:20:19.548  INFO 17124 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2018-12-20 22:20:19.578  INFO 17124 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-20 22:20:19.578  INFO 17124 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-20 22:20:19.594  INFO 17124 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.18]
+2018-12-20 22:20:19.594  INFO 17124 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2018-12-20 22:20:19.595  INFO 17124 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2018-12-20 22:20:19.595  INFO 17124 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2018-12-20 22:20:20.718  INFO 17124 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2018-12-20 22:20:20.880  INFO 17124 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2018-12-20 22:20:20.880  INFO 17124 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4383 ms
+2018-12-20 22:20:21.715  INFO 17124 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-20 22:20:22.518  INFO 17124 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path '/api'
+2018-12-20 22:20:22.526  INFO 17124 --- [main] c.p.s.SpringBoot01HelloworldApplication  : Started SpringBoot01HelloworldApplication in 7.045 seconds (JVM running for 8.906)
