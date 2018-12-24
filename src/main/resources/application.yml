@@ -26,7 +26,7 @@ spring:
         max-idle: 8
         min-idle: 0
 
-    timeout: 0ms
+    timeout: 5000ms
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.panda.springboot01helloworld.entity

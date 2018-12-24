@@ -4,7 +4,9 @@ import com.panda.springboot01helloworld.entity.Panda;
 import com.panda.springboot01helloworld.service.PandaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 /**
@@ -19,15 +21,15 @@ public class PandaController {
 
     @GetMapping("/pandas")
     public List<Panda> getPandaList() {
-        List<Panda> pandaList= pandaService.getPandaList();
+        List<Panda> pandaList = pandaService.getPandaList();
         pandaList.forEach(panda -> System.out.println("panda = " + panda));
         return pandaList;
     }
 
     @GetMapping("/panda")
-    public Panda getPandaById(Integer id){
-        Panda panda=pandaService.getPandaById(id);
-        return  panda;
+    public Panda getPandaById(Integer id) {
+        Panda panda = pandaService.getPandaById(id);
+        return panda;
     }
 
 }

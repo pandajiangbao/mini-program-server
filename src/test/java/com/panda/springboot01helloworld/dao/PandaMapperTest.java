@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
@@ -20,6 +21,8 @@ import java.util.List;
 public class PandaMapperTest {
     @Autowired
     private PandaMapper pandaMapper;
+    @Autowired
+    private RedisTemplate<Object, Object> redisTemplate;
     @Test
     public void deleteByPrimaryKey() {
         int result7=pandaMapper.deleteByPrimaryKey(7);
@@ -65,5 +68,11 @@ public class PandaMapperTest {
         int result= pandaMapper.updateByPrimaryKey(panda);
         System.out.println("result = " + result);
 
+    }
+
+    @Test
+    public void testRedis(){
+        redisTemplate.opsForValue().set("aaa", "111");
+        System.out.println(redisTemplate.opsForValue().get("aaa"));
     }
 }
