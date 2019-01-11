@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
     <classPathEntry
-            location="C:\Users\胖达\.m2\repository\mysql\mysql-connector-java\8.0.13\mysql-connector-java-8.0.13.jar"/>
+            location="/Users/panda/.m2/repository/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar"/>
     <context id="context" targetRuntime="MyBatis3Simple">
 
         <plugin type="org.mybatis.generator.plugins.LombokPlugin" >
@@ -26,16 +26,16 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.panda.springboot01helloworld.entity" targetProject="./src/main/java">
+        <javaModelGenerator targetPackage="com.panda.animeStore.entity" targetProject="./src/main/java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="false"/>
         </javaModelGenerator>
 
-        <javaClientGenerator targetPackage="com.panda.springboot01helloworld.mapper" type="ANNOTATEDMAPPER" targetProject="./src/main/java">
+        <javaClientGenerator targetPackage="com.panda.animeStore.mapper" type="ANNOTATEDMAPPER" targetProject="./src/main/java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <table schema="demo" tableName="%"
+        <table schema="demo" tableName="shipping_com"
                enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>

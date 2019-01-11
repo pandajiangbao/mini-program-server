@@ -29,7 +29,7 @@ spring:
     timeout: 5000ms
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.panda.springboot01helloworld.entity
+  type-aliases-package: com.panda.animeStore.entity
 pagehelper:
   helperDialect: mysql
   reasonable: true
