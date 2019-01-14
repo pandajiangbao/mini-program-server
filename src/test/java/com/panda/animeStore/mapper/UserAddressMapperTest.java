@@ -11,34 +11,33 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author panda
- * @date 2019-01-11 9:03 AM
+ * @date 2019-01-13 7:13 PM
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class UserAddressMapperTest {
 	@Autowired
-	private  UserAddressMapper userAddressMapper;
+	private UserAddressMapper userAddressMapper;
+
 	@Test
 	void deleteByPrimaryKey() {
 	}
 
 	@Test
 	void insert() {
-		UserAddress userAddress=new UserAddress();
-		userAddress.setReceiver("胖达酱");
-		userAddress.setPhoneNumber("18520554670");
-		userAddress.setCounty("天河区");
-		userAddress.setDetail("华南农业大学华山区14栋302");
-		userAddress.setUserId(1);
-		System.out.println("userAddress = " + userAddress);
+		UserAddress userAddress = new UserAddress();
+		userAddress.setUserId(2);
 		int result=userAddressMapper.insert(userAddress);
-		System.out.println("result = " + result);
-		System.out.println(userAddressMapper.selectByPrimaryKey(1));
+		System.out.println(userAddressMapper.selectByPrimaryKey(3));
 	}
 
 	@Test
 	void selectByPrimaryKey() {
-		System.out.println(userAddressMapper.selectByPrimaryKey(2));
+	}
+
+	@Test
+	void selectListByUserId() {
+		userAddressMapper.selectListByUserId(1).forEach(userAddress -> System.out.println(userAddress));
 	}
 
 	@Test

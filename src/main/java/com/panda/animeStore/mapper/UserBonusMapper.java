@@ -1,15 +1,16 @@
 package com.panda.animeStore.mapper;
 
 import com.panda.animeStore.entity.UserBonus;
-import java.util.List;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
 @Mapper
@@ -31,6 +32,10 @@ public interface UserBonusMapper {
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
     int insert(UserBonus record);
 
+    @InsertProvider(type=UserBonusSqlProvider.class, method="insertSelective")
+    @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
+    int insertSelective(UserBonus record);
+
     @Select({
         "select",
         "id, reduce_amount, target_amount, outdate_time, category_id, user_id",
@@ -47,20 +52,8 @@ public interface UserBonusMapper {
     })
     UserBonus selectByPrimaryKey(Integer id);
 
-    @Select({
-        "select",
-        "id, reduce_amount, target_amount, outdate_time, category_id, user_id",
-        "from user_bonus"
-    })
-    @Results({
-        @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="reduce_amount", property="reduceAmount", jdbcType=JdbcType.DECIMAL),
-        @Result(column="target_amount", property="targetAmount", jdbcType=JdbcType.DECIMAL),
-        @Result(column="outdate_time", property="outdateTime", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="category_id", property="categoryId", jdbcType=JdbcType.INTEGER),
-        @Result(column="user_id", property="userId", jdbcType=JdbcType.INTEGER)
-    })
-    List<UserBonus> selectAll();
+    @UpdateProvider(type=UserBonusSqlProvider.class, method="updateByPrimaryKeySelective")
+    int updateByPrimaryKeySelective(UserBonus record);
 
     @Update({
         "update user_bonus",

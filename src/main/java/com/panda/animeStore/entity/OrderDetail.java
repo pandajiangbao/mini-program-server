@@ -1,9 +1,10 @@
 package com.panda.animeStore.entity;
 
-import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
@@ -15,7 +16,7 @@ public class OrderDetail {
 
     private Integer productId;
 
-    private Integer productAmout;
+    private Integer productAmount;
 
     private BigDecimal productSinglePrice;
 

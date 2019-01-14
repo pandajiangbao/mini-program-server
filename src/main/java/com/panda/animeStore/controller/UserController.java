@@ -3,7 +3,6 @@ package com.panda.animeStore.controller;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.panda.animeStore.entity.User;
-import com.panda.animeStore.mapper.UserAddressMapper;
 import com.panda.animeStore.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +24,6 @@ import java.util.concurrent.TimeUnit;
 public class UserController {
 	@Autowired
 	private UserService userService;
-	@Autowired
-	private UserAddressMapper userAddressMapper;
 	@Autowired
 	private RedisTemplate<Object, Object> redisTemplate;
 
@@ -55,7 +52,7 @@ public class UserController {
 		String url = "https://api.weixin.qq.com/sns/jscode2session?" + "appid=" + appId + "&secret=" + secret + "&js_code=" + code + "&grant_type" + grant_type;
 		log.info("微信登陆接口请求开始");
 		JsonObject response = new Gson().fromJson(new RestTemplate().getForObject(url, String.class), JsonObject.class);
-		if (jsonObject.has("errcode")) {
+		if (response.has("errcode")) {
 			log.error("微信登陆接口请求失败");
 			log.error(jsonObject.toString());
 			throw new RuntimeException("微信登陆接口请求失败");

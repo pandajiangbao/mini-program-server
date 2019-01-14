@@ -1,17 +1,19 @@
 package com.panda.animeStore.mapper;
 
 import com.panda.animeStore.entity.UserAddress;
-import java.util.List;
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
-import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Mapper
 public interface UserAddressMapper {
@@ -20,6 +22,12 @@ public interface UserAddressMapper {
         "where id = #{id,jdbcType=INTEGER}"
     })
     int deleteByPrimaryKey(Integer id);
+
+	@Delete({
+			"delete from user_address",
+			"where user_id = #{userId,jdbcType=INTEGER}"
+	})
+	int deleteAllByUserId(Integer userId);
 
     @Insert({
         "insert into user_address (receiver, phone_number, ",
@@ -33,6 +41,10 @@ public interface UserAddressMapper {
     })
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
     int insert(UserAddress record);
+
+    @InsertProvider(type=UserAddressSqlProvider.class, method="insertSelective")
+    @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
+    int insertSelective(UserAddress record);
 
     @Select({
         "select",
@@ -53,21 +65,25 @@ public interface UserAddressMapper {
     UserAddress selectByPrimaryKey(Integer id);
 
     @Select({
-        "select",
-        "id, receiver, phone_number, province, city, county, detail, user_id",
-        "from user_address"
+            "select",
+            "id, receiver, phone_number, province, city, county, detail, user_id",
+            "from user_address",
+            "where user_id = #{userId,jdbcType=INTEGER}"
     })
     @Results({
-        @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="receiver", property="receiver", jdbcType=JdbcType.VARCHAR),
-        @Result(column="phone_number", property="phoneNumber", jdbcType=JdbcType.VARCHAR),
-        @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
-        @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
-        @Result(column="county", property="county", jdbcType=JdbcType.VARCHAR),
-        @Result(column="detail", property="detail", jdbcType=JdbcType.VARCHAR),
-        @Result(column="user_id", property="userId", jdbcType=JdbcType.INTEGER)
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="receiver", property="receiver", jdbcType=JdbcType.VARCHAR),
+            @Result(column="phone_number", property="phoneNumber", jdbcType=JdbcType.VARCHAR),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="county", property="county", jdbcType=JdbcType.VARCHAR),
+            @Result(column="detail", property="detail", jdbcType=JdbcType.VARCHAR),
+            @Result(column="user_id", property="userId", jdbcType=JdbcType.INTEGER)
     })
-    List<UserAddress> selectAll();
+    List<UserAddress> selectListByUserId(Integer userId);
+
+    @UpdateProvider(type=UserAddressSqlProvider.class, method="updateByPrimaryKeySelective")
+    int updateByPrimaryKeySelective(UserAddress record);
 
     @Update({
         "update user_address",

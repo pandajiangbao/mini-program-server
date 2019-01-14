@@ -1,9 +1,10 @@
 package com.panda.animeStore.entity;
 
-import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
@@ -21,7 +22,7 @@ public class Product {
 
     private String img;
 
-    private Integer categotyId;
+    private Integer categoryId;
 
     private String info;
 }

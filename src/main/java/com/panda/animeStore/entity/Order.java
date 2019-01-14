@@ -1,10 +1,11 @@
 package com.panda.animeStore.entity;
 
-import java.math.BigDecimal;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -32,5 +33,5 @@ public class Order {
 
     private String orderStatus;
 
-    private BigDecimal procuctPrice;
+    private BigDecimal productPrice;
 }

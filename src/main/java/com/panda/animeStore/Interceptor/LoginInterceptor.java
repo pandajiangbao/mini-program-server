@@ -5,10 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * @author panda
@@ -20,13 +20,14 @@ public class LoginInterceptor implements HandlerInterceptor {
 	@Autowired
 	private RedisTemplate<String, String> redisTemplate;
 
+	//请求处理前进行调用
 	@Override
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
 		String token = request.getHeader("token");
 		if (StringUtils.isEmpty(token)) {
-			log.error("403:{}", "没有设置token");
+			log.error("403:{}", "token为空");
 			response.setStatus(403);
-			response.setHeader("errMsg","no set token");
+			response.setHeader("errMsg", "token is empty");
 			return false;
 		}
 		log.info("token:{}", token);
@@ -36,8 +37,20 @@ public class LoginInterceptor implements HandlerInterceptor {
 		}
 		log.error("403:{}", "用户token错误或失效");
 		response.setStatus(403);
-		response.setHeader("errMsg","token invalid or timeout");
+		response.setHeader("errMsg", "token invalid or timeout");
 		return false;
 	}
+
+	//请求处理之后进行调用，但是在视图被渲染之前（Controller方法调用之后）
+	@Override
+	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
+	                       ModelAndView modelAndView) {
+	}
+
+	//在整个请求结束之后被调用，也就是在DispatcherServlet 渲染了对应的视图之后执行（主要是用于进行资源清理工作）
+	@Override
+	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
+	}
+
 }
 
