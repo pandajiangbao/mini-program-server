@@ -13,7 +13,7 @@ import java.util.List;
  * @date 2019-01-12 8:59 AM
  */
 @Service
-public class ShippingComServiceImpi implements ShippingComService {
+public class ShippingComServiceImpl implements ShippingComService {
 	@Autowired
 	private ShippingComMapper shippingComMapper;
 	@Override

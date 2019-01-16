@@ -31,5 +31,6 @@ class UserAddressServiceImpiTest {
 
 	@Test
 	void deleteUserAddress() {
+		System.out.println("userAddressService.deleteUserAddress(3) = " + userAddressService.deleteUserAddress(3));
 	}
 }

@@ -21,6 +21,7 @@ class UserAddressMapperTest {
 
 	@Test
 	void deleteByPrimaryKey() {
+		System.out.println("userAddressMapper.deleteByPrimaryKey(3) = " + userAddressMapper.deleteByPrimaryKey(3));
 	}
 
 	@Test

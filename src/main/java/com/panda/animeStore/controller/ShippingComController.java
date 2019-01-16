@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -16,11 +17,12 @@ import java.util.List;
  */
 @Slf4j
 @RestController
+@RequestMapping("/shippingComs")
 public class ShippingComController {
 	@Autowired
 	private ShippingComService shippingComService;
 
-	@GetMapping("/shippingComs")
+	@GetMapping
 	public List<ShippingCom> getShippingComList() {
 		log.info("获取快递公司列表,请求开始");
 		List<ShippingCom> shippingComList = shippingComService.getShippingComList();
@@ -29,7 +31,7 @@ public class ShippingComController {
 		return shippingComList;
 	}
 
-	@GetMapping("/shippingComs/{id}")
+	@GetMapping("/{id}")
 	public ShippingCom getShippingComById(@PathVariable Integer id) {
 		log.info("获取快递公司,请求开始");
 		ShippingCom shippingCom = shippingComService.getShippingComListById(id);

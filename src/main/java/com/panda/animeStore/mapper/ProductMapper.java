@@ -2,16 +2,9 @@ package com.panda.animeStore.mapper;
 
 import com.panda.animeStore.entity.Product;
 import org.apache.ibatis.annotations.*;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.InsertProvider;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectKey;
-import org.apache.ibatis.annotations.Update;
-import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
+
+import java.util.List;
 
 @Mapper
 public interface ProductMapper {
@@ -53,6 +46,23 @@ public interface ProductMapper {
         @Result(column="info", property="info", jdbcType=JdbcType.LONGVARCHAR)
     })
     Product selectByPrimaryKey(Integer id);
+
+    @Select({
+            "select",
+            "id, title, price, sales, stock, img, category_id, info",
+            "from product"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="title", property="title", jdbcType=JdbcType.VARCHAR),
+            @Result(column="price", property="price", jdbcType=JdbcType.DECIMAL),
+            @Result(column="sales", property="sales", jdbcType=JdbcType.INTEGER),
+            @Result(column="stock", property="stock", jdbcType=JdbcType.INTEGER),
+            @Result(column="img", property="img", jdbcType=JdbcType.VARCHAR),
+            @Result(column= "category_id", property="categoryId", jdbcType=JdbcType.INTEGER),
+            @Result(column="info", property="info", jdbcType=JdbcType.LONGVARCHAR)
+    })
+    List<Product> selectAll();
 
     @UpdateProvider(type=ProductSqlProvider.class, method="updateByPrimaryKeySelective")
     int updateByPrimaryKeySelective(Product record);

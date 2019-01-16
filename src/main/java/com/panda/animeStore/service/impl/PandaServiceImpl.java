@@ -15,7 +15,7 @@ import java.util.List;
  * @date 2018-12-10 1:33
  */
 @Service
-public class PandaServiceImpi implements PandaService {
+public class PandaServiceImpl implements PandaService {
 	@Autowired
 	private PandaMapper pandaMapper;
 

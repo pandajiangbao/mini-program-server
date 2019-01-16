@@ -54,11 +54,10 @@ public class UserController {
 		JsonObject response = new Gson().fromJson(new RestTemplate().getForObject(url, String.class), JsonObject.class);
 		if (response.has("errcode")) {
 			log.error("微信登陆接口请求失败");
-			log.error(jsonObject.toString());
 			throw new RuntimeException("微信登陆接口请求失败");
 		} else {
 			log.info("微信登陆接口请求成功");
-			//response tranfer to user
+			//response transfer to user
 			User user = new Gson().fromJson(response, User.class);
 			String openid = user.getOpenid();
 			String token = UUID.randomUUID().toString();
@@ -66,15 +65,19 @@ public class UserController {
 			//set timeout 2 hours
 			log.info("存入redis,过期时间2小时");
 			redisTemplate.opsForValue().set(token, openid, 7200, TimeUnit.SECONDS);
-			if (userService.checkUserByOpenId(openid)) {
+			System.out.println("user = " + user);
+			Integer userId= userService.checkUserByOpenId(openid);
+			if (userId> 0) {
 				log.info("用户已存在");
 
 			} else {
 				log.info("添加新用户");
 				userService.addUser(user);
+				userId=user.getId();
 			}
 			log.info("返回新token");
 			jsonObject.addProperty("token", token);
+			jsonObject.addProperty("userId", userId);
 			return jsonObject.toString();
 		}
 	}

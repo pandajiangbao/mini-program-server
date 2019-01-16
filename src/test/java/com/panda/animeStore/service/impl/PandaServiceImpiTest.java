@@ -10,7 +10,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author panda
@@ -48,6 +47,5 @@ public class PandaServiceImpiTest {
 
     @Test
     public void testRedis(){
-        redisTemplate.opsForValue().set("test","panda",10, TimeUnit.SECONDS);
     }
 }
