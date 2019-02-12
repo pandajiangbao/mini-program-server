@@ -9,6 +9,10 @@ public class OrderSqlProvider {
         SQL sql = new SQL();
         sql.INSERT_INTO("order");
         
+        if (record.getOrderNo() != null) {
+            sql.VALUES("order_no", "#{orderNo,jdbcType=VARCHAR}");
+        }
+        
         if (record.getReceiveTime() != null) {
             sql.VALUES("receive_time", "#{receiveTime,jdbcType=TIMESTAMP}");
         }
@@ -33,6 +37,10 @@ public class OrderSqlProvider {
             sql.VALUES("address_id", "#{addressId,jdbcType=INTEGER}");
         }
         
+        if (record.getProductPrice() != null) {
+            sql.VALUES("product_price", "#{productPrice,jdbcType=DECIMAL}");
+        }
+        
         if (record.getShippingPrice() != null) {
             sql.VALUES("shipping_price", "#{shippingPrice,jdbcType=DECIMAL}");
         }
@@ -49,16 +57,16 @@ public class OrderSqlProvider {
             sql.VALUES("order_status", "#{orderStatus,jdbcType=VARCHAR}");
         }
         
-        if (record.getProductPrice() != null) {
-            sql.VALUES("product_price", "#{productPrice,jdbcType=DECIMAL}");
-        }
-        
         return sql.toString();
     }
 
     public String updateByPrimaryKeySelective(Order record) {
         SQL sql = new SQL();
         sql.UPDATE("order");
+        
+        if (record.getOrderNo() != null) {
+            sql.SET("order_no = #{orderNo,jdbcType=VARCHAR}");
+        }
         
         if (record.getReceiveTime() != null) {
             sql.SET("receive_time = #{receiveTime,jdbcType=TIMESTAMP}");
@@ -84,6 +92,10 @@ public class OrderSqlProvider {
             sql.SET("address_id = #{addressId,jdbcType=INTEGER}");
         }
         
+        if (record.getProductPrice() != null) {
+            sql.SET("product_price = #{productPrice,jdbcType=DECIMAL}");
+        }
+        
         if (record.getShippingPrice() != null) {
             sql.SET("shipping_price = #{shippingPrice,jdbcType=DECIMAL}");
         }
@@ -98,10 +110,6 @@ public class OrderSqlProvider {
         
         if (record.getOrderStatus() != null) {
             sql.SET("order_status = #{orderStatus,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getProductPrice() != null) {
-            sql.SET("product_price = #{productPrice,jdbcType=DECIMAL}");
         }
         
         sql.WHERE("id = #{id,jdbcType=INTEGER}");

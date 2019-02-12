@@ -1,6 +1,7 @@
 package com.panda.animeStore.service.impl;
 
 import com.panda.animeStore.entity.Product;
+import com.panda.animeStore.exceptionHandler.error.BusinessError;
 import com.panda.animeStore.mapper.ProductMapper;
 import com.panda.animeStore.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,49 +17,62 @@ import java.util.List;
  */
 @Service
 public class ProductServiceImpl implements ProductService {
-	@Autowired
-	private ProductMapper productMapper;
+    @Autowired
+    private ProductMapper productMapper;
 
-	@Override
-	public List<Product> getAllProduct() {
-		return productMapper.selectAll();
-	}
+    @Override
+    public List<Product> getAllProduct() {
+        return productMapper.selectAll();
+    }
 
-	@Override
-	public boolean addProduct(Product product) {
-		int result = productMapper.insertSelective(product);
-		if (result > 0) {
-			return true;
-		} else {
-			throw new RuntimeException("插入商品失败");
-		}
-	}
+    @Override
+    public boolean addProduct(Product product) {
+        int result = productMapper.insertSelective(product);
+        if (result > 0) {
+            return true;
+        } else {
+            throw new RuntimeException(BusinessError.DATA_ACCESS_ERROR.getErrMsg());
+        }
+    }
 
-	@Override
-	public boolean updateProduct(Product product) {
-		if (product.getId() != null) {
-			int result = productMapper.updateByPrimaryKeySelective(product);
-			if (result > 0) {
-				return true;
-			} else {
-				throw new RuntimeException("更新商品失败");
-			}
-		} else {
-			throw new RuntimeException("商品id不能为空");
-		}
-	}
+    @Override
+    public boolean updateProduct(Product product) {
+        if (product.getId() != null) {
+            int result = productMapper.updateByPrimaryKeySelective(product);
+            if (result > 0) {
+                return true;
+            } else {
+                throw new RuntimeException(BusinessError.DATA_ACCESS_ERROR.getErrMsg());
+            }
+        } else {
+            throw new RuntimeException(BusinessError.PARAMETER_ERROR.getErrMsg());
+        }
+    }
 
-	@Override
-	public boolean deleteProduct(Integer id) {
-		if (id != null) {
-			int result = productMapper.deleteByPrimaryKey(id);
-			if (result > 0) {
-				return true;
-			} else {
-				throw new RuntimeException("删除商品失败");
-			}
-		} else {
-			throw new RuntimeException("删除商品所需id不能为空");
-		}
-	}
+    @Override
+    public boolean deleteProduct(Integer id) {
+        if (id != null) {
+            int result = productMapper.deleteByPrimaryKey(id);
+            if (result > 0) {
+                return true;
+            } else {
+                throw new RuntimeException(BusinessError.DATA_ACCESS_ERROR.getErrMsg());
+            }
+        } else {
+            throw new RuntimeException(BusinessError.PARAMETER_ERROR.getErrMsg());
+        }
+    }
+
+    @Override
+    public boolean decreaseStock(Integer id, Integer amount) {
+        if (id != null && amount > 0) {
+            int result= productMapper.decreaseStock(id,amount);
+            if (result>0){
+                return true;
+            }else {
+                throw new RuntimeException((BusinessError.STOCK_ERROR.getErrMsg()));
+            }
+        }
+        throw new RuntimeException(BusinessError.PARAMETER_ERROR.getErrMsg());
+    }
 }

@@ -4,18 +4,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
+/**
+ * @author panda
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserAddress {
     private Integer id;
 
-    @NotNull(message = "收货人不能为空")
+    @NotBlank(message = "收货人不能为空")
     private String receiver;
 
-    @NotNull(message = "联系电话不能为空")
+	@NotBlank(message = "电话号码不能为空")
     private String phoneNumber;
 
     private String province;
@@ -24,9 +28,8 @@ public class UserAddress {
 
     private String county;
 
-    @NotNull(message = "住址细节不能为空")
     private String detail;
 
-    @NotNull(message = "用户id不能为空")
+    @NotEmpty(message = "所属用户不能为空")
     private Integer userId;
 }

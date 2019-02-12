@@ -91,4 +91,11 @@ public interface ProductMapper {
         "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(Product record);
+
+    @Update({
+            "update product",
+            "set stock = stock - #{amount},",
+            "where id = #{id,jdbcType=INTEGER} and stock >= #{amount}"
+    })
+    int decreaseStock(Integer id,Integer amount);
 }

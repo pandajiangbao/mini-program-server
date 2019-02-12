@@ -21,40 +21,40 @@ public class ProductController {
 	private ProductService productService;
 
 	@GetMapping
-	public List<Product> getAllProduct() {
+	public ResJson getAllProduct() {
 		log.info("获取所有商品列表,请求开始");
 		List<Product> productList = productService.getAllProduct();
 		log.info("返回所有商品列表,请求结束");
-		return productList;
+		return ResJson.result(productList);
 	}
 
 	@PostMapping
-	public String addProduct(@RequestBody Product product) {
+	public ResJson addProduct(@RequestBody Product product) {
 		log.info("添加商品,请求开始");
 		if (productService.addProduct(product)) {
-			return ResJson.addSuccess();
+			return ResJson.success("addProduct");
 		} else {
-			return ResJson.addFailed();
+			return ResJson.failed("addProduct");
 		}
 	}
 
 	@PutMapping
-	public String updateProduct(@RequestBody Product product) {
+	public ResJson updateProduct(@RequestBody Product product) {
 		log.info("修改商品,请求开始");
 		if (productService.updateProduct(product)) {
-			return ResJson.updateSuccess();
+			return ResJson.success("updateProduct");
 		} else {
-			return ResJson.updateFailed();
+			return ResJson.failed("updateProduct");
 		}
 	}
 
 	@DeleteMapping("/{id}")
-	public String deleteProduct(@PathVariable Integer id) {
+	public ResJson deleteProduct(@PathVariable Integer id) {
 		log.info("删除商品请求开始");
 		if (productService.deleteProduct(id)) {
-			return ResJson.deleteSuccess();
+			return ResJson.success("deleteProduct");
 		} else {
-			return ResJson.deleteFailed();
+			return ResJson.failed("deleteProduct");
 		}
 	}
 }

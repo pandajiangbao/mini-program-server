@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Min;
 import java.math.BigDecimal;
 
 @Data
@@ -14,6 +15,7 @@ public class Product {
 
     private String title;
 
+    @Min(value = 0,message = "价格必须大于0")
     private BigDecimal price;
 
     private Integer sales;

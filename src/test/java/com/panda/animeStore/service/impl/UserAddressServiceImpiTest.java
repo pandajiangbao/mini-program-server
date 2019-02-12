@@ -18,7 +18,7 @@ class UserAddressServiceImpiTest {
 	private UserAddressService userAddressService;
 	@Test
 	void getUserAddressListByUserId() {
-		System.out.println(userAddressService.getUserAddressListByUserId(1));
+		System.out.println(userAddressService.listUserAddressByUserId(1));
 	}
 
 	@Test

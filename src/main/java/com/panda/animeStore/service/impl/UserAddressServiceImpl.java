@@ -5,6 +5,7 @@ import com.panda.animeStore.mapper.UserAddressMapper;
 import com.panda.animeStore.service.UserAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
@@ -15,12 +16,13 @@ import java.util.List;
  * @date 2019-01-13 9:09 PM
  */
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class UserAddressServiceImpl implements UserAddressService {
 	@Autowired
 	private UserAddressMapper userAddressMapper;
 
 	@Override
-	public List<UserAddress> getUserAddressListByUserId(Integer userId) {
+	public List<UserAddress> listUserAddressByUserId(Integer userId) {
 		return userAddressMapper.selectListByUserId(userId);
 	}
 

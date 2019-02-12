@@ -2,57 +2,84 @@ package com.panda.animeStore.mapper;
 
 import com.panda.animeStore.entity.User;
 import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.InsertProvider;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
+import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
-
-import java.util.List;
 
 @Mapper
 public interface UserMapper {
     @Delete({
-            "delete from user",
-            "where id = #{id,jdbcType=INTEGER}"
+        "delete from user",
+        "where id = #{id,jdbcType=INTEGER}"
     })
     int deleteByPrimaryKey(Integer id);
 
     @Insert({
-            "insert into user (openid)",
-            "values (#{openid,jdbcType=VARCHAR})"
+        "insert into user (openid, nick_name, ",
+        "gender, city, province, ",
+        "country, avatar_url, ",
+        "create_time)",
+        "values (#{openid,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, ",
+        "#{gender,jdbcType=INTEGER}, #{city,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, ",
+        "#{country,jdbcType=VARCHAR}, #{avatarUrl,jdbcType=VARCHAR}, ",
+        "#{createTime,jdbcType=TIMESTAMP})"
     })
-    @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = Integer.class)
+    @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
     int insert(User record);
 
-    @Select({
-            "select",
-            "id, openid",
-            "from user",
-            "where openid = #{openid,jdbcType=VARCHAR}"
-    })
-    @ConstructorArgs({
-            @Arg(column = "id", javaType = Integer.class, jdbcType = JdbcType.INTEGER, id = true),
-            @Arg(column = "openid", javaType = String.class, jdbcType = JdbcType.VARCHAR)
-    })
-    User selectByOpenId(String openid);
+    @InsertProvider(type=UserSqlProvider.class, method="insertSelective")
+    @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
+    int insertSelective(User record);
 
     @Select({
-            "select",
-            "id, openid",
-            "from user",
-            "where id = #{id,jdbcType=INTEGER}"
+        "select",
+        "id, openid, nick_name, gender, city, province, country, avatar_url, create_time",
+        "from user",
+        "where id = #{id,jdbcType=INTEGER}"
     })
-    @ConstructorArgs({
-            @Arg(column = "id", javaType = Integer.class, jdbcType = JdbcType.INTEGER, id = true),
-            @Arg(column = "openid", javaType = String.class, jdbcType = JdbcType.VARCHAR)
+    @Results({
+        @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+        @Result(column="openid", property="openid", jdbcType=JdbcType.VARCHAR),
+        @Result(column="nick_name", property="nickName", jdbcType=JdbcType.VARCHAR),
+        @Result(column="gender", property="gender", jdbcType=JdbcType.INTEGER),
+        @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+        @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+        @Result(column="country", property="country", jdbcType=JdbcType.VARCHAR),
+        @Result(column="avatar_url", property="avatarUrl", jdbcType=JdbcType.VARCHAR),
+        @Result(column="create_time", property="createTime", jdbcType=JdbcType.TIMESTAMP)
     })
     User selectByPrimaryKey(Integer id);
 
     @Select({
             "select",
-            "id, openid",
-            "from user"
+            "id, openid, nick_name, gender, city, province, country, avatar_url, create_time",
+            "from user",
+            "where openid = #{openid}"
     })
-    @ConstructorArgs({
-            @Arg(column = "id", javaType = Integer.class, jdbcType = JdbcType.INTEGER, id = true),
-            @Arg(column = "openid", javaType = String.class, jdbcType = JdbcType.VARCHAR)
+    User selectByOpenid(String openid);
+
+
+    @UpdateProvider(type=UserSqlProvider.class, method="updateByPrimaryKeySelective")
+    int updateByPrimaryKeySelective(User record);
+
+    @Update({
+        "update user",
+        "set openid = #{openid,jdbcType=VARCHAR},",
+          "nick_name = #{nickName,jdbcType=VARCHAR},",
+          "gender = #{gender,jdbcType=INTEGER},",
+          "city = #{city,jdbcType=VARCHAR},",
+          "province = #{province,jdbcType=VARCHAR},",
+          "country = #{country,jdbcType=VARCHAR},",
+          "avatar_url = #{avatarUrl,jdbcType=VARCHAR},",
+          "create_time = #{createTime,jdbcType=TIMESTAMP}",
+        "where id = #{id,jdbcType=INTEGER}"
     })
-    List<User> selectAll();
+    int updateByPrimaryKey(User record);
 }

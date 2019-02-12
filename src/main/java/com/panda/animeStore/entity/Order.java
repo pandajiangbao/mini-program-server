@@ -13,6 +13,8 @@ import java.util.Date;
 public class Order {
     private Integer id;
 
+    private String orderNo;
+
     private Date receiveTime;
 
     private Integer userId;
@@ -25,6 +27,8 @@ public class Order {
 
     private Integer addressId;
 
+    private BigDecimal productPrice;
+
     private BigDecimal shippingPrice;
 
     private BigDecimal bonusPrice;
@@ -32,6 +36,4 @@ public class Order {
     private BigDecimal totalPrice;
 
     private String orderStatus;
-
-    private BigDecimal productPrice;
 }

@@ -29,7 +29,7 @@ public class PandaServiceImpl implements PandaService {
 		return pandaMapper.selectByPrimaryKey(id);
 	}
 
-	@Transactional
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public boolean addPanda(Panda panda) {
 		if (panda.getTitle() != null && !"".equals(panda.getTitle())) {

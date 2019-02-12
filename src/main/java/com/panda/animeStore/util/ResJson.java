@@ -1,6 +1,6 @@
 package com.panda.animeStore.util;
 
-import com.google.gson.JsonObject;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -9,48 +9,30 @@ import lombok.extern.slf4j.Slf4j;
  * 请求响应工具类
  */
 @Slf4j
+@Data
 public class ResJson {
-	private static JsonObject res = new JsonObject();
+	private String status;
+	private Object result;
 
-	public static String addSuccess() {
-		log.info("添加成功,请求结束");
-		res.addProperty("status", "success");
-		res.addProperty("message", "添加成功");
-		return res.toString();
+	public static ResJson create(String status, Object result) {
+		ResJson res = new ResJson();
+		res.setStatus(status);
+		res.setResult(result);
+		return res;
 	}
 
-	public static String addFailed() {
-		log.error("添加失败,请求结束");
-		res.addProperty("status", "failed");
-		res.addProperty("message", "添加失败");
-		return res.toString();
+	public static ResJson result(Object result) {
+		log.info("请求成功,返回数据");
+		return ResJson.create("success", result);
 	}
 
-	public static String updateSuccess() {
-		log.info("修改成功,请求结束");
-		res.addProperty("status", "success");
-		res.addProperty("message", "修改成功");
-		return res.toString();
+	public static ResJson success(String requestName) {
+		log.info("{}成功,请求结束",requestName);
+		return ResJson.create("success", requestName+"成功");
 	}
 
-	public static String updateFailed() {
-		log.error("修改失败,请求结束");
-		res.addProperty("status", "failed");
-		res.addProperty("message", "修改失败");
-		return res.toString();
-	}
-
-	public static String deleteSuccess() {
-		log.info("删除成功,请求结束");
-		res.addProperty("status", "success");
-		res.addProperty("message", "删除成功");
-		return res.toString();
-	}
-
-	public static String deleteFailed() {
-		log.error("删除失败,请求结束");
-		res.addProperty("status", "failed");
-		res.addProperty("message", "删除失败");
-		return res.toString();
+	public static ResJson failed(String requestName) {
+		log.error("{}失败,请求结束",requestName);
+		return ResJson.create("failed", requestName+"失败");
 	}
 }

@@ -13,6 +13,8 @@ import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
+import java.util.List;
+
 @Mapper
 public interface ShoppingCartMapper {
     @Delete({
@@ -45,12 +47,28 @@ public interface ShoppingCartMapper {
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
         @Result(column="user_id", property="userId", jdbcType=JdbcType.INTEGER),
-        @Result(column= "product_amount", property="productAmount", jdbcType=JdbcType.INTEGER),
+        @Result(column="product_amount", property="productAmount", jdbcType=JdbcType.INTEGER),
         @Result(column="price_sum", property="priceSum", jdbcType=JdbcType.DECIMAL),
         @Result(column="product_id", property="productId", jdbcType=JdbcType.INTEGER),
         @Result(column="created_time", property="createdTime", jdbcType=JdbcType.TIMESTAMP)
     })
     ShoppingCart selectByPrimaryKey(Integer id);
+
+    @Select({
+            "select",
+            "id, user_id, product_amount, price_sum, product_id, created_time",
+            "from shopping_cart",
+            "where user_id = #{user_id,jdbcType=INTEGER}"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="user_id", property="userId", jdbcType=JdbcType.INTEGER),
+            @Result(column="product_amount", property="productAmount", jdbcType=JdbcType.INTEGER),
+            @Result(column="price_sum", property="priceSum", jdbcType=JdbcType.DECIMAL),
+            @Result(column="product_id", property="productId", jdbcType=JdbcType.INTEGER),
+            @Result(column="created_time", property="createdTime", jdbcType=JdbcType.TIMESTAMP)
+    })
+    List<ShoppingCart> selectByUserId(Integer userId);
 
     @UpdateProvider(type=ShoppingCartSqlProvider.class, method="updateByPrimaryKeySelective")
     int updateByPrimaryKeySelective(ShoppingCart record);

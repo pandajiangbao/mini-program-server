@@ -1,14 +1,14 @@
 package com.panda.animeStore.controller;
 
 import com.panda.animeStore.entity.Panda;
+import com.panda.animeStore.exceptionHandler.error.BusinessError;
+import com.panda.animeStore.util.ResJson;
 import com.panda.animeStore.service.PandaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * @author panda
@@ -21,16 +21,17 @@ public class PandaController {
 	private PandaService pandaService;
 
 	@GetMapping("/pandas")
-	public List<Panda> getPandaList() {
-		List<Panda> pandaList = pandaService.getPandaList();
-		pandaList.forEach(panda -> System.out.println("panda = " + panda));
-		return pandaList;
+	public ResJson getPandaList() {
+		throw new RuntimeException(BusinessError.PARAMETER_ERROR.getErrMsg());
+//		List<Panda> pandaList = pandaService.getPandaList();
+//		pandaList.forEach(panda -> System.out.println("panda = " + panda));
+//		return ResJson.responseResult(pandaList);
 	}
 
 	@GetMapping("/pandas/{id}")
-	public Panda getPandaById(@PathVariable Integer id) {
+	public ResJson getPandaById(@PathVariable Integer id) {
 		Panda panda = pandaService.getPandaById(id);
-		return panda;
+		return ResJson.result(panda);
 	}
 
 }
