@@ -2,7 +2,7 @@ package com.panda.animeStore.controller;
 
 import com.panda.animeStore.entity.Panda;
 import com.panda.animeStore.exceptionHandler.error.BusinessError;
-import com.panda.animeStore.util.ResJson;
+import com.panda.animeStore.util.ResultJson;
 import com.panda.animeStore.service.PandaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,17 +21,17 @@ public class PandaController {
 	private PandaService pandaService;
 
 	@GetMapping("/pandas")
-	public ResJson getPandaList() {
+	public ResultJson getPandaList() {
 		throw new RuntimeException(BusinessError.PARAMETER_ERROR.getErrMsg());
 //		List<Panda> pandaList = pandaService.getPandaList();
 //		pandaList.forEach(panda -> System.out.println("panda = " + panda));
-//		return ResJson.responseResult(pandaList);
+//		return ResultJson.responseResult(pandaList);
 	}
 
 	@GetMapping("/pandas/{id}")
-	public ResJson getPandaById(@PathVariable Integer id) {
+	public ResultJson getPandaById(@PathVariable Integer id) {
 		Panda panda = pandaService.getPandaById(id);
-		return ResJson.result(panda);
+		return ResultJson.result(panda);
 	}
 
 }

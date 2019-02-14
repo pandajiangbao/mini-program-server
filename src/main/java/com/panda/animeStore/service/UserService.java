@@ -13,7 +13,7 @@ public interface UserService {
     User getUserByOpenId(String openId);
     boolean addUser(User user);
     boolean updateUser(User user);
-    boolean deleteUser(User user);
+    boolean deleteUser(Integer id);
     JSONObject loginApi(String code);
     UserVO getUserVO(Integer id);
 }

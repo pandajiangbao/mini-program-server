@@ -33,10 +33,6 @@ public class ProductSqlProvider {
             sql.VALUES("category_id", "#{categoryId,jdbcType=INTEGER}");
         }
         
-        if (record.getInfo() != null) {
-            sql.VALUES("info", "#{info,jdbcType=LONGVARCHAR}");
-        }
-        
         return sql.toString();
     }
 
@@ -66,10 +62,6 @@ public class ProductSqlProvider {
         
         if (record.getCategoryId() != null) {
             sql.SET("category_id = #{categoryId,jdbcType=INTEGER}");
-        }
-        
-        if (record.getInfo() != null) {
-            sql.SET("info = #{info,jdbcType=LONGVARCHAR}");
         }
         
         sql.WHERE("id = #{id,jdbcType=INTEGER}");

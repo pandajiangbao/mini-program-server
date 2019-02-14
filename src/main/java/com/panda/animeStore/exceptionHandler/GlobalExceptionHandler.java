@@ -1,6 +1,6 @@
 package com.panda.animeStore.exceptionHandler;
 
-import com.panda.animeStore.util.ResJson;
+import com.panda.animeStore.util.ResultJson;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(value = Exception.class)
-    private static ResJson globalExceptionHandle(Exception e) {
+    private static ResultJson globalExceptionHandle(Exception e) {
         log.error("抛出异常信息:{}", e.getMessage());
-        return ResJson.create("failed",e.getMessage());
+        return ResultJson.create("failed",e.getMessage());
     }
 }

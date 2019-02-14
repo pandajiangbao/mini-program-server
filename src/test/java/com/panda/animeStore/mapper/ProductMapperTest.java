@@ -33,7 +33,6 @@ class ProductMapperTest {
 		product.setStock(644);
 		product.setImg("/static/image/index/panda1.JPG");
 		product.setCategoryId(2);
-		product.setInfo("asdassdfzxcv");
 		productMapper.insert(product);
 		productMapper.selectAll().forEach(System.out::println);
 	}

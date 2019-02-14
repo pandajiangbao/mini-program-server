@@ -6,8 +6,7 @@ import com.panda.animeStore.mapper.ProductMapper;
 import com.panda.animeStore.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
-import org.springframework.util.StringUtils;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,6 +15,7 @@ import java.util.List;
  * @date 2019-01-15 10:09 AM
  */
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductMapper productMapper;
@@ -64,9 +64,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public boolean decreaseStock(Integer id, Integer amount) {
+    public boolean handleAmount(Integer id, Integer amount) {
         if (id != null && amount > 0) {
-            int result= productMapper.decreaseStock(id,amount);
+            int result= productMapper.handleAmount(id,amount);
             if (result>0){
                 return true;
             }else {

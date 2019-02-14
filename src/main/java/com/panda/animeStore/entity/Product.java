@@ -25,6 +25,4 @@ public class Product {
     private String img;
 
     private Integer categoryId;
-
-    private String info;
 }

@@ -10,6 +10,7 @@ import com.panda.animeStore.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -18,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @Slf4j
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
@@ -61,9 +63,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean deleteUser(User user) {
-        //todo
-        return false;
+    public boolean deleteUser(Integer id) {
+        if (id != null) {
+            int result = userMapper.deleteByPrimaryKey(id);
+            if (result > 0) {
+                return true;
+            } else {
+                throw new RuntimeException(BusinessError.DATA_ACCESS_ERROR.getErrMsg());
+            }
+        } else {
+            throw new RuntimeException(BusinessError.PARAMETER_ERROR.getErrMsg());
+        }
     }
 
     @Override
@@ -76,7 +86,6 @@ public class UserServiceImpl implements UserService {
         log.info("微信登陆接口请求开始");
 
         JSONObject response = JSON.parseObject(new RestTemplate().getForObject(url, String.class));
-        System.out.println("response = " + response);
         if (response.containsKey("errcode")) {
             log.error("微信登陆接口请求失败");
             throw new RuntimeException("微信登陆接口请求失败");

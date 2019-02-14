@@ -11,7 +11,7 @@ import org.mybatis.generator.api.dom.java.TopLevelClass;
 import java.util.List;
 
 /**
- * @author Liweizhou  2018/6/6
+ * @author panda  2018/6/6
  */
 public class LombokPlugin extends PluginAdapter {
 
