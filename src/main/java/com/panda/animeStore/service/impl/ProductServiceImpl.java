@@ -21,6 +21,11 @@ public class ProductServiceImpl implements ProductService {
     private ProductMapper productMapper;
 
     @Override
+    public List<Product> getProductByCategoryId(Integer categoryId) {
+        return productMapper.selectByCategoryId(categoryId);
+    }
+
+    @Override
     public List<Product> getAllProduct() {
         return productMapper.selectAll();
     }
@@ -36,8 +41,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public boolean updateProduct(Product product) {
-        if (product.getId() != null) {
+    public boolean updateProductById(Integer id,Product product) {
+        if (id != null) {
+            product.setId(id);
             int result = productMapper.updateByPrimaryKeySelective(product);
             if (result > 0) {
                 return true;
@@ -50,7 +56,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public boolean deleteProduct(Integer id) {
+    public boolean deleteProductById(Integer id) {
         if (id != null) {
             int result = productMapper.deleteByPrimaryKey(id);
             if (result > 0) {

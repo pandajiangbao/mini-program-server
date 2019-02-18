@@ -58,7 +58,33 @@ public interface ProductMapper {
     @Select({
             "select",
             "id, title, price, sales, stock, img, category_id",
+            "from product",
+            "where category_id = #{categoryId,jdbcType=INTEGER}"
+    })
+    @Results({
+            @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "title", property = "title", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "price", property = "price", jdbcType = JdbcType.DECIMAL),
+            @Result(column = "sales", property = "sales", jdbcType = JdbcType.INTEGER),
+            @Result(column = "stock", property = "stock", jdbcType = JdbcType.INTEGER),
+            @Result(column = "img", property = "img", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "category_id", property = "categoryId", jdbcType = JdbcType.INTEGER)
+    })
+    List<Product> selectByCategoryId(Integer categoryId);
+
+    @Select({
+            "select",
+            "id, title, price, sales, stock, img, category_id",
             "from product"
+    })
+    @Results({
+            @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "title", property = "title", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "price", property = "price", jdbcType = JdbcType.DECIMAL),
+            @Result(column = "sales", property = "sales", jdbcType = JdbcType.INTEGER),
+            @Result(column = "stock", property = "stock", jdbcType = JdbcType.INTEGER),
+            @Result(column = "img", property = "img", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "category_id", property = "categoryId", jdbcType = JdbcType.INTEGER)
     })
     List<Product> selectAll();
 

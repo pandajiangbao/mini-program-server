@@ -15,18 +15,17 @@ import java.util.List;
  */
 @Slf4j
 @RestController
-@RequestMapping("/userAddresses")
 public class UserAddressController {
     @Autowired
     private UserAddressService userAddressService;
 
-    @GetMapping("/users/{userId}")
+    @GetMapping("/users/{userId}/userAddresses")
     public ResultJson getUserAddressList(@PathVariable Integer userId) {
         List<UserAddress> userAddressList = userAddressService.listUserAddressByUserId(userId);
         return ResultJson.result(userAddressList);
     }
 
-    @PostMapping
+    @PostMapping("/userAddresses")
     public ResultJson addUserAddresses(@RequestBody UserAddress userAddress) {
         if (userAddressService.addUserAddress(userAddress)) {
             return ResultJson.success();
@@ -35,7 +34,7 @@ public class UserAddressController {
         }
     }
 
-    @PutMapping
+    @PutMapping("/userAddresses")
     public ResultJson updateAddress(@RequestBody UserAddress userAddress) {
         if (userAddressService.updateUserAddress(userAddress)) {
             return ResultJson.success();
@@ -44,18 +43,18 @@ public class UserAddressController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResultJson deleteAddress(@PathVariable Integer id) {
-        if (userAddressService.deleteUserAddress(id)) {
+    @DeleteMapping("/users/{userId}/userAddresses")
+    public ResultJson deleteUserAllAddress(@PathVariable Integer userId) {
+        if (userAddressService.deleteAllUserAddressByUserId(userId)) {
             return ResultJson.success();
         } else {
             return ResultJson.failed();
         }
     }
 
-    @DeleteMapping("/users/{userId}")
-    public ResultJson deleteUserAllAddress(@PathVariable Integer userId){
-        if (userAddressService.deleteAllUserAddressByUserId(userId)) {
+    @DeleteMapping("/userAddresses/{id}")
+    public ResultJson deleteAddress(@PathVariable Integer id) {
+        if (userAddressService.deleteUserAddress(id)) {
             return ResultJson.success();
         } else {
             return ResultJson.failed();

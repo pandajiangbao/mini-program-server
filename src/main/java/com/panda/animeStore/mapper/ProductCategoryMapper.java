@@ -13,6 +13,8 @@ import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
+import java.util.List;
+
 @Mapper
 public interface ProductCategoryMapper {
     @Delete({
@@ -44,6 +46,18 @@ public interface ProductCategoryMapper {
         @Result(column="counts", property="counts", jdbcType=JdbcType.INTEGER)
     })
     ProductCategory selectByPrimaryKey(Integer id);
+
+    @Select({
+            "select",
+            "id, name, counts",
+            "from product_category"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
+            @Result(column="counts", property="counts", jdbcType=JdbcType.INTEGER)
+    })
+    List<ProductCategory> selectAll();
 
     @UpdateProvider(type=ProductCategorySqlProvider.class, method="updateByPrimaryKeySelective")
     int updateByPrimaryKeySelective(ProductCategory record);

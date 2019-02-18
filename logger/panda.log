@@ -1,199 +1,345 @@
-2019-02-15 01:06:16.144  INFO 71897 --- [Thread-34] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-15 01:06:32.428  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 71897 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
-2019-02-15 01:06:32.428  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
-2019-02-15 01:06:33.981  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-15 01:06:33.981  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-15 01:06:33.990  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
-2019-02-15 01:06:34.114  INFO 71897 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$28382102] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-15 01:06:34.637  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-02-15 01:06:34.638  INFO 71897 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-15 01:06:34.639  INFO 71897 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-02-15 01:06:34.751  INFO 71897 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-15 01:06:34.752  INFO 71897 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2320 ms
-2019-02-15 01:06:35.804  INFO 71897 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-02-15 01:06:35.907  INFO 71897 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-15 01:06:35.921  INFO 71897 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-02-15 01:06:36.086  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2019-02-15 01:06:36.087  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2019-02-15 01:06:36.093  INFO 71897 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-02-15 01:06:36.428  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-02-15 01:06:36.429  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 7.435 seconds (JVM running for 11696.26)
-2019-02-15 01:06:36.432  INFO 71897 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2019-02-15 01:12:20.617  INFO 71897 --- [Thread-40] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-15 01:12:22.466  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 71897 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
-2019-02-15 01:12:22.489  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
-2019-02-15 01:12:23.427  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-15 01:12:23.464  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-15 01:12:23.710  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
-2019-02-15 01:12:24.291  INFO 71897 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$28382102] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-15 01:12:24.640  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-02-15 01:12:24.855  INFO 71897 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-15 01:12:24.855  INFO 71897 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-02-15 01:12:25.418  INFO 71897 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-15 01:12:25.418  INFO 71897 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2839 ms
-2019-02-15 01:12:26.249  INFO 71897 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-02-15 01:12:26.324  INFO 71897 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-15 01:12:26.337  INFO 71897 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-02-15 01:12:26.485  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2019-02-15 01:12:26.486  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2019-02-15 01:12:26.493  INFO 71897 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-02-15 01:12:26.821  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-02-15 01:12:26.903  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 4.764 seconds (JVM running for 12046.742)
-2019-02-15 01:12:26.907  INFO 71897 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2019-02-15 01:12:36.066  INFO 74401 --- [main] c.p.animeStore.mapper.ProductMapperTest  : Starting ProductMapperTest on mac-mini with PID 74401 (started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
-2019-02-15 01:12:36.104  INFO 74401 --- [main] c.p.animeStore.mapper.ProductMapperTest  : No active profile set, falling back to default profiles: default
-2019-02-15 01:12:37.613  INFO 74401 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-15 01:12:37.617  INFO 74401 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-15 01:12:37.656  INFO 74401 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
-2019-02-15 01:12:38.295  INFO 74401 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$643ac7d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-15 01:12:40.999  INFO 74401 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-02-15 01:12:42.427  INFO 74401 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-15 01:12:43.410  INFO 74401 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2019-02-15 01:12:43.515  INFO 74401 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2019-02-15 01:12:43.564  INFO 74401 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-02-15 01:12:43.875  INFO 74401 --- [main] c.p.animeStore.mapper.ProductMapperTest  : Started ProductMapperTest in 8.309 seconds (JVM running for 11.622)
-2019-02-15 01:12:45.969  INFO 74401 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2019-02-15 01:12:46.440  INFO 74401 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-15 01:12:46.489  INFO 74401 --- [Thread-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2019-02-15 01:20:44.370  INFO 71897 --- [Thread-46] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-15 01:20:51.148  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 71897 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
-2019-02-15 01:20:51.231  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
-2019-02-15 01:20:55.801  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-15 01:20:55.802  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-15 01:20:55.809  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
-2019-02-15 01:20:56.194  INFO 71897 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$28382102] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-15 01:20:56.845  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-02-15 01:20:56.847  INFO 71897 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-15 01:20:56.847  INFO 71897 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-02-15 01:20:57.189  INFO 71897 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-15 01:20:57.189  INFO 71897 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5955 ms
-2019-02-15 01:20:57.690  INFO 71897 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-02-15 01:20:57.747  INFO 71897 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-15 01:20:57.759  INFO 71897 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-02-15 01:20:57.891  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2019-02-15 01:20:57.892  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2019-02-15 01:20:57.899  INFO 71897 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-02-15 01:20:57.942  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-02-15 01:20:57.942  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 12.995 seconds (JVM running for 12557.794)
-2019-02-15 01:20:57.945  INFO 71897 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2019-02-15 02:02:13.200  INFO 71897 --- [Thread-52] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-15 02:02:22.794  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 71897 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
-2019-02-15 02:02:22.795  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
-2019-02-15 02:02:24.366  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-15 02:02:24.366  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-15 02:02:24.376  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
-2019-02-15 02:02:24.424  INFO 71897 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$28382102] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-15 02:02:24.678  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-02-15 02:02:24.679  INFO 71897 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-15 02:02:24.679  INFO 71897 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-02-15 02:02:24.809  INFO 71897 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-15 02:02:24.809  INFO 71897 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2012 ms
-2019-02-15 02:02:25.059  INFO 71897 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-02-15 02:02:25.639  INFO 71897 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-15 02:02:25.650  INFO 71897 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-02-15 02:02:25.823  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2019-02-15 02:02:25.824  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2019-02-15 02:02:25.849  INFO 71897 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-02-15 02:02:25.901  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-02-15 02:02:25.901  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 3.227 seconds (JVM running for 15045.812)
-2019-02-15 02:02:25.904  INFO 71897 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2019-02-15 02:13:09.544  INFO 71897 --- [Thread-58] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-15 02:13:10.243  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 71897 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
-2019-02-15 02:13:10.360  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
-2019-02-15 02:13:11.973  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-15 02:13:11.973  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-15 02:13:11.981  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
-2019-02-15 02:13:12.403  INFO 71897 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$28382102] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-15 02:13:12.754  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-02-15 02:13:12.755  INFO 71897 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-15 02:13:12.755  INFO 71897 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-02-15 02:13:12.900  INFO 71897 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-15 02:13:12.900  INFO 71897 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2537 ms
-2019-02-15 02:13:13.447  INFO 71897 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-02-15 02:13:13.508  INFO 71897 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-15 02:13:13.523  INFO 71897 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-02-15 02:13:13.675  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2019-02-15 02:13:13.676  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2019-02-15 02:13:13.683  INFO 71897 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-02-15 02:13:13.717  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-02-15 02:13:13.718  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 3.655 seconds (JVM running for 15693.65)
-2019-02-15 02:13:13.720  INFO 71897 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2019-02-15 02:14:19.061  INFO 71897 --- [Thread-64] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-15 02:14:21.945  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 71897 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
-2019-02-15 02:14:21.946  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
-2019-02-15 02:14:25.221  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-15 02:14:25.221  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-15 02:14:25.228  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 repository interfaces.
-2019-02-15 02:14:25.364  INFO 71897 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$28382102] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-15 02:14:25.946  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-02-15 02:14:25.947  INFO 71897 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-15 02:14:25.948  INFO 71897 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-02-15 02:14:26.026  INFO 71897 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-15 02:14:26.026  INFO 71897 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4078 ms
-2019-02-15 02:14:26.321  INFO 71897 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-02-15 02:14:26.715  INFO 71897 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-15 02:14:26.727  INFO 71897 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-02-15 02:14:26.846  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2019-02-15 02:14:26.848  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2019-02-15 02:14:26.853  INFO 71897 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-02-15 02:14:26.890  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-02-15 02:14:26.908  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 5.083 seconds (JVM running for 15766.841)
-2019-02-15 02:14:27.066  INFO 71897 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
-
-
-==========================
-CONDITION EVALUATION DELTA
-==========================
-
-
-Positive matches:
------------------
-
-   DataSourceConfiguration.Generic matched:
-      - @ConditionalOnProperty (spring.datasource.type) matched (OnPropertyCondition)
-
-
-Negative matches:
------------------
-
-   DataSourceConfiguration.Hikari:
-      Did not match:
-         - @ConditionalOnProperty (spring.datasource.type=com.zaxxer.hikari.HikariDataSource) found different value in property 'spring.datasource.type' (OnPropertyCondition)
-      Matched:
-         - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
-
-
-Exclusions:
------------
-
-    None
-
-
-Unconditional classes:
-----------------------
-
-    None
-
-
-
-2019-02-15 02:16:02.439  INFO 71897 --- [Thread-70] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-15 02:16:03.720  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 71897 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
-2019-02-15 02:16:03.720  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
-2019-02-15 02:16:04.399  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-15 02:16:04.399  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-15 02:16:04.406  INFO 71897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
-2019-02-15 02:16:04.505  INFO 71897 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$28382102] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-15 02:16:04.994  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-02-15 02:16:04.995  INFO 71897 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-15 02:16:04.995  INFO 71897 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-02-15 02:16:05.004  INFO 71897 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-15 02:16:05.004  INFO 71897 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1282 ms
-2019-02-15 02:16:05.430  INFO 71897 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-02-15 02:16:05.487  INFO 71897 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-15 02:16:05.805  INFO 71897 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-02-15 02:16:05.964  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2019-02-15 02:16:05.966  INFO 71897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2019-02-15 02:16:05.977  INFO 71897 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-02-15 02:16:06.052  INFO 71897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-02-15 02:16:06.053  INFO 71897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 2.464 seconds (JVM running for 15865.989)
-2019-02-15 02:16:06.056  INFO 71897 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-02-18 12:09:38.322  INFO 81848 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : AnimeStore登陆开始
+2019-02-18 12:09:40.998  INFO 81848 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : token不存在或已过期
+2019-02-18 12:09:40.998  INFO 81848 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 调用微信第三方登录api
+2019-02-18 12:09:44.325  INFO 81848 --- [http-nio-8082-exec-10] c.p.a.service.impl.UserServiceImpl       : 登录code:0337Vn2m0n91Ir1dnc3m0QWj2m07Vn2X
+2019-02-18 12:09:44.724  INFO 81848 --- [http-nio-8082-exec-10] c.p.a.service.impl.UserServiceImpl       : 微信登陆接口请求开始
+2019-02-18 12:09:54.295  INFO 81848 --- [http-nio-8082-exec-10] c.p.a.service.impl.UserServiceImpl       : 微信登陆接口请求成功
+2019-02-18 12:09:54.321  INFO 81848 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 生成新token:9bbb6d29-53a0-4bc9-b5e7-72fd67be9d87
+2019-02-18 12:09:54.321  INFO 81848 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 存入redis,过期时间90分钟
+2019-02-18 12:09:55.344  INFO 81848 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 用户已存在,更新用户信息
+2019-02-18 12:09:55.354  INFO 81848 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 返回新token
+2019-02-18 12:09:55.433  INFO 81848 --- [http-nio-8082-exec-10] com.panda.animeStore.util.ResultJson     : login请求成功,返回数据
+2019-02-18 12:17:23.948  INFO 81848 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : AnimeStore登陆开始
+2019-02-18 12:17:24.241  INFO 81848 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : token未过期,登录成功
+2019-02-18 12:17:24.418  INFO 81848 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 刷新token:523dea3b-6623-44da-b899-b3023dfdabe4,更新用户数据
+2019-02-18 12:17:24.418  INFO 81848 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
+2019-02-18 12:17:24.426  INFO 81848 --- [http-nio-8082-exec-3] com.panda.animeStore.util.ResultJson     : login请求成功,返回数据
+2019-02-18 12:29:37.009  INFO 81848 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : AnimeStore登陆开始
+2019-02-18 12:29:37.165  INFO 81848 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : token未过期,登录成功
+2019-02-18 12:29:39.455  INFO 81848 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 刷新token:e0c50350-bcd2-4a76-a0e8-c37eb00c322e,更新用户数据
+2019-02-18 12:29:39.455  INFO 81848 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
+2019-02-18 12:29:39.463  INFO 81848 --- [http-nio-8082-exec-4] com.panda.animeStore.util.ResultJson     : login请求成功,返回数据
+2019-02-18 12:29:46.936  INFO 81848 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称null,/products GET请求开始
+2019-02-18 12:30:45.910  INFO 81848 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : AnimeStore登陆开始
+2019-02-18 12:30:45.967  INFO 81848 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : token未过期,登录成功
+2019-02-18 12:30:46.938  INFO 81848 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 刷新token:29fb26e7-0508-4703-82e2-bcfaf1e5b296,更新用户数据
+2019-02-18 12:30:46.938  INFO 81848 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
+2019-02-18 12:30:47.168  INFO 81848 --- [http-nio-8082-exec-6] com.panda.animeStore.util.ResultJson     : login请求成功,返回数据
+2019-02-18 12:30:59.026  INFO 81848 --- [http-nio-8082-exec-7] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称null,/products GET请求开始
+2019-02-18 12:32:57.887  INFO 81848 --- [Thread-95] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 12:33:00.100  INFO 81848 --- [Thread-95] com.alibaba.druid.pool.DruidDataSource   : {dataSource-5} closed
+2019-02-18 12:33:16.725  INFO 11473 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11473 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 12:33:16.741  INFO 11473 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 12:33:17.159  INFO 11473 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-02-18 12:33:17.159  INFO 11473 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-02-18 12:33:21.169  INFO 11473 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 12:33:21.176  INFO 11473 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 12:33:21.330  INFO 11473 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54ms. Found 0 repository interfaces.
+2019-02-18 12:33:22.250  INFO 11473 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cdba8f7f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 12:33:24.365  INFO 11473 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 12:33:24.502  INFO 11473 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 12:33:24.503  INFO 11473 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 12:33:24.529  INFO 11473 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/panda/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-02-18 12:33:24.792  INFO 11473 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 12:33:24.793  INFO 11473 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7633 ms
+2019-02-18 12:33:28.719  INFO 11473 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 12:33:29.316  INFO 11473 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 12:33:29.461  INFO 11473 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 12:33:30.426  INFO 11473 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 12:33:30.529  INFO 11473 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 12:33:30.639  INFO 11473 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 12:33:31.106  INFO 11473 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 12:33:31.113  INFO 11473 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 16.549 seconds (JVM running for 23.599)
+2019-02-18 12:33:47.862  INFO 11473 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-18 12:33:47.886  INFO 11473 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-18 12:33:47.911  INFO 11473 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 25 ms
+2019-02-18 12:33:48.396  INFO 11473 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : AnimeStore登陆开始
+2019-02-18 12:33:50.431  INFO 11473 --- [http-nio-8082-exec-1] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-02-18 12:33:50.433  INFO 11473 --- [http-nio-8082-exec-1] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-02-18 12:33:50.788  INFO 11473 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : token未过期,登录成功
+2019-02-18 12:33:52.094  INFO 11473 --- [http-nio-8082-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-02-18 12:33:52.595  INFO 11473 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 刷新token:79b856ab-6f0e-4be2-8023-c66ef16ee477,更新用户数据
+2019-02-18 12:33:52.595  INFO 11473 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
+2019-02-18 12:33:52.607  INFO 11473 --- [http-nio-8082-exec-1] com.panda.animeStore.util.ResultJson     : login请求成功,返回数据
+2019-02-18 12:33:56.009  INFO 11473 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称null,/products GET请求开始
+2019-02-18 12:35:04.374  INFO 11473 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称null,/products/products GET请求开始
+2019-02-18 12:35:04.727  INFO 11473 --- [http-nio-8082-exec-8] com.panda.animeStore.util.ResultJson     : getAllProduct请求成功,返回数据
+2019-02-18 12:35:32.423  INFO 11473 --- [Thread-36] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 12:35:33.682  INFO 11473 --- [Thread-36] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-02-18 12:35:34.247  INFO 11473 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11473 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 12:35:34.252  INFO 11473 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 12:35:35.905  INFO 11473 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 12:35:35.906  INFO 11473 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 12:35:35.914  INFO 11473 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
+2019-02-18 12:35:35.967  INFO 11473 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cdba8f7f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 12:35:36.171  INFO 11473 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 12:35:36.172  INFO 11473 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 12:35:36.173  INFO 11473 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 12:35:36.183  INFO 11473 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 12:35:36.183  INFO 11473 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1927 ms
+2019-02-18 12:35:36.486  INFO 11473 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 12:35:36.543  INFO 11473 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 12:35:36.555  INFO 11473 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 12:35:36.685  INFO 11473 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 12:35:36.686  INFO 11473 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 12:35:36.693  INFO 11473 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 12:35:36.737  INFO 11473 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 12:35:36.739  INFO 11473 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 2.58 seconds (JVM running for 149.229)
+2019-02-18 12:35:36.743  INFO 11473 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-02-18 12:43:25.862  INFO 11473 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-18 12:43:25.892  INFO 11473 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-18 12:43:25.896  INFO 11473 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-02-18 12:43:25.957  INFO 11473 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : AnimeStore登陆开始
+2019-02-18 12:43:26.011  INFO 11473 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : token未过期,登录成功
+2019-02-18 12:43:26.318  INFO 11473 --- [http-nio-8082-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2019-02-18 12:43:26.381  INFO 11473 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 刷新token:d73064b9-82a0-4dee-80e9-b4042d08fcc7,更新用户数据
+2019-02-18 12:43:26.381  INFO 11473 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
+2019-02-18 12:43:26.392  INFO 11473 --- [http-nio-8082-exec-1] com.panda.animeStore.util.ResultJson     : login请求成功,返回数据
+2019-02-18 12:43:31.404  INFO 11473 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称null,/products GET请求开始
+2019-02-18 12:43:50.328  INFO 11473 --- [Thread-53] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 12:43:51.446  INFO 11473 --- [Thread-53] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2019-02-18 12:43:59.317  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11726 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 12:43:59.322  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 12:43:59.385  INFO 11726 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-02-18 12:43:59.385  INFO 11726 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-02-18 12:44:01.155  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 12:44:01.157  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 12:44:01.196  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2019-02-18 12:44:01.676  INFO 11726 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$436d562c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 12:44:02.186  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 12:44:02.216  INFO 11726 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 12:44:02.216  INFO 11726 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 12:44:02.225  INFO 11726 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/panda/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-02-18 12:44:02.353  INFO 11726 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 12:44:02.353  INFO 11726 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2967 ms
+2019-02-18 12:44:03.349  INFO 11726 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 12:44:03.510  INFO 11726 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 12:44:03.579  INFO 11726 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 12:44:03.964  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 12:44:03.984  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 12:44:04.046  INFO 11726 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 12:44:04.276  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 12:44:04.280  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 5.534 seconds (JVM running for 6.502)
+2019-02-18 12:44:17.628  INFO 11726 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-18 12:44:17.654  INFO 11726 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-18 12:44:17.666  INFO 11726 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-02-18 12:44:17.706  INFO 11726 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : AnimeStore登陆开始
+2019-02-18 12:44:17.875  INFO 11726 --- [http-nio-8082-exec-1] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-02-18 12:44:17.877  INFO 11726 --- [http-nio-8082-exec-1] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-02-18 12:44:18.018  INFO 11726 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : token未过期,登录成功
+2019-02-18 12:44:19.622  INFO 11726 --- [http-nio-8082-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-02-18 12:44:19.714  INFO 11726 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 刷新token:47ea4ea9-c0f1-405f-ad53-fd31796d141b,更新用户数据
+2019-02-18 12:44:19.715  INFO 11726 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
+2019-02-18 12:44:19.727  INFO 11726 --- [http-nio-8082-exec-1] com.panda.animeStore.util.ResultJson     : login请求成功,返回数据
+2019-02-18 12:44:27.019  INFO 11726 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称null,/products GET请求开始
+2019-02-18 12:44:27.163  INFO 11726 --- [http-nio-8082-exec-2] com.panda.animeStore.util.ResultJson     : getAllProduct请求成功,返回数据
+2019-02-18 12:46:31.025  INFO 11726 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : AnimeStore登陆开始
+2019-02-18 12:46:31.229  INFO 11726 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : token未过期,登录成功
+2019-02-18 12:46:31.433  INFO 11726 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 刷新token:d8d019f4-0c00-4b88-bd0d-fbf76264fabf,更新用户数据
+2019-02-18 12:46:31.433  INFO 11726 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
+2019-02-18 12:46:31.448  INFO 11726 --- [http-nio-8082-exec-4] com.panda.animeStore.util.ResultJson     : login请求成功,返回数据
+2019-02-18 13:41:28.201  INFO 11726 --- [Thread-15] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 13:41:29.764  INFO 11726 --- [Thread-15] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-02-18 13:41:30.378  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11726 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 13:41:30.446  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 13:41:31.975  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 13:41:31.975  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 13:41:31.985  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+2019-02-18 13:41:32.052  INFO 11726 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$436d562c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 13:41:32.144  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 13:41:32.145  INFO 11726 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 13:41:32.145  INFO 11726 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 13:41:32.155  INFO 11726 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 13:41:32.155  INFO 11726 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1706 ms
+2019-02-18 13:41:32.521  INFO 11726 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 13:41:32.592  INFO 11726 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 13:41:32.628  INFO 11726 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 13:41:33.122  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 13:41:33.126  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 13:41:33.142  INFO 11726 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 13:41:33.239  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 13:41:33.241  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 3.023 seconds (JVM running for 3455.545)
+2019-02-18 13:41:33.245  INFO 11726 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-02-18 13:47:15.993  INFO 11726 --- [Thread-26] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 13:47:16.701  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11726 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 13:47:17.231  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 13:47:20.528  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 13:47:20.529  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 13:47:20.537  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
+2019-02-18 13:47:20.589  INFO 11726 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$436d562c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 13:47:20.791  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 13:47:20.793  INFO 11726 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 13:47:20.794  INFO 11726 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 13:47:20.810  INFO 11726 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 13:47:20.810  INFO 11726 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3576 ms
+2019-02-18 13:47:21.304  INFO 11726 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 13:47:21.361  INFO 11726 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 13:47:21.375  INFO 11726 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 13:47:21.588  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 13:47:21.589  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 13:47:21.605  INFO 11726 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 13:47:21.674  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 13:47:21.675  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 5.25 seconds (JVM running for 3803.988)
+2019-02-18 13:47:21.683  INFO 11726 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-02-18 13:58:18.677  INFO 11726 --- [Thread-32] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 13:58:19.231  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11726 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 13:58:19.233  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 13:58:20.709  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 13:58:20.709  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 13:58:20.717  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
+2019-02-18 13:58:20.768  INFO 11726 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$436d562c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 13:58:20.903  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 13:58:20.904  INFO 11726 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 13:58:20.905  INFO 11726 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 13:58:20.917  INFO 11726 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 13:58:20.917  INFO 11726 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1675 ms
+2019-02-18 13:58:21.204  INFO 11726 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 13:58:21.262  INFO 11726 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 13:58:21.275  INFO 11726 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 13:58:21.417  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 13:58:21.419  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 13:58:21.429  INFO 11726 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 13:58:21.475  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 13:58:21.475  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 2.389 seconds (JVM running for 4463.804)
+2019-02-18 13:58:21.478  INFO 11726 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-02-18 13:58:22.821  INFO 11726 --- [Thread-38] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 13:58:23.068  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11726 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 13:58:23.074  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 13:58:23.470  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 13:58:23.470  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 13:58:23.477  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
+2019-02-18 13:58:23.527  INFO 11726 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$436d562c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 13:58:23.629  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 13:58:23.630  INFO 11726 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 13:58:23.631  INFO 11726 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 13:58:23.639  INFO 11726 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 13:58:23.639  INFO 11726 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 563 ms
+2019-02-18 13:58:23.934  INFO 11726 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 13:58:23.989  INFO 11726 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 13:58:24.001  INFO 11726 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 13:58:24.124  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 13:58:24.125  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 13:58:24.132  INFO 11726 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 13:58:24.183  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 13:58:24.184  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 1.143 seconds (JVM running for 4466.513)
+2019-02-18 13:58:24.188  INFO 11726 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-02-18 14:05:04.636  INFO 11726 --- [Thread-44] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:05:05.027  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11726 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 14:05:05.027  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 14:05:07.298  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 14:05:07.299  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 14:05:07.306  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
+2019-02-18 14:05:07.357  INFO 11726 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$436d562c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 14:05:07.738  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 14:05:07.739  INFO 11726 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 14:05:07.740  INFO 11726 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 14:05:07.752  INFO 11726 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 14:05:07.752  INFO 11726 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2722 ms
+2019-02-18 14:05:08.061  INFO 11726 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 14:05:08.264  INFO 11726 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:05:08.281  INFO 11726 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 14:05:08.445  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 14:05:08.609  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 14:05:08.616  INFO 11726 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 14:05:08.663  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 14:05:08.663  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 3.742 seconds (JVM running for 4871.003)
+2019-02-18 14:05:08.667  INFO 11726 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-02-18 14:05:20.085  INFO 12626 --- [main] c.p.a.s.i.ProductCategoryServiceImplTest : Starting ProductCategoryServiceImplTest on mac-mini with PID 12626 (started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 14:05:20.087  INFO 12626 --- [main] c.p.a.s.i.ProductCategoryServiceImplTest : No active profile set, falling back to default profiles: default
+2019-02-18 14:05:21.817  INFO 12626 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 14:05:21.821  INFO 12626 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 14:05:21.886  INFO 12626 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 0 repository interfaces.
+2019-02-18 14:05:22.581  INFO 12626 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c5fe5d2c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 14:05:25.500  INFO 12626 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 14:05:26.509  INFO 12626 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:05:27.582  INFO 12626 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 14:05:27.680  INFO 12626 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 14:05:27.735  INFO 12626 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 14:05:28.112  INFO 12626 --- [main] c.p.a.s.i.ProductCategoryServiceImplTest : Started ProductCategoryServiceImplTest in 8.702 seconds (JVM running for 12.872)
+2019-02-18 14:05:29.807  INFO 12626 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-02-18 14:05:30.051  INFO 12626 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:05:30.078  INFO 12626 --- [Thread-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-02-18 14:07:27.094  INFO 11726 --- [Thread-50] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:07:27.368  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11726 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 14:07:27.507  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 14:07:27.908  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 14:07:27.908  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 14:07:27.916  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
+2019-02-18 14:07:27.961  INFO 11726 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$436d562c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 14:07:28.026  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 14:07:28.027  INFO 11726 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 14:07:28.027  INFO 11726 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 14:07:28.036  INFO 11726 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 14:07:28.036  INFO 11726 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 526 ms
+2019-02-18 14:07:28.335  INFO 11726 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 14:07:28.395  INFO 11726 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:07:28.408  INFO 11726 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 14:07:28.560  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 14:07:28.561  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 14:07:28.569  INFO 11726 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 14:07:28.619  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 14:07:28.626  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 1.369 seconds (JVM running for 5010.969)
+2019-02-18 14:07:28.630  INFO 11726 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-02-18 14:15:35.538  INFO 11726 --- [Thread-56] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:15:35.834  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11726 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 14:15:35.846  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 14:15:38.233  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 14:15:38.233  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 14:15:38.241  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
+2019-02-18 14:15:38.289  INFO 11726 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$436d562c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 14:15:38.408  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 14:15:38.409  INFO 11726 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 14:15:38.409  INFO 11726 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 14:15:38.418  INFO 11726 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 14:15:38.418  INFO 11726 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2570 ms
+2019-02-18 14:15:38.713  INFO 11726 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 14:15:38.790  INFO 11726 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:15:38.806  INFO 11726 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 14:15:38.944  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 14:15:38.945  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 14:15:38.952  INFO 11726 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 14:15:38.996  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 14:15:38.996  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 3.249 seconds (JVM running for 5501.351)
+2019-02-18 14:15:39.000  INFO 11726 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-02-18 14:20:49.477  INFO 11726 --- [Thread-62] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:20:49.978  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11726 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 14:20:49.989  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 14:20:51.674  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 14:20:51.674  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 14:20:51.684  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2019-02-18 14:20:51.737  INFO 11726 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$436d562c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 14:20:52.334  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 14:20:52.335  INFO 11726 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 14:20:52.335  INFO 11726 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 14:20:52.343  INFO 11726 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 14:20:52.343  INFO 11726 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2352 ms
+2019-02-18 14:20:52.657  INFO 11726 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 14:20:52.713  INFO 11726 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:20:52.726  INFO 11726 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 14:20:52.890  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 14:20:52.891  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 14:20:52.899  INFO 11726 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 14:20:52.936  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 14:20:52.937  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 3.046 seconds (JVM running for 5815.299)
+2019-02-18 14:20:52.940  INFO 11726 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-02-18 14:20:54.292  INFO 11726 --- [Thread-68] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:20:54.463  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on mac-mini with PID 11726 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-02-18 14:20:54.464  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-02-18 14:20:54.835  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-18 14:20:54.836  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-18 14:20:54.846  INFO 11726 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2019-02-18 14:20:54.892  INFO 11726 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$436d562c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-18 14:20:55.105  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-02-18 14:20:55.106  INFO 11726 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-18 14:20:55.106  INFO 11726 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-02-18 14:20:55.115  INFO 11726 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-18 14:20:55.115  INFO 11726 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 649 ms
+2019-02-18 14:20:55.373  INFO 11726 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-02-18 14:20:55.430  INFO 11726 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:20:55.441  INFO 11726 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-18 14:20:55.566  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-02-18 14:20:55.568  INFO 11726 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-02-18 14:20:55.576  INFO 11726 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-02-18 14:20:55.626  INFO 11726 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-02-18 14:20:55.627  INFO 11726 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 1.187 seconds (JVM running for 5817.989)
+2019-02-18 14:20:55.630  INFO 11726 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
