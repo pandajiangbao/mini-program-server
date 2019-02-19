@@ -2,7 +2,7 @@ package com.panda.animeStore.entity.VO;
 
 import com.panda.animeStore.entity.UserAddress;
 import com.panda.animeStore.entity.UserBonus;
-import com.panda.animeStore.entity.UserStared;
+import com.panda.animeStore.entity.UserStar;
 
 import java.util.List;
 
@@ -23,5 +23,5 @@ public class UserVO {
     private List<UserBonus> userBonusList;
 
     //用户收藏列表
-    private List<UserStared> userStaredList;
+    private List<UserStar> userStarList;
 }

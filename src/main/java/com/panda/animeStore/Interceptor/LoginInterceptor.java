@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * @author panda
@@ -26,12 +27,14 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     //请求处理前进行调用
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
+
         String token = request.getHeader("token");
+
         if (StringUtils.isEmpty(token)) {
             log.error("403:{}", "权限认证失败,token为空");
             response.setStatus(403);
-            response.setHeader("errMsg", "token is empty");
+            response.getWriter().append("token is empty");
             return false;
         }
 
@@ -46,8 +49,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
         } catch (NullPointerException e) {
             log.error("403:{}", "权限认证失败,用户token错误或失效");
-            response.setStatus(403);
-            response.setHeader("errMsg", "token invalid or timeout");
+            response.getWriter().append("token invalid or timeout");
             return false;
         }
     }

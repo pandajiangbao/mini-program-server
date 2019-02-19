@@ -3,9 +3,11 @@ package com.panda.animeStore.controller;
 import com.github.pagehelper.PageHelper;
 import com.panda.animeStore.entity.Product;
 import com.panda.animeStore.service.ProductService;
-import com.panda.animeStore.util.ResultJson;
+import com.panda.animeStore.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author panda
@@ -17,41 +19,29 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    public ResultJson getAllProduct(@RequestParam(required = false, defaultValue = "1") int pageNo,
-                                    @RequestParam(required = false, defaultValue = "8") int pageSize) {
+    public List<Product> getAllProduct(@RequestParam(required = false, defaultValue = "1") int pageNo,
+                                       @RequestParam(required = false, defaultValue = "0") int pageSize) {
         PageHelper.startPage(pageNo, pageSize);
-        return ResultJson.result(productService.getAllProduct());
+        return productService.getAllProduct();
     }
 
-    @GetMapping("/category/{categoryId}/products")
-    public ResultJson getProductByCategoryId(@PathVariable Integer categoryId) {
-        return ResultJson.result(productService.getProductByCategoryId(categoryId));
+    @GetMapping("/categories/{categoryId}/products")
+    public List<Product> getProductByCategoryId(@PathVariable Integer categoryId) {
+        return productService.getProductByCategoryId(categoryId);
     }
 
     @PostMapping("/products")
-    public ResultJson addProduct(@RequestBody Product product) {
-        if (productService.addProduct(product)) {
-            return ResultJson.success();
-        } else {
-            return ResultJson.failed();
-        }
+    public void addProduct(@RequestBody Product product) {
+        Result.status(productService.addProduct(product));
     }
 
     @PutMapping("/products/{id}")
-    public ResultJson updateProduct(@PathVariable Integer id, @RequestBody Product product) {
-        if (productService.updateProductById(id, product)) {
-            return ResultJson.success();
-        } else {
-            return ResultJson.failed();
-        }
+    public void updateProduct(@PathVariable Integer id, @RequestBody Product product) {
+        Result.status(productService.updateProductById(id, product));
     }
 
     @DeleteMapping("/products/{id}")
-    public ResultJson deleteProduct(@PathVariable Integer id) {
-        if (productService.deleteProductById(id)) {
-            return ResultJson.success();
-        } else {
-            return ResultJson.failed();
-        }
+    public void deleteProduct(@PathVariable Integer id) {
+        Result.status(productService.deleteProductById(id));
     }
 }

@@ -1,6 +1,6 @@
 package com.panda.animeStore.mapper;
 
-import com.panda.animeStore.entity.UserStared;
+import com.panda.animeStore.entity.UserStar;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
@@ -13,50 +13,66 @@ import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
+import java.util.List;
+
 @Mapper
-public interface UserStaredMapper {
+public interface UserStarMapper {
     @Delete({
-            "delete from user_stared",
+            "delete from user_star",
             "where id = #{id,jdbcType=INTEGER}"
     })
     int deleteByPrimaryKey(Integer id);
 
     @Insert({
-            "insert into user_stared (user_id, product_id, ",
-            "stared_time)",
+            "insert into user_star (user_id, product_id, ",
+            "star_time)",
             "values (#{userId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, ",
-            "#{staredTime,jdbcType=TIMESTAMP})"
+            "#{starTime,jdbcType=TIMESTAMP})"
     })
     @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = Integer.class)
-    int insert(UserStared record);
+    int insert(UserStar record);
 
-    @InsertProvider(type = UserStaredSqlProvider.class, method = "insertSelective")
+    @InsertProvider(type = UserStarSqlProvider.class, method = "insertSelective")
     @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = Integer.class)
-    int insertSelective(UserStared record);
+    int insertSelective(UserStar record);
 
     @Select({
             "select",
-            "id, user_id, product_id, stared_time",
-            "from user_stared",
+            "id, user_id, product_id, star_time",
+            "from user_star",
             "where id = #{id,jdbcType=INTEGER}"
     })
     @Results({
             @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
             @Result(column = "user_id", property = "userId", jdbcType = JdbcType.INTEGER),
             @Result(column = "product_id", property = "productId", jdbcType = JdbcType.INTEGER),
-            @Result(column = "stared_time", property = "staredTime", jdbcType = JdbcType.TIMESTAMP)
+            @Result(column = "star_time", property = "starTime", jdbcType = JdbcType.TIMESTAMP)
     })
-    UserStared selectByPrimaryKey(Integer id);
+    UserStar selectByPrimaryKey(Integer id);
 
-    @UpdateProvider(type = UserStaredSqlProvider.class, method = "updateByPrimaryKeySelective")
-    int updateByPrimaryKeySelective(UserStared record);
+    @Select({
+            "select",
+            "id, user_id, product_id, star_time",
+            "from user_star",
+            "where user_id = #{userId,jdbcType=INTEGER}"
+    })
+    @Results({
+            @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "user_id", property = "userId", jdbcType = JdbcType.INTEGER),
+            @Result(column = "product_id", property = "productId", jdbcType = JdbcType.INTEGER),
+            @Result(column = "star_time", property = "starTime", jdbcType = JdbcType.TIMESTAMP)
+    })
+    List<UserStar> selectByUserId(Integer userId);
+
+    @UpdateProvider(type = UserStarSqlProvider.class, method = "updateByPrimaryKeySelective")
+    int updateByPrimaryKeySelective(UserStar record);
 
     @Update({
-            "update user_stared",
+            "update user_star",
             "set user_id = #{userId,jdbcType=INTEGER},",
             "product_id = #{productId,jdbcType=INTEGER},",
-            "stared_time = #{staredTime,jdbcType=TIMESTAMP}",
+            "star_time = #{starTime,jdbcType=TIMESTAMP}",
             "where id = #{id,jdbcType=INTEGER}"
     })
-    int updateByPrimaryKey(UserStared record);
+    int updateByPrimaryKey(UserStar record);
 }

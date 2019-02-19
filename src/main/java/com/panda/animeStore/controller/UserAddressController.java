@@ -2,7 +2,7 @@ package com.panda.animeStore.controller;
 
 import com.panda.animeStore.entity.UserAddress;
 import com.panda.animeStore.service.UserAddressService;
-import com.panda.animeStore.util.ResultJson;
+import com.panda.animeStore.util.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,44 +20,27 @@ public class UserAddressController {
     private UserAddressService userAddressService;
 
     @GetMapping("/users/{userId}/userAddresses")
-    public ResultJson getUserAddressList(@PathVariable Integer userId) {
-        List<UserAddress> userAddressList = userAddressService.listUserAddressByUserId(userId);
-        return ResultJson.result(userAddressList);
+    public List<UserAddress> getUserAddressList(@PathVariable Integer userId) {
+        return userAddressService.listUserAddressByUserId(userId);
     }
 
     @PostMapping("/userAddresses")
-    public ResultJson addUserAddresses(@RequestBody UserAddress userAddress) {
-        if (userAddressService.addUserAddress(userAddress)) {
-            return ResultJson.success();
-        } else {
-            return ResultJson.failed();
-        }
+    public void addUserAddresses(@RequestBody UserAddress userAddress) {
+        Result.status(userAddressService.addUserAddress(userAddress));
     }
 
     @PutMapping("/userAddresses")
-    public ResultJson updateAddress(@RequestBody UserAddress userAddress) {
-        if (userAddressService.updateUserAddress(userAddress)) {
-            return ResultJson.success();
-        } else {
-            return ResultJson.failed();
-        }
+    public void updateAddress(@RequestBody UserAddress userAddress) {
+        Result.status(userAddressService.updateUserAddress(userAddress));
     }
 
     @DeleteMapping("/users/{userId}/userAddresses")
-    public ResultJson deleteUserAllAddress(@PathVariable Integer userId) {
-        if (userAddressService.deleteAllUserAddressByUserId(userId)) {
-            return ResultJson.success();
-        } else {
-            return ResultJson.failed();
-        }
+    public void deleteUserAllAddress(@PathVariable Integer userId) {
+        Result.status(userAddressService.deleteAllUserAddressByUserId(userId));
     }
 
     @DeleteMapping("/userAddresses/{id}")
-    public ResultJson deleteAddress(@PathVariable Integer id) {
-        if (userAddressService.deleteUserAddress(id)) {
-            return ResultJson.success();
-        } else {
-            return ResultJson.failed();
-        }
+    public void deleteAddress(@PathVariable Integer id) {
+        Result.status(userAddressService.deleteUserAddress(id));
     }
 }

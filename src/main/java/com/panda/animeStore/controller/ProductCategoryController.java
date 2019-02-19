@@ -2,9 +2,11 @@ package com.panda.animeStore.controller;
 
 import com.panda.animeStore.entity.ProductCategory;
 import com.panda.animeStore.service.ProductCategoryService;
-import com.panda.animeStore.util.ResultJson;
+import com.panda.animeStore.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author panda
@@ -16,34 +18,22 @@ public class ProductCategoryController {
     private ProductCategoryService productCategoryService;
 
     @GetMapping("/categories")
-    public ResultJson getAllCategories(){
-        return ResultJson.result(productCategoryService.getAllProductCategory());
+    public List<ProductCategory> getAllCategories() {
+        return productCategoryService.getAllProductCategory();
     }
 
     @PostMapping("/categories")
-    public ResultJson addProductCategory(@RequestBody ProductCategory productCategory) {
-        if (productCategoryService.addProductCategory(productCategory)) {
-            return ResultJson.success();
-        } else {
-            return ResultJson.failed();
-        }
+    public void addProductCategory(@RequestBody ProductCategory productCategory) {
+        Result.status(productCategoryService.addProductCategory(productCategory));
     }
 
     @PutMapping("/categories/{id}")
-    public ResultJson updateProductCategory(@PathVariable Integer id, @RequestBody ProductCategory productCategory) {
-        if (productCategoryService.updateProductCategoryById(id, productCategory)) {
-            return ResultJson.success();
-        } else {
-            return ResultJson.failed();
-        }
+    public void updateProductCategory(@PathVariable Integer id, @RequestBody ProductCategory productCategory) {
+        Result.status(productCategoryService.updateProductCategoryById(id, productCategory));
     }
 
     @DeleteMapping("/categories/{id}")
-    public ResultJson deleteProductCategory(@PathVariable Integer id) {
-        if (productCategoryService.deleteProductCategoryById(id)) {
-            return ResultJson.success();
-        } else {
-            return ResultJson.failed();
-        }
+    public void deleteProductCategory(@PathVariable Integer id) {
+        Result.status(productCategoryService.deleteProductCategoryById(id));
     }
 }

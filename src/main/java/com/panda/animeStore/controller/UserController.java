@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.panda.animeStore.entity.User;
 import com.panda.animeStore.entity.VO.LoginVO;
 import com.panda.animeStore.service.UserService;
-import com.panda.animeStore.util.ResultJson;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +32,7 @@ public class UserController {
 
     @ApiOperation(value = "用户登陆并信息入库", notes = "登陆成功后返回Token并入库用户信息")
     @PostMapping("/login")
-    public ResultJson login(String code,
+    public LoginVO login(String code,
                             String rawData,
                             String oldToken) {
         log.info("AnimeStore登陆开始");
@@ -65,7 +64,7 @@ public class UserController {
 
             loginVO.setToken(token);
             loginVO.setUserId(userService.getUserByOpenId(openid).getId());
-            return ResultJson.result(loginVO);
+            return loginVO;
         }
 
         log.info("token不存在或已过期");
@@ -118,12 +117,11 @@ public class UserController {
 
         loginVO.setToken(token);
         loginVO.setUserId(user.getId());
-        return ResultJson.result(loginVO);
-
+        return loginVO;
     }
 
     @GetMapping("/{id}")
-    private ResultJson getUserById(@PathVariable Integer id) {
-        return ResultJson.result(userService.getUserById(id));
+    private User getUserById(@PathVariable Integer id) {
+        return userService.getUserById(id);
     }
 }

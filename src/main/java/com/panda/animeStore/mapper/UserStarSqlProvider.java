@@ -1,11 +1,11 @@
 package com.panda.animeStore.mapper;
 
-import com.panda.animeStore.entity.UserStared;
+import com.panda.animeStore.entity.UserStar;
 import org.apache.ibatis.jdbc.SQL;
 
-public class UserStaredSqlProvider {
+public class UserStarSqlProvider {
 
-    public String insertSelective(UserStared record) {
+    public String insertSelective(UserStar record) {
         SQL sql = new SQL();
         sql.INSERT_INTO("user_stared");
         
@@ -17,14 +17,14 @@ public class UserStaredSqlProvider {
             sql.VALUES("product_id", "#{productId,jdbcType=INTEGER}");
         }
         
-        if (record.getStaredTime() != null) {
+        if (record.getStarTime() != null) {
             sql.VALUES("stared_time", "#{staredTime,jdbcType=TIMESTAMP}");
         }
         
         return sql.toString();
     }
 
-    public String updateByPrimaryKeySelective(UserStared record) {
+    public String updateByPrimaryKeySelective(UserStar record) {
         SQL sql = new SQL();
         sql.UPDATE("user_stared");
         
@@ -36,7 +36,7 @@ public class UserStaredSqlProvider {
             sql.SET("product_id = #{productId,jdbcType=INTEGER}");
         }
         
-        if (record.getStaredTime() != null) {
+        if (record.getStarTime() != null) {
             sql.SET("stared_time = #{staredTime,jdbcType=TIMESTAMP}");
         }
         
