@@ -6,8 +6,6 @@ import com.panda.animeStore.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 /**
  * @author panda
  * @date 2019-02-18 13:53
@@ -18,22 +16,22 @@ public class ProductCategoryController {
     private ProductCategoryService productCategoryService;
 
     @GetMapping("/categories")
-    public List<ProductCategory> getAllCategories() {
-        return productCategoryService.getAllProductCategory();
+    public Object getAllCategories() {
+        return Result.data(productCategoryService.getAllProductCategory());
     }
 
     @PostMapping("/categories")
-    public void addProductCategory(@RequestBody ProductCategory productCategory) {
-        Result.status(productCategoryService.addProductCategory(productCategory));
+    public Object addProductCategory(@RequestBody ProductCategory productCategory) {
+        return Result.status(productCategoryService.addProductCategory(productCategory));
     }
 
     @PutMapping("/categories/{id}")
-    public void updateProductCategory(@PathVariable Integer id, @RequestBody ProductCategory productCategory) {
-        Result.status(productCategoryService.updateProductCategoryById(id, productCategory));
+    public Object updateProductCategory(@PathVariable Integer id, @RequestBody ProductCategory productCategory) {
+        return Result.status(productCategoryService.updateProductCategoryById(id, productCategory));
     }
 
     @DeleteMapping("/categories/{id}")
-    public void deleteProductCategory(@PathVariable Integer id) {
-        Result.status(productCategoryService.deleteProductCategoryById(id));
+    public Object deleteProductCategory(@PathVariable Integer id) {
+        return Result.status(productCategoryService.deleteProductCategoryById(id));
     }
 }

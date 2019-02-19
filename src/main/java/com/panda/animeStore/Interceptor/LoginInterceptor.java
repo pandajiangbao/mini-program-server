@@ -5,6 +5,7 @@ import com.panda.animeStore.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,9 +33,8 @@ public class LoginInterceptor implements HandlerInterceptor {
         String token = request.getHeader("token");
 
         if (StringUtils.isEmpty(token)) {
-            log.error("403:{}", "权限认证失败,token为空");
-            response.setStatus(403);
-            response.getWriter().append("token is empty");
+            log.error("用户认证失败,token为空");
+            ResponseEntity.status(401).body("token is empty");
             return false;
         }
 
@@ -48,8 +48,8 @@ public class LoginInterceptor implements HandlerInterceptor {
                     request.getMethod());
             return true;
         } catch (NullPointerException e) {
-            log.error("403:{}", "权限认证失败,用户token错误或失效");
-            response.getWriter().append("token invalid or timeout");
+            log.error("用户认证失败,token错误或失效");
+            ResponseEntity.status(401).body("token invalid or timeout");
             return false;
         }
     }

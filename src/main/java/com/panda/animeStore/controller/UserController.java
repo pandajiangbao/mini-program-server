@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.panda.animeStore.entity.User;
 import com.panda.animeStore.entity.VO.LoginVO;
 import com.panda.animeStore.service.UserService;
+import com.panda.animeStore.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -121,7 +122,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    private User getUserById(@PathVariable Integer id) {
-        return userService.getUserById(id);
+    private Object getUserById(@PathVariable Integer id) {
+        return Result.data(userService.getUserById(id));
     }
 }

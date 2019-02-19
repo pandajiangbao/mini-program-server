@@ -7,8 +7,6 @@ import com.panda.animeStore.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 /**
  * @author panda
  * @date 2019-01-15 10:21 AM
@@ -19,29 +17,29 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    public List<Product> getAllProduct(@RequestParam(required = false, defaultValue = "1") int pageNo,
-                                       @RequestParam(required = false, defaultValue = "0") int pageSize) {
+    public Object getAllProduct(@RequestParam(required = false, defaultValue = "1") int pageNo,
+                              @RequestParam(required = false, defaultValue = "0") int pageSize) {
         PageHelper.startPage(pageNo, pageSize);
-        return productService.getAllProduct();
+        return Result.data(productService.getAllProduct());
     }
 
     @GetMapping("/categories/{categoryId}/products")
-    public List<Product> getProductByCategoryId(@PathVariable Integer categoryId) {
-        return productService.getProductByCategoryId(categoryId);
+    public Object getProductByCategoryId(@PathVariable Integer categoryId) {
+        return Result.data(productService.getProductByCategoryId(categoryId));
     }
 
     @PostMapping("/products")
-    public void addProduct(@RequestBody Product product) {
-        Result.status(productService.addProduct(product));
+    public Object addProduct(@RequestBody Product product) {
+        return Result.status(productService.addProduct(product));
     }
 
     @PutMapping("/products/{id}")
-    public void updateProduct(@PathVariable Integer id, @RequestBody Product product) {
-        Result.status(productService.updateProductById(id, product));
+    public Object updateProduct(@PathVariable Integer id, @RequestBody Product product) {
+        return Result.status(productService.updateProductById(id, product));
     }
 
     @DeleteMapping("/products/{id}")
-    public void deleteProduct(@PathVariable Integer id) {
-        Result.status(productService.deleteProductById(id));
+    public Object deleteProduct(@PathVariable Integer id) {
+        return Result.status(productService.deleteProductById(id));
     }
 }
