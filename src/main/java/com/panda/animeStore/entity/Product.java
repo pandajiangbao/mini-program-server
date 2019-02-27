@@ -1,10 +1,11 @@
 package com.panda.animeStore.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.panda.animeStore.util.CustomBigDecimalSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.Min;
 import java.math.BigDecimal;
 
 @Data
@@ -15,7 +16,7 @@ public class Product {
 
     private String title;
 
-    @Min(value = 0,message = "价格必须大于0")
+    @JsonSerialize(using = CustomBigDecimalSerialize.class)
     private BigDecimal price;
 
     private Integer sales;

@@ -122,7 +122,8 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    private Object getUserById(@PathVariable Integer id) {
-        return Result.data(userService.getUserById(id));
+    private User getUserById(@PathVariable Integer id) {
+        Result.data();
+        return userService.getUserById(id);
     }
 }

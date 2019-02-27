@@ -1,6 +1,7 @@
 package com.panda.animeStore.service;
 
 import com.panda.animeStore.entity.ShippingCom;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

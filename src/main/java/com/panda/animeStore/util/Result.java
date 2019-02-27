@@ -10,11 +10,10 @@ import org.springframework.http.ResponseEntity;
  */
 @Slf4j
 public class Result {
-    public static Object data(Object data) {
+    public static void data() {
         //get caller method name
         String caller = Thread.currentThread().getStackTrace()[2].getMethodName();
         log.info("{}请求成功,返回数据", caller);
-        return data;
     }
 
     public static ResponseEntity<String> status(boolean status) {

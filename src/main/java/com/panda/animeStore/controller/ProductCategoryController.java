@@ -4,7 +4,10 @@ import com.panda.animeStore.entity.ProductCategory;
 import com.panda.animeStore.service.ProductCategoryService;
 import com.panda.animeStore.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author panda
@@ -16,22 +19,23 @@ public class ProductCategoryController {
     private ProductCategoryService productCategoryService;
 
     @GetMapping("/categories")
-    public Object getAllCategories() {
-        return Result.data(productCategoryService.getAllProductCategory());
+    public List<ProductCategory> getAllCategories() {
+        Result.data();
+        return productCategoryService.getAllProductCategory();
     }
 
     @PostMapping("/categories")
-    public Object addProductCategory(@RequestBody ProductCategory productCategory) {
+    public ResponseEntity<String> addProductCategory(@RequestBody ProductCategory productCategory) {
         return Result.status(productCategoryService.addProductCategory(productCategory));
     }
 
     @PutMapping("/categories/{id}")
-    public Object updateProductCategory(@PathVariable Integer id, @RequestBody ProductCategory productCategory) {
+    public ResponseEntity<String> updateProductCategory(@PathVariable Integer id, @RequestBody ProductCategory productCategory) {
         return Result.status(productCategoryService.updateProductCategoryById(id, productCategory));
     }
 
     @DeleteMapping("/categories/{id}")
-    public Object deleteProductCategory(@PathVariable Integer id) {
+    public ResponseEntity<String> deleteProductCategory(@PathVariable Integer id) {
         return Result.status(productCategoryService.deleteProductCategoryById(id));
     }
 }

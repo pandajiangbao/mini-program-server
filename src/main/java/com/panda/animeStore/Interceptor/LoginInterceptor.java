@@ -34,7 +34,8 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         if (StringUtils.isEmpty(token)) {
             log.error("用户认证失败,token为空");
-            ResponseEntity.status(401).body("token is empty");
+            response.setStatus(401);
+            response.getWriter().append("token is empty");
             return false;
         }
 
@@ -48,8 +49,9 @@ public class LoginInterceptor implements HandlerInterceptor {
                     request.getMethod());
             return true;
         } catch (NullPointerException e) {
-            log.error("用户认证失败,token错误或失效");
-            ResponseEntity.status(401).body("token invalid or timeout");
+            log.error("用户认证失败,用户token错误或失效");
+            response.setStatus(401);
+            response.getWriter().append("token invalid or timeout");
             return false;
         }
     }

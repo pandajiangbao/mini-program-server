@@ -4,7 +4,10 @@ import com.panda.animeStore.entity.UserStar;
 import com.panda.animeStore.service.UserStarService;
 import com.panda.animeStore.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author panda
@@ -16,17 +19,18 @@ public class UserStarController {
     private UserStarService userStarService;
 
     @GetMapping("/users/{userId}/userStars")
-    public Object getUserAddressList(@PathVariable Integer userId) {
-        return Result.data(userStarService.getUserStarByUserId(userId));
+    public List<UserStar> getUserStarList(@PathVariable Integer userId) {
+        Result.data();
+        return userStarService.getUserStarByUserId(userId);
     }
 
     @PostMapping("/userStars")
-    public Object addProduct(@RequestBody UserStar userStar) {
+    public ResponseEntity<String> addUserStar(@RequestBody UserStar userStar) {
         return Result.status(userStarService.addUserStar(userStar));
     }
 
     @DeleteMapping("/userStars/{id}")
-    public Object deleteProduct(@PathVariable Integer id) {
+    public ResponseEntity<String> deleteUserStar(@PathVariable Integer id) {
         return Result.status(userStarService.deleteUserStar(id));
     }
 }

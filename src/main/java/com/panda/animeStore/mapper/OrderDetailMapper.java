@@ -17,7 +17,7 @@ import org.apache.ibatis.type.JdbcType;
 public interface OrderDetailMapper {
     @Delete({
         "delete from order_detail",
-        "where id = #{id,jdbcType=INTEGER}"
+        "where id = #{id}"
     })
     int deleteByPrimaryKey(Integer id);
 

@@ -63,6 +63,17 @@ public interface UserMapper {
             "from user",
             "where openid = #{openid}"
     })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="openid", property="openid", jdbcType=JdbcType.VARCHAR),
+            @Result(column="nick_name", property="nickName", jdbcType=JdbcType.VARCHAR),
+            @Result(column="gender", property="gender", jdbcType=JdbcType.INTEGER),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="country", property="country", jdbcType=JdbcType.VARCHAR),
+            @Result(column="avatar_url", property="avatarUrl", jdbcType=JdbcType.VARCHAR),
+            @Result(column="create_time", property="createTime", jdbcType=JdbcType.TIMESTAMP)
+    })
     User selectByOpenid(String openid);
 
 

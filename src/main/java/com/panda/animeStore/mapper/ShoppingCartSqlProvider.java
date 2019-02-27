@@ -21,6 +21,10 @@ public class ShoppingCartSqlProvider {
             sql.VALUES("price_sum", "#{priceSum,jdbcType=DECIMAL}");
         }
         
+        if (record.getIsSelected() != null) {
+            sql.VALUES("is_selected", "#{isSelected,jdbcType=BIT}");
+        }
+        
         if (record.getProductId() != null) {
             sql.VALUES("product_id", "#{productId,jdbcType=INTEGER}");
         }
@@ -46,6 +50,10 @@ public class ShoppingCartSqlProvider {
         
         if (record.getPriceSum() != null) {
             sql.SET("price_sum = #{priceSum,jdbcType=DECIMAL}");
+        }
+        
+        if (record.getIsSelected() != null) {
+            sql.SET("is_selected = #{isSelected,jdbcType=BIT}");
         }
         
         if (record.getProductId() != null) {
