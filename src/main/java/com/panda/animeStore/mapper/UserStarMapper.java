@@ -1,16 +1,8 @@
 package com.panda.animeStore.mapper;
 
 import com.panda.animeStore.entity.UserStar;
+import com.panda.animeStore.entity.VO.UserStarVO;
 import org.apache.ibatis.annotations.*;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.InsertProvider;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectKey;
-import org.apache.ibatis.annotations.Update;
-import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
 import java.util.List;
@@ -60,9 +52,11 @@ public interface UserStarMapper {
             @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
             @Result(column = "user_id", property = "userId", jdbcType = JdbcType.INTEGER),
             @Result(column = "product_id", property = "productId", jdbcType = JdbcType.INTEGER),
-            @Result(column = "star_time", property = "starTime", jdbcType = JdbcType.TIMESTAMP)
+            @Result(column = "star_time", property = "starTime", jdbcType = JdbcType.TIMESTAMP),
+            @Result(property = "product", column = "product_id",
+                    one = @One(select = "com.panda.animeStore.mapper.ProductMapper.selectByPrimaryKey"))
     })
-    List<UserStar> selectByUserId(Integer userId);
+    List<UserStarVO> selectVOByUserId(Integer userId);
 
     @UpdateProvider(type = UserStarSqlProvider.class, method = "updateByPrimaryKeySelective")
     int updateByPrimaryKeySelective(UserStar record);

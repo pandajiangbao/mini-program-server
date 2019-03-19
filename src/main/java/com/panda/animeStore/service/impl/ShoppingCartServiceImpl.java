@@ -5,8 +5,10 @@ import com.panda.animeStore.entity.VO.ShoppingCartVO;
 import com.panda.animeStore.exceptionHandler.error.BusinessError;
 import com.panda.animeStore.mapper.ShoppingCartMapper;
 import com.panda.animeStore.service.ShoppingCartService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,6 +17,7 @@ import java.util.List;
  * @date 2019-02-20 12:31
  */
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Autowired
     private ShoppingCartMapper shoppingCartMapper;
@@ -31,7 +34,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public boolean addShoppingCart(ShoppingCart shoppingCart) {
-        if (shoppingCartMapper.selectByProductId(shoppingCart.getProductId())==null){
+        ShoppingCart oldShoppingCart  =shoppingCartMapper.selectByProductId(shoppingCart.getProductId());
+        if (oldShoppingCart==null){
             int result = shoppingCartMapper.insertSelective(shoppingCart);
             if (result > 0) {
                 return true;
@@ -40,7 +44,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             }
         }else {
             //旧数量总价加上新数量总价
-            ShoppingCart oldShoppingCart  =shoppingCartMapper.selectByProductId(shoppingCart.getProductId());
             oldShoppingCart.setProductAmount(oldShoppingCart.getProductAmount()+shoppingCart.getProductAmount());
             oldShoppingCart.setPriceSum(oldShoppingCart.getPriceSum().add(shoppingCart.getPriceSum()));
             int result = shoppingCartMapper.updateByPrimaryKeySelective(oldShoppingCart);
@@ -68,6 +71,17 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     }
 
     @Override
+    public boolean updateShoppingCartBatch(List<ShoppingCartVO> shoppingCartVOList) {
+        for(ShoppingCartVO shoppingCartVO:shoppingCartVOList){
+            ShoppingCart shoppingCart=convertFromShoppingCartVO(shoppingCartVO);
+            if(!updateShoppingCartById(shoppingCart.getId(),shoppingCart)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
     public boolean deleteShoppingCartById(Integer id) {
         if (id != null) {
             int result = shoppingCartMapper.deleteByPrimaryKey(id);
@@ -79,5 +93,14 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         } else {
             throw new RuntimeException(BusinessError.PARAMETER_ERROR.getErrMsg());
         }
+    }
+    private ShoppingCart convertFromShoppingCartVO(ShoppingCartVO shoppingCartVO){
+        if(shoppingCartVO == null)
+        {
+            return null;
+        }
+        ShoppingCart shoppingCart=new ShoppingCart();
+        BeanUtils.copyProperties(shoppingCartVO,shoppingCart);
+        return shoppingCart;
     }
 }

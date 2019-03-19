@@ -101,6 +101,7 @@ public class UserController {
             user.setCreateTime(new Date());
 
             userService.addUser(user);
+            loginVO.setIsNew(true);
         } else {
             log.info("用户已存在,更新用户信息");
 

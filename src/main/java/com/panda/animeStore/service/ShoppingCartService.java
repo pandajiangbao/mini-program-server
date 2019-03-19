@@ -14,5 +14,6 @@ public interface ShoppingCartService {
     List<ShoppingCartVO> getShoppingCartVOListByUserId(Integer userId);
     boolean addShoppingCart(ShoppingCart shoppingCart);
     boolean updateShoppingCartById(Integer id,ShoppingCart shoppingCart);
+    boolean updateShoppingCartBatch(List<ShoppingCartVO> shoppingCartVOList);
     boolean deleteShoppingCartById(Integer id);
 }

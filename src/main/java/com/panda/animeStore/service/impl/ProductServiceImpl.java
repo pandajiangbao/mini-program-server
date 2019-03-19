@@ -26,6 +26,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> getProductByQuery(String query) {
+        return productMapper.selectByQuery(query);
+    }
+
+    @Override
     public List<Product> getAllProduct() {
         return productMapper.selectAll();
     }

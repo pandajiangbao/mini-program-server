@@ -7,7 +7,7 @@ public class UserStarSqlProvider {
 
     public String insertSelective(UserStar record) {
         SQL sql = new SQL();
-        sql.INSERT_INTO("user_stared");
+        sql.INSERT_INTO("user_star");
         
         if (record.getUserId() != null) {
             sql.VALUES("user_id", "#{userId,jdbcType=INTEGER}");
@@ -26,7 +26,7 @@ public class UserStarSqlProvider {
 
     public String updateByPrimaryKeySelective(UserStar record) {
         SQL sql = new SQL();
-        sql.UPDATE("user_stared");
+        sql.UPDATE("user_star");
         
         if (record.getUserId() != null) {
             sql.SET("user_id = #{userId,jdbcType=INTEGER}");

@@ -3,7 +3,6 @@ package com.panda.animeStore.controller;
 import com.panda.animeStore.entity.UserAddress;
 import com.panda.animeStore.service.UserAddressService;
 import com.panda.animeStore.util.Result;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,9 +29,9 @@ public class UserAddressController {
         return Result.status(userAddressService.addUserAddress(userAddress));
     }
 
-    @PutMapping("/userAddresses")
-    public ResponseEntity<String> updateAddress(@RequestBody UserAddress userAddress) {
-        return Result.status(userAddressService.updateUserAddress(userAddress));
+    @PutMapping("/userAddresses/{id}")
+    public ResponseEntity<String> updateAddress(@PathVariable Integer id,@RequestBody UserAddress userAddress) {
+        return Result.status(userAddressService.updateUserAddressById(id,userAddress));
     }
 
     @DeleteMapping("/users/{userId}/userAddresses")

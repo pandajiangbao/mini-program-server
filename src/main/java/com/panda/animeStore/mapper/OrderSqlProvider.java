@@ -7,34 +7,18 @@ public class OrderSqlProvider {
 
     public String insertSelective(Order record) {
         SQL sql = new SQL();
-        sql.INSERT_INTO("order");
+        sql.INSERT_INTO("`order`");
         
         if (record.getOrderNo() != null) {
             sql.VALUES("order_no", "#{orderNo,jdbcType=VARCHAR}");
-        }
-        
-        if (record.getReceiveTime() != null) {
-            sql.VALUES("receive_time", "#{receiveTime,jdbcType=TIMESTAMP}");
         }
         
         if (record.getUserId() != null) {
             sql.VALUES("user_id", "#{userId,jdbcType=INTEGER}");
         }
         
-        if (record.getPaymentTime() != null) {
-            sql.VALUES("payment_time", "#{paymentTime,jdbcType=TIMESTAMP}");
-        }
-        
         if (record.getCreatedTime() != null) {
             sql.VALUES("created_time", "#{createdTime,jdbcType=TIMESTAMP}");
-        }
-        
-        if (record.getShippingComId() != null) {
-            sql.VALUES("shipping_com_id", "#{shippingComId,jdbcType=INTEGER}");
-        }
-        
-        if (record.getAddressId() != null) {
-            sql.VALUES("address_id", "#{addressId,jdbcType=INTEGER}");
         }
         
         if (record.getProductPrice() != null) {
@@ -53,10 +37,21 @@ public class OrderSqlProvider {
             sql.VALUES("total_price", "#{totalPrice,jdbcType=DECIMAL}");
         }
         
+        if (record.getAddressId() != null) {
+            sql.VALUES("address_id", "#{addressId,jdbcType=INTEGER}");
+        }
+        
+        if (record.getShippingComId() != null) {
+            sql.VALUES("shipping_com_id", "#{shippingComId,jdbcType=INTEGER}");
+        }
+        
+        if (record.getReceiveTime() != null) {
+            sql.VALUES("receive_time", "#{receiveTime,jdbcType=TIMESTAMP}");
+        }
+        
         if (record.getOrderStatus() != null) {
             sql.VALUES("order_status", "#{orderStatus,jdbcType=VARCHAR}");
         }
-        
         return sql.toString();
     }
 
@@ -68,28 +63,12 @@ public class OrderSqlProvider {
             sql.SET("order_no = #{orderNo,jdbcType=VARCHAR}");
         }
         
-        if (record.getReceiveTime() != null) {
-            sql.SET("receive_time = #{receiveTime,jdbcType=TIMESTAMP}");
-        }
-        
         if (record.getUserId() != null) {
             sql.SET("user_id = #{userId,jdbcType=INTEGER}");
         }
         
-        if (record.getPaymentTime() != null) {
-            sql.SET("payment_time = #{paymentTime,jdbcType=TIMESTAMP}");
-        }
-        
         if (record.getCreatedTime() != null) {
             sql.SET("created_time = #{createdTime,jdbcType=TIMESTAMP}");
-        }
-        
-        if (record.getShippingComId() != null) {
-            sql.SET("shipping_com_id = #{shippingComId,jdbcType=INTEGER}");
-        }
-        
-        if (record.getAddressId() != null) {
-            sql.SET("address_id = #{addressId,jdbcType=INTEGER}");
         }
         
         if (record.getProductPrice() != null) {
@@ -106,6 +85,18 @@ public class OrderSqlProvider {
         
         if (record.getTotalPrice() != null) {
             sql.SET("total_price = #{totalPrice,jdbcType=DECIMAL}");
+        }
+        
+        if (record.getAddressId() != null) {
+            sql.SET("address_id = #{addressId,jdbcType=INTEGER}");
+        }
+        
+        if (record.getShippingComId() != null) {
+            sql.SET("shipping_com_id = #{shippingComId,jdbcType=INTEGER}");
+        }
+        
+        if (record.getReceiveTime() != null) {
+            sql.SET("receive_time = #{receiveTime,jdbcType=TIMESTAMP}");
         }
         
         if (record.getOrderStatus() != null) {

@@ -1,638 +1,241 @@
-2019-02-27 00:00:05.702  INFO 20561 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 00:00:13.252  INFO 20561 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 00:00:13.595  INFO 20561 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 刷新token:b928a426-8476-40a9-b461-0752ada5945d,更新用户数据
-2019-02-27 00:00:13.595  INFO 20561 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 00:00:13.693  INFO 20561 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 00:00:13.735  INFO 20561 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 00:00:18.976  INFO 20561 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 00:00:18.977  INFO 20561 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 00:00:19.076  INFO 20561 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 00:00:19.077  INFO 20561 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 00:00:26.372  INFO 20561 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories/1/products GET请求开始
-2019-02-27 00:00:26.373  INFO 20561 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : getProductByCategoryId请求成功,返回数据
-2019-02-27 00:00:40.829  INFO 20561 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories/0/products GET请求开始
-2019-02-27 00:00:40.854  INFO 20561 --- [http-nio-8082-exec-8] com.panda.animeStore.util.Result         : getProductByCategoryId请求成功,返回数据
-2019-02-27 00:00:45.610  INFO 20561 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts POST请求开始
-2019-02-27 00:00:45.668  INFO 20561 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 00:00:45.669  INFO 20561 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 00:00:45.942  INFO 20561 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : addShoppingCart请求成功
-2019-02-27 00:01:22.542  INFO 20561 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 00:01:22.542  INFO 20561 --- [http-nio-8082-exec-7] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts POST请求开始
-2019-02-27 00:01:22.542  INFO 20561 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 00:01:22.735  INFO 20561 --- [http-nio-8082-exec-7] com.panda.animeStore.util.Result         : addShoppingCart请求成功
-2019-02-27 00:01:33.810  INFO 20561 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts POST请求开始
-2019-02-27 00:01:33.816  INFO 20561 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 00:01:33.817  INFO 20561 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 00:01:34.002  INFO 20561 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : addShoppingCart请求成功
-2019-02-27 00:02:45.495  INFO 20561 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 00:02:45.527  INFO 20561 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 00:02:45.745  INFO 20561 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 刷新token:f07788b7-1b98-4fc7-a025-9dc032bd51ee,更新用户数据
-2019-02-27 00:02:45.746  INFO 20561 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 00:02:46.137  INFO 20561 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 00:02:46.138  INFO 20561 --- [http-nio-8082-exec-8] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 00:04:01.632  INFO 20561 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 00:04:01.633  INFO 20561 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 00:04:01.633  INFO 20561 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 00:04:01.634  INFO 20561 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 00:04:15.758  INFO 20561 --- [http-nio-8082-exec-7] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 00:04:15.758  INFO 20561 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts POST请求开始
-2019-02-27 00:04:16.005  INFO 20561 --- [http-nio-8082-exec-7] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 00:04:17.573  INFO 20561 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : addShoppingCart请求成功
-2019-02-27 08:13:22.689  INFO 20561 --- [Thread-33] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-27 08:13:28.156  INFO 20561 --- [Thread-33] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2019-02-27 08:15:49.220  INFO 25897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on Mac-mini.lan with PID 25897 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
-2019-02-27 08:15:49.251  INFO 25897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
-2019-02-27 08:15:49.293  INFO 25897 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-02-27 08:15:49.294  INFO 25897 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-02-27 08:15:52.457  INFO 25897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-27 08:15:52.461  INFO 25897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-27 08:15:52.512  INFO 25897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 repository interfaces.
-2019-02-27 08:15:52.922  INFO 25897 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a30d8a38] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-27 08:15:53.684  INFO 25897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-02-27 08:15:53.706  INFO 25897 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-27 08:15:53.706  INFO 25897 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-02-27 08:15:53.713  INFO 25897 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/panda/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-2019-02-27 08:15:54.537  INFO 25897 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-27 08:15:54.537  INFO 25897 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5242 ms
-2019-02-27 08:15:55.971  INFO 25897 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-02-27 08:15:56.166  INFO 25897 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-27 08:15:56.239  INFO 25897 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-02-27 08:15:56.681  INFO 25897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2019-02-27 08:15:56.696  INFO 25897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2019-02-27 08:15:56.741  INFO 25897 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-02-27 08:15:57.031  INFO 25897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-02-27 08:15:57.035  INFO 25897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 98.202 seconds (JVM running for 134.292)
-2019-02-27 08:16:16.121  INFO 25897 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-02-27 08:16:16.143  INFO 25897 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-02-27 08:16:16.151  INFO 25897 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2019-02-27 08:16:16.166 ERROR 25897 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户认证失败,token为空
-2019-02-27 08:16:16.166 ERROR 25897 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户认证失败,token为空
-2019-02-27 08:17:20.339 ERROR 25897 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户认证失败,token为空
-2019-02-27 08:17:20.339 ERROR 25897 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户认证失败,token为空
-2019-02-27 08:26:22.219  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 08:26:22.678  INFO 25897 --- [http-nio-8082-exec-9] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2019-02-27 08:26:22.679  INFO 25897 --- [http-nio-8082-exec-9] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2019-02-27 08:26:23.045  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : token不存在或已过期
-2019-02-27 08:26:23.045  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 调用微信第三方登录api
-2019-02-27 08:26:24.862  INFO 25897 --- [http-nio-8082-exec-9] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2019-02-27 08:26:24.870  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.service.impl.UserServiceImpl       : 登录code:033jc7Jx1PHbl90tw4Gx1uu5Jx1jc7JX
-2019-02-27 08:26:24.870  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.service.impl.UserServiceImpl       : 微信登陆接口请求开始
-2019-02-27 08:26:25.171  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.service.impl.UserServiceImpl       : 微信登陆接口请求成功
-2019-02-27 08:26:25.177  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 生成新token:c3909d69-5d79-4137-a707-565717a76d63
-2019-02-27 08:26:25.178  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 存入redis,过期时间90分钟
-2019-02-27 08:26:25.810  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 用户已存在,更新用户信息
-2019-02-27 08:26:26.761  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 返回新token
-2019-02-27 08:26:27.237  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 08:26:28.240  INFO 25897 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 08:27:16.336  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 08:27:16.347  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 08:27:16.398  INFO 25897 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 08:27:16.458  INFO 25897 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 08:27:35.164  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts POST请求开始
-2019-02-27 08:27:35.212  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 08:27:35.213  INFO 25897 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 08:27:35.504  INFO 25897 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : addShoppingCart请求成功
-2019-02-27 08:29:07.194  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 08:29:07.231  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 08:29:07.332  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 刷新token:bfe1e583-0bff-44ec-8c2d-7decf9109c7f,更新用户数据
-2019-02-27 08:29:07.333  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 08:29:07.479  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 08:29:07.480  INFO 25897 --- [http-nio-8082-exec-8] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 08:29:30.282  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 08:29:30.286  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 08:29:30.475  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 刷新token:aa47af4f-6b07-4246-b820-00ff455ddce6,更新用户数据
-2019-02-27 08:29:30.475  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 08:29:30.580  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 08:29:30.582  INFO 25897 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 08:29:33.905  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 08:29:33.910  INFO 25897 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 08:29:33.933  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 08:29:33.934  INFO 25897 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 08:29:43.827  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts POST请求开始
-2019-02-27 08:29:43.833  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 08:29:43.833  INFO 25897 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 08:29:44.169  INFO 25897 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : addShoppingCart请求成功
-2019-02-27 09:00:29.888  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:00:30.010  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:00:30.209  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 刷新token:3832fec3-16da-4dfb-b531-6ff417f736a5,更新用户数据
-2019-02-27 09:00:30.209  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:00:30.336  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:00:30.338  INFO 25897 --- [http-nio-8082-exec-8] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:01:00.935  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:01:00.941  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:01:01.026  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 刷新token:e2fcff8c-1677-43ea-8cff-8d6c01179549,更新用户数据
-2019-02-27 09:01:01.026  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:01:01.196  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:01:01.197  INFO 25897 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:01:55.927  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 09:01:55.927  INFO 25897 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 09:01:55.937  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 09:01:55.938  INFO 25897 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 09:02:08.212  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts POST请求开始
-2019-02-27 09:02:08.426  INFO 25897 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : addShoppingCart请求成功
-2019-02-27 09:02:08.525  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:02:08.525  INFO 25897 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:02:53.600  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:02:53.668  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:02:53.869  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 刷新token:f8d28c69-2569-45d9-a2c3-a199d1b79399,更新用户数据
-2019-02-27 09:02:53.869  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:02:54.115  INFO 25897 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:02:54.115  INFO 25897 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:05:09.843  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 09:05:09.861  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 09:05:09.905  INFO 25897 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 09:05:09.905  INFO 25897 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 09:05:21.813  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts POST请求开始
-2019-02-27 09:05:23.638  INFO 25897 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : addShoppingCart请求成功
-2019-02-27 09:05:23.804  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:05:23.805  INFO 25897 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:21:25.731  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:21:25.789  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:21:25.949  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 刷新token:0d535cc3-e21b-4127-ad2f-037b1a5606c8,更新用户数据
-2019-02-27 09:21:25.949  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:21:26.306  INFO 25897 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:21:26.308  INFO 25897 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:25:34.347  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:25:34.403  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:25:34.501  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 刷新token:683aa15c-5769-48b9-b7ed-0ec36d3339ed,更新用户数据
-2019-02-27 09:25:34.501  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:25:34.677  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:25:34.678  INFO 25897 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:26:30.892  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:26:30.930  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:26:30.992  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 刷新token:f07b0b3c-772b-43fe-9b34-666ef2cfb33c,更新用户数据
-2019-02-27 09:26:30.992  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:26:31.117  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:26:31.117  INFO 25897 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:30:10.176  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:30:10.231  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:30:10.316  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 刷新token:3413bac8-5e49-41ff-a87a-0e33b9108e8c,更新用户数据
-2019-02-27 09:30:10.316  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:30:10.417  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:30:10.418  INFO 25897 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:30:34.277  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:30:34.290  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:30:34.381  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 刷新token:e36567a2-377d-425d-a3c5-d661399723a4,更新用户数据
-2019-02-27 09:30:34.381  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:30:34.486  INFO 25897 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:30:34.487  INFO 25897 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:34:03.799  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:34:03.845  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:34:03.984  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 刷新token:7abbbe49-19e5-4edc-b3df-26c3466dc358,更新用户数据
-2019-02-27 09:34:03.985  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:34:04.197  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:34:04.239  INFO 25897 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:39:04.979  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:39:05.083  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:39:05.641  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 刷新token:677ea51f-d968-4c03-9da9-4d04ae0b397d,更新用户数据
-2019-02-27 09:39:05.985  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:39:06.321  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:39:06.322  INFO 25897 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:40:36.288  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:40:36.355  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:40:36.461  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 刷新token:f0505551-5ab7-4458-922e-3e27c5bc3008,更新用户数据
-2019-02-27 09:40:36.461  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:40:36.542  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:40:36.543  INFO 25897 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:40:55.874  INFO 25897 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:40:55.879  INFO 25897 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:40:55.961  INFO 25897 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 刷新token:53e8b98a-fb2b-473f-8ac1-e76efd14e6df,更新用户数据
-2019-02-27 09:40:55.961  INFO 25897 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:40:56.042  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:40:56.042  INFO 25897 --- [http-nio-8082-exec-7] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:42:46.563  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:42:46.609  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:42:46.807  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 刷新token:1720c591-c43c-4320-9ad5-155c01e98e82,更新用户数据
-2019-02-27 09:42:46.807  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:42:46.937  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:42:46.937  INFO 25897 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:43:10.082  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:43:10.085  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:43:10.132  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 刷新token:72ec59e4-a450-4ce8-9482-1cf0af5061f4,更新用户数据
-2019-02-27 09:43:10.132  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:43:10.367  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:43:10.368  INFO 25897 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:59:21.080  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:59:21.118  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:59:21.185  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 刷新token:cb02da13-f2e5-41fd-a84a-e9ade3f0a3e3,更新用户数据
-2019-02-27 09:59:21.186  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:59:21.327  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:59:21.328  INFO 25897 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 09:59:27.257  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/undefined/shoppingCarts GET请求开始
-2019-02-27 09:59:27.267 ERROR 25897 --- [http-nio-8082-exec-7] c.p.a.e.GlobalExceptionHandler           : 抛出异常信息:Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
-2019-02-27 09:59:27.269  WARN 25897 --- [http-nio-8082-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "undefined"]
-2019-02-27 09:59:57.936  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 09:59:57.944  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 09:59:57.979  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 刷新token:da3f954e-57cf-4586-bf4d-7f38ac83dd43,更新用户数据
-2019-02-27 09:59:57.979  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 09:59:58.082  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 09:59:58.082  INFO 25897 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:00:22.122  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:00:22.146  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:00:22.186  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 刷新token:f4d81df9-8530-4fee-bb49-e68e576b21ed,更新用户数据
-2019-02-27 10:00:22.186  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:00:22.284  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:00:22.285  INFO 25897 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:00:26.732  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:00:26.739  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:00:26.772  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : 刷新token:a53385ee-c214-4ec3-8edd-8c4bc2fb04e8,更新用户数据
-2019-02-27 10:00:26.772  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:00:26.867  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:00:26.868  INFO 25897 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:00:29.913  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:00:29.931  INFO 25897 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:01:52.441  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:01:52.472  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:01:52.561  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 刷新token:39e224a3-edbf-4bca-b492-e4cf98a642b0,更新用户数据
-2019-02-27 10:01:52.561  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:01:52.687  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:01:52.688  INFO 25897 --- [http-nio-8082-exec-8] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:05:49.722  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:05:49.762  INFO 25897 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:06:45.642  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:06:45.767  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:06:46.052  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : 刷新token:e1d21ae0-09fe-48eb-9123-725c2c756e47,更新用户数据
-2019-02-27 10:06:46.052  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:06:46.189  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:06:46.190  INFO 25897 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:06:48.454  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 10:06:48.455  INFO 25897 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 10:06:48.463  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 10:06:48.464  INFO 25897 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 10:06:52.252  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:06:52.254  INFO 25897 --- [http-nio-8082-exec-7] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:07:59.038  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:07:59.040  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:07:59.146  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 刷新token:01a3531e-19a5-4b5c-a199-a002a7d3e1a1,更新用户数据
-2019-02-27 10:07:59.146  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:07:59.395  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:07:59.396  INFO 25897 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:08:05.892  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:08:05.905  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:08:05.948  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 刷新token:64f4890e-acac-4898-ab33-a3925ea0319a,更新用户数据
-2019-02-27 10:08:06.005  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:08:06.112  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:08:06.113  INFO 25897 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:08:28.360  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:08:28.361  INFO 25897 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:09:02.387  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:09:02.541  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:09:02.645  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 刷新token:7e93bc0c-4c2e-4bb8-a371-4e3df292eece,更新用户数据
-2019-02-27 10:09:02.754  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:09:02.842  INFO 25897 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:09:02.843  INFO 25897 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:09:13.482  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:09:13.485  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:09:13.551  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 刷新token:4bc55bdf-203a-4e91-87ac-ecc37e5a1c19,更新用户数据
-2019-02-27 10:09:13.551  INFO 25897 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:09:13.649  INFO 25897 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:09:13.650  INFO 25897 --- [http-nio-8082-exec-8] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:09:53.470  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:09:53.473  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:09:53.538  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 刷新token:951d578f-062d-4660-affd-cfc4f3f35e69,更新用户数据
-2019-02-27 10:09:53.538  INFO 25897 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:09:53.687  INFO 25897 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:09:53.688  INFO 25897 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:10:04.532  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts/2 DELETE请求开始
-2019-02-27 10:10:04.879  INFO 25897 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : updateShoppingCart请求成功
-2019-02-27 10:10:04.966  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:10:04.968  INFO 25897 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:11:13.226  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:11:13.264  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:11:13.366  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 刷新token:db69b4fd-cd6d-49be-be31-1c691597cea0,更新用户数据
-2019-02-27 10:11:13.367  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:11:15.354  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:11:15.356  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:11:17.566  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 刷新token:9dd88736-063e-4a3b-94c5-3f09003b2505,更新用户数据
-2019-02-27 10:11:17.566  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:11:17.688  INFO 25897 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:11:17.689  INFO 25897 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:12:00.869  INFO 25897 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-27 10:12:02.027  INFO 25897 --- [Thread-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2019-02-27 10:12:02.972  INFO 25897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on Mac-mini.local with PID 25897 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
-2019-02-27 10:12:03.034  INFO 25897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
-2019-02-27 10:12:07.481  INFO 25897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-27 10:12:07.552  INFO 25897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-27 10:12:07.562  INFO 25897 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
-2019-02-27 10:12:07.638  INFO 25897 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a30d8a38] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-27 10:12:07.887  INFO 25897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-02-27 10:12:07.889  INFO 25897 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-27 10:12:07.889  INFO 25897 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-02-27 10:12:07.997  INFO 25897 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-27 10:12:07.997  INFO 25897 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4957 ms
-2019-02-27 10:12:08.412  INFO 25897 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-02-27 10:12:08.486  INFO 25897 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-27 10:12:08.503  INFO 25897 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-02-27 10:12:08.735  INFO 25897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2019-02-27 10:12:08.738  INFO 25897 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2019-02-27 10:12:08.769  INFO 25897 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-02-27 10:12:08.869  INFO 25897 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-02-27 10:12:08.870  INFO 25897 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 6.304 seconds (JVM running for 7104.698)
-2019-02-27 10:12:08.874  INFO 25897 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2019-02-27 10:12:22.055  INFO 25897 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-02-27 10:12:22.056  INFO 25897 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-02-27 10:12:22.061  INFO 25897 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2019-02-27 10:12:22.063  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:12:22.238  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:12:22.475  INFO 25897 --- [http-nio-8082-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
-2019-02-27 10:12:22.507  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 刷新token:bb0aa247-f68a-400f-bf30-e17853817dbb,更新用户数据
-2019-02-27 10:12:22.507  INFO 25897 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:12:22.850  INFO 25897 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:12:31.680  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:12:31.684  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:12:31.717  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 刷新token:49e1c95f-2478-4727-92e9-f3990178dbb5,更新用户数据
-2019-02-27 10:12:31.718  INFO 25897 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:12:31.836  INFO 25897 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:12:39.386  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:12:39.391  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:12:39.430  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 刷新token:ce219a6d-086c-49ec-a340-2c5ac3ff17a7,更新用户数据
-2019-02-27 10:12:39.430  INFO 25897 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:12:39.613  INFO 25897 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:12:43.255  INFO 25897 --- [Thread-15] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-02-27 10:12:44.371  INFO 25897 --- [Thread-15] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
-2019-02-27 10:12:47.627  INFO 29043 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on Mac-mini.local with PID 29043 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
-2019-02-27 10:12:47.631  INFO 29043 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
-2019-02-27 10:12:47.679  INFO 29043 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-02-27 10:12:47.679  INFO 29043 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-02-27 10:12:51.854  INFO 29043 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-27 10:12:51.857  INFO 29043 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-27 10:12:51.902  INFO 29043 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 repository interfaces.
-2019-02-27 10:12:52.322  INFO 29043 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b7743a8e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-27 10:12:52.897  INFO 29043 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-02-27 10:12:52.927  INFO 29043 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-27 10:12:52.927  INFO 29043 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-02-27 10:12:52.936  INFO 29043 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/panda/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-2019-02-27 10:12:53.049  INFO 29043 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-27 10:12:53.050  INFO 29043 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5371 ms
-2019-02-27 10:12:54.140  INFO 29043 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-02-27 10:12:54.378  INFO 29043 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-27 10:12:54.421  INFO 29043 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-02-27 10:12:54.825  INFO 29043 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2019-02-27 10:12:54.843  INFO 29043 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2019-02-27 10:12:54.899  INFO 29043 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2019-02-27 10:12:55.246  INFO 29043 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-02-27 10:12:55.251  INFO 29043 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Started AnimeStoreApplication in 8.151 seconds (JVM running for 9.49)
-2019-02-27 10:13:05.098  INFO 29043 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-02-27 10:13:05.099  INFO 29043 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-02-27 10:13:05.117  INFO 29043 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
-2019-02-27 10:13:05.162  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:13:05.328  INFO 29043 --- [http-nio-8082-exec-1] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2019-02-27 10:13:05.330  INFO 29043 --- [http-nio-8082-exec-1] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2019-02-27 10:13:05.582  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:13:06.059  INFO 29043 --- [http-nio-8082-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2019-02-27 10:13:06.183  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 刷新token:d9266a27-ed3b-4a2b-a2e6-ef572cedb8b7,更新用户数据
-2019-02-27 10:13:06.183  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:13:06.341  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:13:06.345  INFO 29043 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:13:08.996  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 10:13:09.010  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 10:13:09.014  INFO 29043 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 10:13:09.031  INFO 29043 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 10:13:14.077  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts/3 DELETE请求开始
-2019-02-27 10:13:15.514  INFO 29043 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : deleteShoppingCart请求成功
-2019-02-27 10:13:15.647  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:13:15.648  INFO 29043 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:13:19.885  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts/1 DELETE请求开始
-2019-02-27 10:13:20.139  INFO 29043 --- [http-nio-8082-exec-7] com.panda.animeStore.util.Result         : deleteShoppingCart请求成功
-2019-02-27 10:13:20.203  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:13:20.203  INFO 29043 --- [http-nio-8082-exec-8] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:13:21.406  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts/10 DELETE请求开始
-2019-02-27 10:13:21.460  INFO 29043 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : deleteShoppingCart请求成功
-2019-02-27 10:13:21.656  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:13:21.656  INFO 29043 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:13:22.518  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts/11 DELETE请求开始
-2019-02-27 10:13:23.351  INFO 29043 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : deleteShoppingCart请求成功
-2019-02-27 10:13:23.414  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:13:23.415  INFO 29043 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:13:24.086  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts/12 DELETE请求开始
-2019-02-27 10:13:24.153  INFO 29043 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : deleteShoppingCart请求成功
-2019-02-27 10:13:24.213  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:13:24.214  INFO 29043 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:13:25.211  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts/13 DELETE请求开始
-2019-02-27 10:13:25.330  INFO 29043 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : deleteShoppingCart请求成功
-2019-02-27 10:13:25.395  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:13:25.395  INFO 29043 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:13:26.567  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts/14 DELETE请求开始
-2019-02-27 10:13:26.635  INFO 29043 --- [http-nio-8082-exec-7] com.panda.animeStore.util.Result         : deleteShoppingCart请求成功
-2019-02-27 10:13:26.693  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:13:26.694  INFO 29043 --- [http-nio-8082-exec-8] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:16:53.333  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:16:53.382  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:16:53.561  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 刷新token:e4d88751-34a0-4a35-a38a-a9de75283fa5,更新用户数据
-2019-02-27 10:16:53.561  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:16:53.759  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:16:53.760  INFO 29043 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:17:10.304  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:17:10.307  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:17:10.914  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 刷新token:bf62ba5e-3a16-4b97-91ad-93b45a79e721,更新用户数据
-2019-02-27 10:17:10.914  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:17:11.019  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:17:11.019  INFO 29043 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:17:32.247  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:17:32.649  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:17:32.722  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 刷新token:5766cc45-92a7-4b5c-9ed9-04e616269d04,更新用户数据
-2019-02-27 10:17:32.723  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:17:32.817  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:17:32.818  INFO 29043 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:23:04.852  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:23:04.881  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:23:04.955  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 刷新token:8c3529c0-e9ae-4a5e-b62e-6a47aeaddedf,更新用户数据
-2019-02-27 10:23:04.955  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:23:05.958  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:23:05.960  INFO 29043 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:23:26.193  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:23:26.204  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:23:26.250  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 刷新token:11868335-cada-4299-b0d8-14dc1889effc,更新用户数据
-2019-02-27 10:23:26.251  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:23:26.367  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:23:26.368  INFO 29043 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:23:37.113  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:23:37.115  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:23:37.162  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : 刷新token:d60b98ee-49c4-4f9e-8d37-ab4d5d2120da,更新用户数据
-2019-02-27 10:23:37.162  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:23:37.270  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:23:37.270  INFO 29043 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:24:00.284  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:24:00.287  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:24:00.325  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 刷新token:14ec9021-a8ec-4093-962b-6cb2df8db5a9,更新用户数据
-2019-02-27 10:24:00.325  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:24:00.440  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:24:00.441  INFO 29043 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:24:15.464  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:24:15.466  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:24:15.584  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 刷新token:fe6683fe-1599-4387-8587-7c78119c378e,更新用户数据
-2019-02-27 10:24:15.584  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:24:16.231  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:24:16.232  INFO 29043 --- [http-nio-8082-exec-7] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:24:18.338  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:24:18.341  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:24:18.367  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 刷新token:6aff0320-15bc-465b-9144-461e6ac33db2,更新用户数据
-2019-02-27 10:24:18.367  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:24:18.470  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:24:18.471  INFO 29043 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:24:48.648  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:24:48.663  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:24:48.715  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 刷新token:f9708208-d640-435e-9f1a-e4a0ec7c6117,更新用户数据
-2019-02-27 10:24:48.715  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:24:48.818  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:24:48.819  INFO 29043 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:24:53.550  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 10:24:53.551  INFO 29043 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 10:24:53.609  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 10:24:53.610  INFO 29043 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 10:25:03.733  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts POST请求开始
-2019-02-27 10:25:04.015  INFO 29043 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : addShoppingCart请求成功
-2019-02-27 10:25:04.089  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:25:04.090  INFO 29043 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:26:16.421  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:26:16.496  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:26:16.733  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 刷新token:1ff34128-08d7-4759-b889-aff3f05388b5,更新用户数据
-2019-02-27 10:26:16.733  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:26:16.907  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:26:16.907  INFO 29043 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:26:48.014  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 10:26:48.014  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 10:26:48.068  INFO 29043 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 10:26:48.068  INFO 29043 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 10:27:58.644  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:27:58.707  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:27:58.766  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 刷新token:a8fe3632-99ae-4d3c-990e-06236f6d1f3f,更新用户数据
-2019-02-27 10:27:58.767  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:27:58.959  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:27:58.960  INFO 29043 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:28:50.137  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:28:50.141  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:28:50.206  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 刷新token:1db230b5-866f-4db5-bf9e-370e8cc51b38,更新用户数据
-2019-02-27 10:28:50.206  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:28:50.320  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:28:50.321  INFO 29043 --- [http-nio-8082-exec-7] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:29:28.530  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 10:29:28.532  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 10:29:28.566  INFO 29043 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 10:29:28.566  INFO 29043 --- [http-nio-8082-exec-8] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 10:29:54.434  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:29:54.448  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:29:54.544  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 刷新token:eb65e2df-dbb6-4c5d-8a69-a50d9846efad,更新用户数据
-2019-02-27 10:29:54.544  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:29:54.645  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:29:54.646  INFO 29043 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:34:43.016  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:34:43.051  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:34:43.225  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 刷新token:08ffee62-5b2d-4e15-9e68-a9c91e7ee652,更新用户数据
-2019-02-27 10:34:43.225  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:34:43.664  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:34:43.665  INFO 29043 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:35:53.530  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:35:53.543  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:35:53.592  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 刷新token:58670d8b-f76c-48ca-aabb-32d8b4b5e28a,更新用户数据
-2019-02-27 10:35:53.593  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:35:53.811  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:35:53.812  INFO 29043 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:36:03.441  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:36:03.466  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:36:03.511  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 刷新token:d68d94f5-3e8d-4fe2-9e45-5a51619c3efe,更新用户数据
-2019-02-27 10:36:03.511  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:36:04.128  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:36:04.129  INFO 29043 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:37:35.029  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:37:35.072  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:37:35.240  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : 刷新token:13f82147-3273-43cc-85bb-3a234af2294b,更新用户数据
-2019-02-27 10:37:35.240  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:37:35.397  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:37:35.397  INFO 29043 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:39:00.782  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:39:00.836  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:39:00.914  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 刷新token:ba359c81-8fc5-4291-8a2c-f2d9f5f5f2bd,更新用户数据
-2019-02-27 10:39:00.915  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:39:01.165  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:39:01.166  INFO 29043 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:39:05.723  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:39:05.726  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:39:05.749  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 刷新token:7f819280-4f7c-4bbb-918e-d2c58d811448,更新用户数据
-2019-02-27 10:39:05.749  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:39:05.862  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:39:05.862  INFO 29043 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:40:02.531  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:40:02.547  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:40:02.646  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 刷新token:09359768-cbdd-4ea2-995e-6a6f108ebcec,更新用户数据
-2019-02-27 10:40:02.646  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:40:02.754  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:40:02.755  INFO 29043 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:40:21.380  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 10:40:21.384  INFO 29043 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
-2019-02-27 10:40:21.389  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 10:40:21.390  INFO 29043 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 10:40:38.794  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/shoppingCarts POST请求开始
-2019-02-27 10:40:39.180  INFO 29043 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : addShoppingCart请求成功
-2019-02-27 10:40:39.332  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:40:39.332  INFO 29043 --- [http-nio-8082-exec-3] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:41:09.097  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:41:09.117  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:41:09.199  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 刷新token:84f8f9db-27a4-4bbe-87c6-8b596911e523,更新用户数据
-2019-02-27 10:41:09.199  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:41:09.342  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:41:09.343  INFO 29043 --- [http-nio-8082-exec-6] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:41:56.431  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:41:56.476  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:41:56.578  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 刷新token:b63da645-296f-4f32-a757-21f14bd7c6b4,更新用户数据
-2019-02-27 10:41:56.578  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:41:56.754  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:41:56.755  INFO 29043 --- [http-nio-8082-exec-8] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:43:05.253  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:43:05.268  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:43:05.365  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : 刷新token:cbf1d69e-558d-4ba4-8d3d-9f0bc5e436fd,更新用户数据
-2019-02-27 10:43:05.365  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:43:05.486  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:43:05.487  INFO 29043 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:48:01.066  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:48:01.109  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:48:01.212  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 刷新token:7a09262f-e389-4bc6-86ed-68a65bbbdef8,更新用户数据
-2019-02-27 10:48:01.212  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:48:01.319  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:48:01.320  INFO 29043 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:49:30.723  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:49:30.768  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:49:30.825  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 刷新token:c16946dc-6535-4d2a-a904-4e44102c9e57,更新用户数据
-2019-02-27 10:49:30.826  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:49:30.910  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:49:30.911  INFO 29043 --- [http-nio-8082-exec-9] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:49:58.953  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:49:58.970  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:49:59.049  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 刷新token:22049a7a-6858-4510-a7ba-8ff3777860c5,更新用户数据
-2019-02-27 10:49:59.049  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:49:59.153  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:49:59.153  INFO 29043 --- [http-nio-8082-exec-1] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:51:53.854  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:51:53.899  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:51:53.969  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 刷新token:451c38c7-9114-4ff7-a8a6-1667ebde0e99,更新用户数据
-2019-02-27 10:51:53.969  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:51:54.064  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:51:54.065  INFO 29043 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:52:08.559  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:52:08.613  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:52:08.861  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 刷新token:12280b78-5d4c-49d3-b367-d91fccd6deda,更新用户数据
-2019-02-27 10:52:08.861  INFO 29043 --- [http-nio-8082-exec-3] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:52:08.955  INFO 29043 --- [http-nio-8082-exec-5] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:52:08.955  INFO 29043 --- [http-nio-8082-exec-5] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:52:11.827  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:52:11.830  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:52:11.897  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 刷新token:5a1931a6-a1f1-4ccc-84df-7ef7c3f812ef,更新用户数据
-2019-02-27 10:52:12.001  INFO 29043 --- [http-nio-8082-exec-6] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:52:12.115  INFO 29043 --- [http-nio-8082-exec-7] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:52:12.115  INFO 29043 --- [http-nio-8082-exec-7] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:52:16.649  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:52:16.651  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:52:16.673  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 刷新token:5fc1ea5e-24d2-4dc7-9169-bd323e89a1b9,更新用户数据
-2019-02-27 10:52:16.673  INFO 29043 --- [http-nio-8082-exec-9] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:52:16.755  INFO 29043 --- [http-nio-8082-exec-8] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:52:16.756  INFO 29043 --- [http-nio-8082-exec-8] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:52:41.071  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : AnimeStore登陆开始
-2019-02-27 10:52:41.074  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : token未过期,登录成功
-2019-02-27 10:52:41.110  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 刷新token:964eda2b-7a3a-49f9-a28b-1bdcd424b14e,更新用户数据
-2019-02-27 10:52:41.110  INFO 29043 --- [http-nio-8082-exec-1] c.p.a.controller.UserController          : 返回并存入新token,过期时间90分钟
-2019-02-27 10:52:41.226  INFO 29043 --- [http-nio-8082-exec-2] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/user/1/shoppingCarts GET请求开始
-2019-02-27 10:52:41.227  INFO 29043 --- [http-nio-8082-exec-2] com.panda.animeStore.util.Result         : getShoppingCartVOListByUserId请求成功,返回数据
-2019-02-27 10:53:09.525  INFO 29043 --- [http-nio-8082-exec-4] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/categories GET请求开始
-2019-02-27 10:53:09.525  INFO 29043 --- [http-nio-8082-exec-4] com.panda.animeStore.util.Result         : getAllCategories请求成功,返回数据
-2019-02-27 10:53:09.526  INFO 29043 --- [http-nio-8082-exec-10] c.p.a.Interceptor.LoginInterceptor       : 用户Id:1,昵称🐼,/products GET请求开始
-2019-02-27 10:53:09.527  INFO 29043 --- [http-nio-8082-exec-10] com.panda.animeStore.util.Result         : getAllProduct请求成功,返回数据
+2019-03-19 10:59:08.319  INFO 88044 --- [Thread-30] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-19 10:59:29.341  INFO 88044 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on Mac-mini.local with PID 88044 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-03-19 10:59:29.341  INFO 88044 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-03-19 10:59:32.516  INFO 88044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-19 10:59:32.516  INFO 88044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-19 10:59:32.525  INFO 88044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+2019-03-19 10:59:32.617  INFO 88044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$56a9568] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-19 10:59:32.793  INFO 88044 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-03-19 10:59:32.795  INFO 88044 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-19 10:59:32.795  INFO 88044 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-03-19 10:59:32.805  INFO 88044 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-19 10:59:32.805  INFO 88044 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3461 ms
+2019-03-19 10:59:32.981  WARN 88044 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3f2760d3]
+2019-03-19 10:59:32.981  INFO 88044 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-03-19 10:59:32.990  INFO 88044 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-19 10:59:33.083 ERROR 88044 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3f2760d3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1378) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:575) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at com.panda.animeStore.AnimeStoreApplication.main(AnimeStoreApplication.java:15) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_191]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_191]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3f2760d3]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1236) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1151) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:273) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1237) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1164) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3f2760d3]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:686) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:583) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:568) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:248) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 36 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/panda/animeStore/entity/VO/UserVO
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_191]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_191]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_191]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:668) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.panda.animeStore.entity.VO.UserVO
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[na:1.8.0_191]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_191]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) ~[na:1.8.0_191]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_191]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:148) ~[spring-boot-devtools-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_191]
+	... 43 common frames omitted
+
+2019-03-19 11:01:08.375  INFO 88044 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on Mac-mini.local with PID 88044 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-03-19 11:01:08.377  INFO 88044 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-03-19 11:01:11.480  INFO 88044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-19 11:01:11.481  INFO 88044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-19 11:01:11.492  INFO 88044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2019-03-19 11:01:11.690  INFO 88044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$56a9568] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-19 11:01:11.808  INFO 88044 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-03-19 11:01:11.809  INFO 88044 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-19 11:01:11.810  INFO 88044 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-03-19 11:01:11.866  INFO 88044 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2019-03-19 11:01:11.866  INFO 88044 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3446 ms
+2019-03-19 11:01:12.174  WARN 88044 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@248b7b9f]
+2019-03-19 11:01:12.175  INFO 88044 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-03-19 11:01:12.182  INFO 88044 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-19 11:01:12.184 ERROR 88044 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@248b7b9f]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1378) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:575) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at com.panda.animeStore.AnimeStoreApplication.main(AnimeStoreApplication.java:15) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_191]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_191]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@248b7b9f]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1236) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1151) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:273) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1237) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1164) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@248b7b9f]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:686) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:583) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:568) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:248) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 36 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/panda/animeStore/entity/VO/UserVO
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_191]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_191]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_191]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:668) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.panda.animeStore.entity.VO.UserVO
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[na:1.8.0_191]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_191]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) ~[na:1.8.0_191]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_191]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:148) ~[spring-boot-devtools-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_191]
+	... 43 common frames omitted
+
+2019-03-19 11:01:33.111  INFO 88044 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : Starting AnimeStoreApplication on Mac-mini.local with PID 88044 (/Users/panda/Documents/projects/mini-program/mini-program-server/target/classes started by panda in /Users/panda/Documents/projects/mini-program/mini-program-server)
+2019-03-19 11:01:33.113  INFO 88044 --- [restartedMain] c.p.animeStore.AnimeStoreApplication     : No active profile set, falling back to default profiles: default
+2019-03-19 11:01:36.566  INFO 88044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-19 11:01:36.566  INFO 88044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-19 11:01:36.575  INFO 88044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
+2019-03-19 11:01:36.624  INFO 88044 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$56a9568] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-19 11:01:36.802  INFO 88044 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-03-19 11:01:36.803  INFO 88044 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-19 11:01:36.803  INFO 88044 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-03-19 11:01:36.811  INFO 88044 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2019-03-19 11:01:36.811  INFO 88044 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3684 ms
+2019-03-19 11:01:37.278  WARN 88044 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4ffbec12]
+2019-03-19 11:01:37.278  INFO 88044 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-03-19 11:01:37.283  INFO 88044 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-19 11:01:37.323 ERROR 88044 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4ffbec12]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1378) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:575) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at com.panda.animeStore.AnimeStoreApplication.main(AnimeStoreApplication.java:15) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_191]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_191]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_191]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4ffbec12]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1236) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1151) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:273) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1237) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1164) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.panda.animeStore.service.impl.UserServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4ffbec12]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:686) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:583) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:568) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:248) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 36 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/panda/animeStore/entity/VO/UserVO
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_191]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_191]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_191]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:668) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.panda.animeStore.entity.VO.UserVO
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[na:1.8.0_191]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_191]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) ~[na:1.8.0_191]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_191]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:148) ~[spring-boot-devtools-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_191]
+	... 43 common frames omitted
+

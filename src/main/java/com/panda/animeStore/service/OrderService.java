@@ -1,0 +1,19 @@
+package com.panda.animeStore.service;
+
+import com.panda.animeStore.entity.DTO.OrderDTO;
+import com.panda.animeStore.entity.VO.OrderVO;
+
+import java.util.List;
+
+
+/**
+ * @author panda
+ * @date 2019-03-01 20:16
+ */
+public interface OrderService {
+    List<OrderVO> getOrderVOListByUserId(Integer userId);
+    OrderVO getOrderVOById(Integer Id);
+    int createOrderFromBuy(OrderDTO orderDTO);
+    int createOrderFromShoppingCart(OrderDTO orderDTO);
+    boolean deleteOrder(Integer id);
+}

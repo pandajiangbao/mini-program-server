@@ -32,7 +32,6 @@ public class ShoppingCartSqlProvider {
         if (record.getCreatedTime() != null) {
             sql.VALUES("created_time", "#{createdTime,jdbcType=TIMESTAMP}");
         }
-        
         return sql.toString();
     }
 

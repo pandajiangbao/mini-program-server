@@ -37,8 +37,9 @@ public class UserAddressServiceImpl implements UserAddressService {
 	}
 
 	@Override
-	public boolean updateUserAddress(UserAddress userAddress) {
-		if (userAddress.getId() != null) {
+	public boolean updateUserAddressById(Integer id,UserAddress userAddress) {
+		if (id != null) {
+			userAddress.setId(id);
 			int result = userAddressMapper.updateByPrimaryKeySelective(userAddress);
 			if (result > 0) {
 				return true;

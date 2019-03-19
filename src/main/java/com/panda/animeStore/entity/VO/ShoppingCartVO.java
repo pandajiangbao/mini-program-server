@@ -1,5 +1,6 @@
 package com.panda.animeStore.entity.VO;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.panda.animeStore.entity.Product;
 import com.panda.animeStore.util.CustomBigDecimalSerialize;
@@ -31,6 +32,7 @@ public class ShoppingCartVO {
 
     private Integer productId;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createdTime;
 
     private Product product;

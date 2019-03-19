@@ -1,7 +1,6 @@
 package com.panda.animeStore.service;
 
 import com.panda.animeStore.entity.UserAddress;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -12,7 +11,7 @@ import java.util.List;
 public interface UserAddressService {
 	List<UserAddress> listUserAddressByUserId(Integer userId);
 	boolean addUserAddress(UserAddress userAddress);
-	boolean updateUserAddress(UserAddress userAddress);
+	boolean updateUserAddressById(Integer id,UserAddress userAddress);
 	boolean deleteUserAddress(Integer id);
 	boolean deleteAllUserAddressByUserId(Integer userId);
 }

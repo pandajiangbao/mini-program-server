@@ -1,6 +1,7 @@
 package com.panda.animeStore.service;
 
 import com.panda.animeStore.entity.UserStar;
+import com.panda.animeStore.entity.VO.UserStarVO;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * @date 2019-02-18 18:05
  */
 public interface UserStarService {
-    List<UserStar> getUserStarByUserId(Integer userId);
+    List<UserStarVO> getUserStarVOByUserId(Integer userId);
     boolean addUserStar(UserStar userStar);
     boolean deleteUserStar(Integer id);
 }

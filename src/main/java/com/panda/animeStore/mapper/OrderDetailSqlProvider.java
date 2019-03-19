@@ -17,8 +17,16 @@ public class OrderDetailSqlProvider {
             sql.VALUES("product_id", "#{productId,jdbcType=INTEGER}");
         }
         
+        if (record.getProductTitle() != null) {
+            sql.VALUES("product_title", "#{productTitle,jdbcType=VARCHAR}");
+        }
+        
         if (record.getProductAmount() != null) {
             sql.VALUES("product_amount", "#{productAmount,jdbcType=INTEGER}");
+        }
+        
+        if (record.getProductImg() != null) {
+            sql.VALUES("product_img", "#{productImg,jdbcType=VARCHAR}");
         }
         
         if (record.getProductSinglePrice() != null) {
@@ -44,8 +52,16 @@ public class OrderDetailSqlProvider {
             sql.SET("product_id = #{productId,jdbcType=INTEGER}");
         }
         
+        if (record.getProductTitle() != null) {
+            sql.SET("product_title = #{productTitle,jdbcType=VARCHAR}");
+        }
+        
         if (record.getProductAmount() != null) {
             sql.SET("product_amount = #{productAmount,jdbcType=INTEGER}");
+        }
+        
+        if (record.getProductImg() != null) {
+            sql.SET("product_img = #{productImg,jdbcType=VARCHAR}");
         }
         
         if (record.getProductSinglePrice() != null) {

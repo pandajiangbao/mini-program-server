@@ -10,6 +10,7 @@ import java.util.List;
  */
 public interface ProductService {
 	List<Product> getProductByCategoryId(Integer categoryId);
+	List<Product> getProductByQuery(String query);
 	List<Product> getAllProduct();
 	boolean addProduct(Product product);
 	boolean updateProductById(Integer id,Product product);

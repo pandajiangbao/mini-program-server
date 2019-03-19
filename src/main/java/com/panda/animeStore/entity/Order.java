@@ -15,17 +15,9 @@ public class Order {
 
     private String orderNo;
 
-    private Date receiveTime;
-
     private Integer userId;
 
-    private Date paymentTime;
-
     private Date createdTime;
-
-    private Integer shippingComId;
-
-    private Integer addressId;
 
     private BigDecimal productPrice;
 
@@ -34,6 +26,12 @@ public class Order {
     private BigDecimal bonusPrice;
 
     private BigDecimal totalPrice;
+
+    private Integer addressId;
+
+    private Integer shippingComId;
+
+    private Date receiveTime;
 
     private String orderStatus;
 }

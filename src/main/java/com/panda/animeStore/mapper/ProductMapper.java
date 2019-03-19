@@ -75,6 +75,23 @@ public interface ProductMapper {
     @Select({
             "select",
             "id, title, price, sales, stock, img, category_id",
+            "from product",
+            "where title like '%${query}%'"
+    })
+    @Results({
+            @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "title", property = "title", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "price", property = "price", jdbcType = JdbcType.DECIMAL),
+            @Result(column = "sales", property = "sales", jdbcType = JdbcType.INTEGER),
+            @Result(column = "stock", property = "stock", jdbcType = JdbcType.INTEGER),
+            @Result(column = "img", property = "img", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "category_id", property = "categoryId", jdbcType = JdbcType.INTEGER)
+    })
+    List<Product> selectByQuery(@Param("query") String query);
+
+    @Select({
+            "select",
+            "id, title, price, sales, stock, img, category_id",
             "from product"
     })
     @Results({
@@ -104,10 +121,10 @@ public interface ProductMapper {
     int updateByPrimaryKey(Product record);
 
     @Update({
-            "update product",
-            "set sales= sales + #{amount}," +
-            "stock = stock - #{amount},",
-            "where id = #{id} and stock >= #{amount}"
+            "update `product`",
+            "set `sales`= `sales` + #{amount}," +
+            "`stock` = `stock` - #{amount}",
+            "where `id` = #{id} and `stock` >= #{amount}"
     })
-    int handleAmount(Integer id, Integer amount);
+    int handleAmount(@Param("id") Integer id, @Param("amount") Integer amount);
 }

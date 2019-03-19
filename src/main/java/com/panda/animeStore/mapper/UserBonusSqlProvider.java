@@ -9,20 +9,16 @@ public class UserBonusSqlProvider {
         SQL sql = new SQL();
         sql.INSERT_INTO("user_bonus");
         
-        if (record.getReduceAmount() != null) {
-            sql.VALUES("reduce_amount", "#{reduceAmount,jdbcType=DECIMAL}");
+        if (record.getCreatedTime() != null) {
+            sql.VALUES("created_time", "#{createdTime,jdbcType=TIMESTAMP}");
         }
         
-        if (record.getTargetAmount() != null) {
-            sql.VALUES("target_amount", "#{targetAmount,jdbcType=DECIMAL}");
+        if (record.getExpiredTime() != null) {
+            sql.VALUES("expired_time", "#{expiredTime,jdbcType=TIMESTAMP}");
         }
         
-        if (record.getOutdateTime() != null) {
-            sql.VALUES("outdate_time", "#{outdateTime,jdbcType=TIMESTAMP}");
-        }
-        
-        if (record.getCategoryId() != null) {
-            sql.VALUES("category_id", "#{categoryId,jdbcType=INTEGER}");
+        if (record.getBonusId() != null) {
+            sql.VALUES("bonus_id", "#{bonusId,jdbcType=INTEGER}");
         }
         
         if (record.getUserId() != null) {
@@ -36,20 +32,16 @@ public class UserBonusSqlProvider {
         SQL sql = new SQL();
         sql.UPDATE("user_bonus");
         
-        if (record.getReduceAmount() != null) {
-            sql.SET("reduce_amount = #{reduceAmount,jdbcType=DECIMAL}");
+        if (record.getCreatedTime() != null) {
+            sql.SET("created_time = #{createdTime,jdbcType=TIMESTAMP}");
         }
         
-        if (record.getTargetAmount() != null) {
-            sql.SET("target_amount = #{targetAmount,jdbcType=DECIMAL}");
+        if (record.getExpiredTime() != null) {
+            sql.SET("expired_time = #{expiredTime,jdbcType=TIMESTAMP}");
         }
         
-        if (record.getOutdateTime() != null) {
-            sql.SET("outdate_time = #{outdateTime,jdbcType=TIMESTAMP}");
-        }
-        
-        if (record.getCategoryId() != null) {
-            sql.SET("category_id = #{categoryId,jdbcType=INTEGER}");
+        if (record.getBonusId() != null) {
+            sql.SET("bonus_id = #{bonusId,jdbcType=INTEGER}");
         }
         
         if (record.getUserId() != null) {

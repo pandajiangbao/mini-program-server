@@ -16,7 +16,11 @@ public class OrderDetail {
 
     private Integer productId;
 
+    private String productTitle;
+
     private Integer productAmount;
+
+    private String productImg;
 
     private BigDecimal productSinglePrice;
 

@@ -1,5 +1,6 @@
 package com.panda.animeStore.mapper;
 
+import com.panda.animeStore.entity.ShoppingCart;
 import com.panda.animeStore.entity.VO.ShoppingCartVO;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -18,6 +20,7 @@ import java.util.List;
 class ShoppingCartMapperTest {
     @Autowired
     private ShoppingCartMapper shoppingCartMapper;
+
     @Test
     void deleteByPrimaryKey() {
     }
@@ -32,12 +35,11 @@ class ShoppingCartMapperTest {
 
     @Test
     void selectByPrimaryKey() {
-        System.out.println(shoppingCartMapper.selectByProductId(2));
     }
 
     @Test
     void selectVOByUserId() {
-        List<ShoppingCartVO> shoppingCartVOList=shoppingCartMapper.selectVOByUserId(1);
+        List<ShoppingCartVO> shoppingCartVOList = shoppingCartMapper.selectVOByUserId(1);
         shoppingCartVOList.forEach(System.out::println);
     }
 
@@ -47,5 +49,9 @@ class ShoppingCartMapperTest {
 
     @Test
     void updateByPrimaryKey() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.setId(34);
+        shoppingCart.setProductAmount(1);
+        shoppingCartMapper.updateByPrimaryKey(shoppingCart);
     }
 }

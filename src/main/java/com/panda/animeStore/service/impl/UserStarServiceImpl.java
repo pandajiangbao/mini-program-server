@@ -1,6 +1,7 @@
 package com.panda.animeStore.service.impl;
 
 import com.panda.animeStore.entity.UserStar;
+import com.panda.animeStore.entity.VO.UserStarVO;
 import com.panda.animeStore.exceptionHandler.error.BusinessError;
 import com.panda.animeStore.mapper.UserStarMapper;
 import com.panda.animeStore.service.UserStarService;
@@ -19,8 +20,8 @@ public class UserStarServiceImpl implements UserStarService {
     private UserStarMapper userStarMapper;
 
     @Override
-    public List<UserStar> getUserStarByUserId(Integer userId) {
-        return userStarMapper.selectByUserId(userId);
+    public List<UserStarVO> getUserStarVOByUserId(Integer userId) {
+        return userStarMapper.selectVOByUserId(userId);
     }
 
     @Override

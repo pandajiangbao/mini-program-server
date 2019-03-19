@@ -20,8 +20,13 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    public List<Product> getAllProduct(@RequestParam(required = false, defaultValue = "1") int pageNo,
-                              @RequestParam(required = false, defaultValue = "0") int pageSize) {
+    public List<Product> getAllProduct(
+            @RequestParam(required = false, defaultValue = "1") int pageNo,
+            @RequestParam(required = false, defaultValue = "0") int pageSize,
+            @RequestParam(required = false) String query) {
+        if (query!=null){
+            return productService.getProductByQuery(query);
+        }
         PageHelper.startPage(pageNo, pageSize);
         Result.data();
         return productService.getAllProduct();

@@ -1,6 +1,7 @@
 package com.panda.animeStore.controller;
 
 import com.panda.animeStore.entity.UserStar;
+import com.panda.animeStore.entity.VO.UserStarVO;
 import com.panda.animeStore.service.UserStarService;
 import com.panda.animeStore.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,9 @@ public class UserStarController {
     private UserStarService userStarService;
 
     @GetMapping("/users/{userId}/userStars")
-    public List<UserStar> getUserStarList(@PathVariable Integer userId) {
+    public List<UserStarVO> getUserStarList(@PathVariable Integer userId) {
         Result.data();
-        return userStarService.getUserStarByUserId(userId);
+        return userStarService.getUserStarVOByUserId(userId);
     }
 
     @PostMapping("/userStars")

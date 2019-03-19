@@ -1,5 +1,6 @@
 package com.panda.animeStore.controller;
 
+import com.panda.animeStore.entity.DTO.ShoppingCartBatch;
 import com.panda.animeStore.entity.ShoppingCart;
 import com.panda.animeStore.entity.VO.ShoppingCartVO;
 import com.panda.animeStore.service.ShoppingCartService;
@@ -33,13 +34,18 @@ public class ShoppingCartController {
 
     @PostMapping("/shoppingCarts")
     public ResponseEntity<String> addShoppingCart(@RequestBody ShoppingCart shoppingCart) {
-        System.out.println(shoppingCart);
         return Result.status(shoppingCartService.addShoppingCart(shoppingCart));
     }
 
     @PutMapping("/shoppingCarts/{id}")
-    public ResponseEntity<String> updateShoppingCart(@PathVariable Integer id,@RequestBody ShoppingCart shoppingCart) {
-        return Result.status(shoppingCartService.updateShoppingCartById(id,shoppingCart));
+    public ResponseEntity<String> updateShoppingCart(@PathVariable Integer id, @RequestBody ShoppingCart shoppingCart) {
+        return Result.status(shoppingCartService.updateShoppingCartById(id, shoppingCart));
+    }
+
+    @PutMapping("/shoppingCarts")
+    public ResponseEntity<String> updateShoppingCartBatch(@RequestBody ShoppingCartBatch shoppingCartBatch) {
+        return Result.status(shoppingCartService.updateShoppingCartBatch(shoppingCartBatch.getShoppingCartVOList()
+        ));
     }
 
     @DeleteMapping("/shoppingCarts/{id}")

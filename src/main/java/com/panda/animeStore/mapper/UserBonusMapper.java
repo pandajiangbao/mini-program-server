@@ -22,12 +22,10 @@ public interface UserBonusMapper {
     int deleteByPrimaryKey(Integer id);
 
     @Insert({
-        "insert into user_bonus (reduce_amount, target_amount, ",
-        "outdate_time, category_id, ",
-        "user_id)",
-        "values (#{reduceAmount,jdbcType=DECIMAL}, #{targetAmount,jdbcType=DECIMAL}, ",
-        "#{outdateTime,jdbcType=TIMESTAMP}, #{categoryId,jdbcType=INTEGER}, ",
-        "#{userId,jdbcType=INTEGER})"
+        "insert into user_bonus (created_time, expired_time, ",
+        "bonus_id, user_id)",
+        "values (#{createdTime,jdbcType=TIMESTAMP}, #{expiredTime,jdbcType=TIMESTAMP}, ",
+        "#{bonusId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER})"
     })
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
     int insert(UserBonus record);
@@ -38,16 +36,15 @@ public interface UserBonusMapper {
 
     @Select({
         "select",
-        "id, reduce_amount, target_amount, outdate_time, category_id, user_id",
+        "id, created_time, expired_time, bonus_id, user_id",
         "from user_bonus",
         "where id = #{id,jdbcType=INTEGER}"
     })
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="reduce_amount", property="reduceAmount", jdbcType=JdbcType.DECIMAL),
-        @Result(column="target_amount", property="targetAmount", jdbcType=JdbcType.DECIMAL),
-        @Result(column="outdate_time", property="outdateTime", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="category_id", property="categoryId", jdbcType=JdbcType.INTEGER),
+        @Result(column="created_time", property="createdTime", jdbcType=JdbcType.TIMESTAMP),
+        @Result(column="expired_time", property="expiredTime", jdbcType=JdbcType.TIMESTAMP),
+        @Result(column="bonus_id", property="bonusId", jdbcType=JdbcType.INTEGER),
         @Result(column="user_id", property="userId", jdbcType=JdbcType.INTEGER)
     })
     UserBonus selectByPrimaryKey(Integer id);
@@ -57,10 +54,9 @@ public interface UserBonusMapper {
 
     @Update({
         "update user_bonus",
-        "set reduce_amount = #{reduceAmount,jdbcType=DECIMAL},",
-          "target_amount = #{targetAmount,jdbcType=DECIMAL},",
-          "outdate_time = #{outdateTime,jdbcType=TIMESTAMP},",
-          "category_id = #{categoryId,jdbcType=INTEGER},",
+        "set created_time = #{createdTime,jdbcType=TIMESTAMP},",
+          "expired_time = #{expiredTime,jdbcType=TIMESTAMP},",
+          "bonus_id = #{bonusId,jdbcType=INTEGER},",
           "user_id = #{userId,jdbcType=INTEGER}",
         "where id = #{id,jdbcType=INTEGER}"
     })

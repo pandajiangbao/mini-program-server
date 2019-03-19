@@ -14,4 +14,5 @@ import lombok.NoArgsConstructor;
 public class LoginVO {
     private String token;
     private Integer userId;
+    private Boolean isNew;
 }
