@@ -13,6 +13,8 @@ import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
 
+import java.util.List;
+
 @Mapper
 public interface BonusMapper {
     @Delete({
@@ -47,6 +49,19 @@ public interface BonusMapper {
         @Result(column="validity", property="validity", jdbcType=JdbcType.INTEGER)
     })
     Bonus selectByPrimaryKey(Integer id);
+
+    @Select({
+            "select",
+            "id, reduce_amount, target_amount, validity",
+            "from bonus"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="reduce_amount", property="reduceAmount", jdbcType=JdbcType.DECIMAL),
+            @Result(column="target_amount", property="targetAmount", jdbcType=JdbcType.DECIMAL),
+            @Result(column="validity", property="validity", jdbcType=JdbcType.INTEGER)
+    })
+    List<Bonus> selectAll();
 
     @UpdateProvider(type=BonusSqlProvider.class, method="updateByPrimaryKeySelective")
     int updateByPrimaryKeySelective(Bonus record);

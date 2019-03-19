@@ -9,7 +9,7 @@ import java.util.List;
  * @date 2019-01-12 10:34 AM
  */
 public interface UserAddressService {
-	List<UserAddress> listUserAddressByUserId(Integer userId);
+	List<UserAddress> getUserAddressByUserId(Integer userId);
 	boolean addUserAddress(UserAddress userAddress);
 	boolean updateUserAddressById(Integer id,UserAddress userAddress);
 	boolean deleteUserAddress(Integer id);

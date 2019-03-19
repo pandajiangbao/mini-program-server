@@ -22,7 +22,7 @@ public class UserAddressServiceImpl implements UserAddressService {
 	private UserAddressMapper userAddressMapper;
 
 	@Override
-	public List<UserAddress> listUserAddressByUserId(Integer userId) {
+	public List<UserAddress> getUserAddressByUserId(Integer userId) {
 		return userAddressMapper.selectListByUserId(userId);
 	}
 

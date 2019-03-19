@@ -1,17 +1,11 @@
 package com.panda.animeStore.mapper;
 
 import com.panda.animeStore.entity.UserBonus;
+import com.panda.animeStore.entity.VO.UserBonusVO;
 import org.apache.ibatis.annotations.*;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.InsertProvider;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectKey;
-import org.apache.ibatis.annotations.Update;
-import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.type.JdbcType;
+
+import java.util.List;
 
 @Mapper
 public interface UserBonusMapper {
@@ -48,6 +42,23 @@ public interface UserBonusMapper {
         @Result(column="user_id", property="userId", jdbcType=JdbcType.INTEGER)
     })
     UserBonus selectByPrimaryKey(Integer id);
+
+    @Select({
+            "select",
+            "id, created_time, expired_time, bonus_id, user_id",
+            "from user_bonus",
+            "where id = #{id,jdbcType=INTEGER}"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="created_time", property="createdTime", jdbcType=JdbcType.TIMESTAMP),
+            @Result(column="expired_time", property="expiredTime", jdbcType=JdbcType.TIMESTAMP),
+            @Result(column="bonus_id", property="bonusId", jdbcType=JdbcType.INTEGER),
+            @Result(column="user_id", property="userId", jdbcType=JdbcType.INTEGER),
+            @Result(property = "bonus", column = "bonus_id",
+                    one = @One(select = "com.panda.animeStore.mapper.BonusMapper.selectByPrimaryKey"))
+    })
+    List<UserBonusVO> selectVOByUserId(Integer userId);
 
     @UpdateProvider(type=UserBonusSqlProvider.class, method="updateByPrimaryKeySelective")
     int updateByPrimaryKeySelective(UserBonus record);

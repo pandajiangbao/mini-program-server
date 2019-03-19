@@ -122,6 +122,7 @@ public class UserController {
         return loginVO;
     }
 
+    @ApiOperation(value = "获取用户信息")
     @GetMapping("/{id}")
     private User getUserById(@PathVariable Integer id) {
         Result.data();
