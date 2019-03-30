@@ -44,6 +44,8 @@ public class OrderDTO {
 
     private String orderStatus;
 
+    private Integer userBonusId;
+
     private List<ShoppingCart> shoppingCartList;
 
     private List<OrderDetail> orderDetailList;

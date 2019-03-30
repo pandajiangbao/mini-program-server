@@ -31,7 +31,7 @@ public class ShoppingCartController {
     }
 
     @ApiOperation(value = "获取用户购物车列表")
-    @GetMapping("/user/{userId}/shoppingCarts")
+    @GetMapping("/users/{userId}/shoppingCarts")
     public List<ShoppingCartVO> getShoppingCartVOListByUserId(@PathVariable Integer userId) {
         Result.data();
         return shoppingCartService.getShoppingCartVOListByUserId(userId);

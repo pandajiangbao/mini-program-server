@@ -4,10 +4,12 @@ import com.panda.animeStore.entity.ShoppingCart;
 import com.panda.animeStore.entity.VO.ShoppingCartVO;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Mapper
+@Component
 public interface ShoppingCartMapper {
     @Delete({
             "delete from shopping_cart",

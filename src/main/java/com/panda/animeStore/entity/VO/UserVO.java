@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginVO {
+public class UserVO {
     private String token;
     private Integer userId;
     private Boolean isNew;

@@ -27,6 +27,7 @@ class OrderMapperTest {
 
     @Test
     void insert() {
+        System.out.println(orderMapper.countTotal());
     }
 
     @Test

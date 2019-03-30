@@ -2,8 +2,6 @@ package com.panda.animeStore.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.panda.animeStore.entity.User;
-import com.panda.animeStore.entity.VO.UserVO;
-import org.springframework.stereotype.Service;
 
 /**
  * @author panda
@@ -16,5 +14,4 @@ public interface UserService {
     boolean updateUser(User user);
     boolean deleteUser(Integer id);
     JSONObject loginApi(String code);
-    UserVO getUserVO(Integer id);
 }

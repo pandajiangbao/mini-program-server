@@ -4,10 +4,12 @@ import com.panda.animeStore.entity.UserBonus;
 import com.panda.animeStore.entity.VO.UserBonusVO;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Mapper
+@Component
 public interface UserBonusMapper {
     @Delete({
         "delete from user_bonus",
@@ -47,7 +49,7 @@ public interface UserBonusMapper {
             "select",
             "id, created_time, expired_time, bonus_id, user_id",
             "from user_bonus",
-            "where id = #{id,jdbcType=INTEGER}"
+            "where user_id = #{userId,jdbcType=INTEGER}"
     })
     @Results({
             @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),

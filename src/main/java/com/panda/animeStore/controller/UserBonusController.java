@@ -22,14 +22,14 @@ public class UserBonusController {
     private UserBonusService userBonusService;
 
     @ApiOperation(value = "获取用户优惠券列表")
-    @GetMapping("/user/{userId}/userBonuses")
+    @GetMapping("/users/{userId}/userBonuses")
     public List<UserBonusVO> getUserBonusVOList(@PathVariable Integer userId){
         Result.data();
         return userBonusService.getUserBonusVOByUserId(userId);
     }
 
     @ApiOperation(value = "发放新用户优惠券", notes = "新用户第一次登陆后发放优惠券")
-    @PostMapping("/user/{userId}/userBonuses/bonusToNewUser")
+    @PostMapping("/users/{userId}/userBonuses/bonusToNewUser")
     public ResponseEntity<String> bonusToNewUser(@PathVariable Integer userId){
         return Result.status(userBonusService.bonusToNewUser(userId));
     }

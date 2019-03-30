@@ -9,7 +9,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author panda
@@ -22,10 +24,19 @@ public class OrderController {
     private OrderService orderService;
 
     @ApiOperation(value = "获取用户订单列表")
-    @GetMapping("/user/{userId}/orders")
+    @GetMapping("/users/{userId}/orders")
     public List<OrderVO> getOrderVOList(@PathVariable Integer userId){
         Result.data();
         return orderService.getOrderVOListByUserId(userId);
+    }
+
+    @ApiOperation(value = "获取用户订单总数")
+    @GetMapping("/orders/total")
+    public String getOrderTotal(){
+        Map<String,Integer> map=new HashMap<>();
+        map.put("total",orderService.getOrderTotal());
+        Result.data();
+        return map.toString();
     }
 
     @ApiOperation(value = "创建订单")

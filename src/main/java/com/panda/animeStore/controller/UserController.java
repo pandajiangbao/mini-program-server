@@ -2,7 +2,7 @@ package com.panda.animeStore.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.panda.animeStore.entity.User;
-import com.panda.animeStore.entity.VO.LoginVO;
+import com.panda.animeStore.entity.VO.UserVO;
 import com.panda.animeStore.service.UserService;
 import com.panda.animeStore.util.Result;
 import io.swagger.annotations.Api;
@@ -23,7 +23,6 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 @RestController
-@RequestMapping("/user")
 @Api(value = "UserApi", description = "用户相关接口")
 public class UserController {
     @Autowired
@@ -32,14 +31,14 @@ public class UserController {
     private RedisTemplate<Object, Object> redisTemplate;
 
     @ApiOperation(value = "用户登陆并信息入库", notes = "登陆成功后返回Token并入库用户信息")
-    @PostMapping("/login")
-    public LoginVO login(String code,
-                            String rawData,
-                            String oldToken) {
-        log.info("AnimeStore登陆开始");
+    @PostMapping("/users/login")
+    public UserVO login(String code,
+                        String rawData,
+                        String oldToken) {
+        log.info("AnimeStore用户登陆开始");
 
 
-        LoginVO loginVO = new LoginVO();
+        UserVO userVO = new UserVO();
         //解析用户非敏感数据
         JSONObject userInfo = JSONObject.parseObject(rawData);
 
@@ -63,9 +62,9 @@ public class UserController {
             log.info("刷新token:{},更新用户数据", token);
             log.info("返回并存入新token,过期时间90分钟");
 
-            loginVO.setToken(token);
-            loginVO.setUserId(userService.getUserByOpenId(openid).getId());
-            return loginVO;
+            userVO.setToken(token);
+            userVO.setUserId(userService.getUserByOpenId(openid).getId());
+            return userVO;
         }
 
         log.info("token不存在或已过期");
@@ -101,7 +100,7 @@ public class UserController {
             user.setCreateTime(new Date());
 
             userService.addUser(user);
-            loginVO.setIsNew(true);
+            userVO.setIsNew(true);
         } else {
             log.info("用户已存在,更新用户信息");
 
@@ -117,13 +116,13 @@ public class UserController {
 
         log.info("返回新token");
 
-        loginVO.setToken(token);
-        loginVO.setUserId(user.getId());
-        return loginVO;
+        userVO.setToken(token);
+        userVO.setUserId(user.getId());
+        return userVO;
     }
 
     @ApiOperation(value = "获取用户信息")
-    @GetMapping("/{id}")
+    @GetMapping("/users/{id}")
     private User getUserById(@PathVariable Integer id) {
         Result.data();
         return userService.getUserById(id);

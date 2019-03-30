@@ -11,6 +11,9 @@ import com.panda.animeStore.mapper.OrderMapper;
 import com.panda.animeStore.mapper.ProductMapper;
 import com.panda.animeStore.mapper.ShoppingCartMapper;
 import com.panda.animeStore.service.OrderService;
+import com.panda.animeStore.service.ProductService;
+import com.panda.animeStore.service.ShoppingCartService;
+import com.panda.animeStore.service.UserBonusService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,9 +33,11 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderDetailMapper orderDetailMapper;
     @Autowired
-    private ProductMapper productMapper;
+    private ProductService productService;
     @Autowired
-    private ShoppingCartMapper shoppingCartMapper;
+    private ShoppingCartService shoppingCartService;
+    @Autowired
+    private UserBonusService userBonusService;
 
     @Override
     public List<OrderVO> getOrderVOListByUserId(Integer userId) {
@@ -45,11 +50,20 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public int createOrderFromBuy(OrderDTO orderDTO) {
+    public Integer getOrderTotal() {
+        return orderMapper.countTotal();
+    }
+
+    @Override
+    public Integer createOrderFromBuy(OrderDTO orderDTO) {
         List<OrderDetail> orderDetailList = orderDTO.getOrderDetailList();
+        //扣除优惠券
+        if(orderDTO.getUserBonusId()!=null){
+            userBonusService.deleteUserBonus(orderDTO.getUserBonusId());
+        }
         //减库存
         orderDetailList.forEach(orderDetail -> {
-            if (productMapper.handleAmount(orderDetail.getProductId(), orderDetail.getProductAmount()) == 0) {
+            if (!productService.handleAmount(orderDetail.getProductId(), orderDetail.getProductAmount())) {
                 throw new RuntimeException(BusinessError.DATA_ACCESS_ERROR.getErrMsg());
             }
         });
@@ -80,23 +94,27 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public int createOrderFromShoppingCart(OrderDTO orderDTO) {
+    public Integer createOrderFromShoppingCart(OrderDTO orderDTO) {
         List<OrderDetail> orderDetailList = orderDTO.getOrderDetailList();
+        //扣除优惠券
+        if(orderDTO.getUserBonusId()!=null){
+            userBonusService.deleteUserBonus(orderDTO.getUserBonusId());
+
+        }
         //减库存
         orderDetailList.forEach(orderDetail -> {
-            if (productMapper.handleAmount(orderDetail.getProductId(), orderDetail.getProductAmount()) == 0) {
+            if (!productService.handleAmount(orderDetail.getProductId(), orderDetail.getProductAmount())) {
                 throw new RuntimeException(BusinessError.DATA_ACCESS_ERROR.getErrMsg());
             }
-        });
 
+        });
         List<ShoppingCart> shoppingCartList = orderDTO.getShoppingCartList();
         //删除相应购物车
         shoppingCartList.forEach(shoppingCart -> {
-            if (shoppingCartMapper.deleteByPrimaryKey(shoppingCart.getId()) == 0) {
+            if (!shoppingCartService.deleteShoppingCartById(shoppingCart.getId())) {
                 throw new RuntimeException(BusinessError.DATA_ACCESS_ERROR.getErrMsg());
             }
         });
-
         Order order = convertFromOrderDTO(orderDTO);
         //生成订单号
         String orderNo = UUID.randomUUID().toString();
@@ -124,7 +142,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public boolean deleteOrder(Integer id) {
+    public Boolean deleteOrder(Integer id) {
         return false;
     }
 

@@ -13,7 +13,8 @@ import java.util.List;
 public interface OrderService {
     List<OrderVO> getOrderVOListByUserId(Integer userId);
     OrderVO getOrderVOById(Integer Id);
-    int createOrderFromBuy(OrderDTO orderDTO);
-    int createOrderFromShoppingCart(OrderDTO orderDTO);
-    boolean deleteOrder(Integer id);
+    Integer getOrderTotal();
+    Integer createOrderFromBuy(OrderDTO orderDTO);
+    Integer createOrderFromShoppingCart(OrderDTO orderDTO);
+    Boolean deleteOrder(Integer id);
 }

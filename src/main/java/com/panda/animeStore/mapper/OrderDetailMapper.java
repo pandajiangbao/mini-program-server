@@ -3,10 +3,12 @@ package com.panda.animeStore.mapper;
 import com.panda.animeStore.entity.OrderDetail;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Mapper
+@Component
 public interface OrderDetailMapper {
     @Delete({
         "delete from order_detail",

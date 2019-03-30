@@ -39,6 +39,7 @@ public class OrderVO {
 
     private Integer shippingComId;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date receiveTime;
 
     private String orderStatus;

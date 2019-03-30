@@ -1,6 +1,7 @@
 package com.panda.animeStore.entity.VO;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.panda.animeStore.entity.ProductCategory;
 import com.panda.animeStore.entity.UserStar;
 import com.panda.animeStore.util.CustomBigDecimalSerialize;
 import lombok.AllArgsConstructor;
@@ -32,6 +33,8 @@ public class ProductVO {
     private String img;
 
     private Integer categoryId;
+
+    private ProductCategory productCategory;
 
     private List<UserStar> userStarList;
 }

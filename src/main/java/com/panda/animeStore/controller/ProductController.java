@@ -9,7 +9,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -47,6 +49,13 @@ public class ProductController {
     @PostMapping("/products")
     public ResponseEntity<String> addProduct(@RequestBody Product product) {
         return Result.status(productService.addProduct(product));
+    }
+
+    @ApiOperation(value = "上传商品图片")
+    @PostMapping("/products/upload")
+    public String uploadProductImg(@RequestParam("file") MultipartFile file) throws IOException {
+        Result.data();
+        return productService.saveProductImg(file);
     }
 
     @ApiOperation(value = "修改商品")

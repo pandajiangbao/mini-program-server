@@ -3,7 +3,6 @@ package com.panda.animeStore.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.panda.animeStore.entity.User;
-import com.panda.animeStore.entity.VO.UserVO;
 import com.panda.animeStore.exceptionHandler.error.BusinessError;
 import com.panda.animeStore.mapper.UserMapper;
 import com.panda.animeStore.service.UserService;
@@ -93,10 +92,5 @@ public class UserServiceImpl implements UserService {
             log.info("微信登陆接口请求成功");
             return response;
         }
-    }
-
-    @Override
-    public UserVO getUserVO(Integer id) {
-        return null;
     }
 }
