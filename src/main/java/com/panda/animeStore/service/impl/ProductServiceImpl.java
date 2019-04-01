@@ -2,6 +2,7 @@ package com.panda.animeStore.service.impl;
 
 import com.panda.animeStore.entity.Product;
 import com.panda.animeStore.exceptionHandler.error.BusinessError;
+import com.panda.animeStore.mapper.ProductCategoryMapper;
 import com.panda.animeStore.mapper.ProductMapper;
 import com.panda.animeStore.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
@@ -31,6 +32,8 @@ public class ProductServiceImpl implements ProductService {
     private HttpServletRequest request;
     @Autowired
     private ProductMapper productMapper;
+    @Autowired
+    private ProductCategoryMapper productCategoryMapper;
 
     @Override
     public List<Product> getProductByCategoryId(Integer categoryId) {
@@ -49,12 +52,18 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public boolean addProduct(Product product) {
-        String url = request.getScheme() +"://" + request.getServerName()
-                + ":" +request.getServerPort();
-        product.setImg(url+product.getImg());
-        int result = productMapper.insertSelective(product);
+        String url = request.getScheme() + "://" + request.getServerName()
+                + ":" + request.getServerPort();
+        product.setImg(url + product.getImg());
+        // 添加分类商品数量
+        int result = productCategoryMapper.addCounts(product.getCategoryId());
         if (result > 0) {
-            return true;
+            result = productMapper.insertSelective(product);
+            if (result > 0) {
+                return true;
+            } else {
+                throw new RuntimeException(BusinessError.DATA_ACCESS_ERROR.getErrMsg());
+            }
         } else {
             throw new RuntimeException(BusinessError.DATA_ACCESS_ERROR.getErrMsg());
         }
@@ -72,9 +81,9 @@ public class ProductServiceImpl implements ProductService {
         String root_fileName = multipartFile.getOriginalFilename();
         log.info("上传图片:name={},type={}", root_fileName, contentType);
         String filePath = "/Users/panda/Documents/projects/mini-program/mini-program-server/src/main/resources/static";
-        String fileName = "/Img/" +UUID.randomUUID().toString() + ".jpg";
+        String fileName = "/Img/" + UUID.randomUUID().toString() + ".jpg";
 
-        log.info("图片保存路径:{}", filePath+fileName);
+        log.info("图片保存路径:{}", filePath + fileName);
         FileInputStream fileInputStream = (FileInputStream) multipartFile.getInputStream();
         BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath + fileName));
         byte[] bs = new byte[1024];
@@ -105,10 +114,16 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public boolean deleteProductById(Integer id) {
         if (id != null) {
-            int result = productMapper.deleteByPrimaryKey(id);
-            if (result > 0) {
-                return true;
-            } else {
+            // 减少分类商品数量
+            int result=productCategoryMapper.decreaseCounts(productMapper.selectByPrimaryKey(id).getCategoryId());
+            if(result>0){
+                result = productMapper.deleteByPrimaryKey(id);
+                if (result > 0) {
+                    return true;
+                } else {
+                    throw new RuntimeException(BusinessError.DATA_ACCESS_ERROR.getErrMsg());
+                }
+            }else {
                 throw new RuntimeException(BusinessError.DATA_ACCESS_ERROR.getErrMsg());
             }
         } else {

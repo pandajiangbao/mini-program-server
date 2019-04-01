@@ -11,32 +11,32 @@ import java.util.List;
 @Component
 public interface ProductCategoryMapper {
     @Delete({
-        "delete from product_category",
-        "where id = #{id,jdbcType=INTEGER}"
+            "delete from product_category",
+            "where id = #{id,jdbcType=INTEGER}"
     })
     int deleteByPrimaryKey(Integer id);
 
     @Insert({
-        "insert into product_category (name, counts)",
-        "values (#{name,jdbcType=VARCHAR}, #{counts,jdbcType=INTEGER})"
+            "insert into product_category (name, counts)",
+            "values (#{name,jdbcType=VARCHAR}, #{counts,jdbcType=INTEGER})"
     })
-    @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
+    @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = Integer.class)
     int insert(ProductCategory record);
 
-    @InsertProvider(type=ProductCategorySqlProvider.class, method="insertSelective")
-    @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
+    @InsertProvider(type = ProductCategorySqlProvider.class, method = "insertSelective")
+    @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = Integer.class)
     int insertSelective(ProductCategory record);
 
     @Select({
-        "select",
-        "id, name, counts",
-        "from product_category",
-        "where id = #{id,jdbcType=INTEGER}"
+            "select",
+            "id, name, counts",
+            "from product_category",
+            "where id = #{id,jdbcType=INTEGER}"
     })
     @Results({
-        @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
-        @Result(column="counts", property="counts", jdbcType=JdbcType.INTEGER)
+            @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "name", property = "name", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "counts", property = "counts", jdbcType = JdbcType.INTEGER)
     })
     ProductCategory selectByPrimaryKey(Integer id);
 
@@ -46,20 +46,34 @@ public interface ProductCategoryMapper {
             "from product_category"
     })
     @Results({
-            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-            @Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
-            @Result(column="counts", property="counts", jdbcType=JdbcType.INTEGER)
+            @Result(column = "id", property = "id", jdbcType = JdbcType.INTEGER, id = true),
+            @Result(column = "name", property = "name", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "counts", property = "counts", jdbcType = JdbcType.INTEGER)
     })
     List<ProductCategory> selectAll();
 
-    @UpdateProvider(type=ProductCategorySqlProvider.class, method="updateByPrimaryKeySelective")
+    @UpdateProvider(type = ProductCategorySqlProvider.class, method = "updateByPrimaryKeySelective")
     int updateByPrimaryKeySelective(ProductCategory record);
 
     @Update({
-        "update product_category",
-        "set name = #{name,jdbcType=VARCHAR},",
-          "counts = #{counts,jdbcType=INTEGER}",
-        "where id = #{id,jdbcType=INTEGER}"
+            "update product_category",
+            "set name = #{name,jdbcType=VARCHAR},",
+            "counts = #{counts,jdbcType=INTEGER}",
+            "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(ProductCategory record);
+
+    @Update({
+            "update `product_category`",
+            "set `counts`= `counts` + 1,",
+            "where `id` = #{id}"
+    })
+    int addCounts(@Param("id") Integer id);
+
+    @Update({
+            "update `product_category`",
+            "set `counts`= `counts` - 1,",
+            "where `id` = #{id} and `counts` > 0"
+    })
+    int decreaseCounts(@Param("id") Integer id);
 }
