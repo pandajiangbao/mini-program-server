@@ -64,16 +64,16 @@ public interface ProductCategoryMapper {
     int updateByPrimaryKey(ProductCategory record);
 
     @Update({
-            "update `product_category`",
-            "set `counts`= `counts` + 1,",
-            "where `id` = #{id}"
+            "update product_category",
+            "set counts = counts + 1" ,
+            "where id = #{id}"
     })
     int addCounts(@Param("id") Integer id);
 
     @Update({
-            "update `product_category`",
-            "set `counts`= `counts` - 1,",
-            "where `id` = #{id} and `counts` > 0"
+            "update product_category",
+            "set counts = counts - 1 ",
+            "where id = #{id} and counts > 0"
     })
     int decreaseCounts(@Param("id") Integer id);
 }

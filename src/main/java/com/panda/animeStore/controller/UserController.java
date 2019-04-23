@@ -61,7 +61,7 @@ public class UserController {
 
             log.info("刷新token:{},更新用户数据", token);
             log.info("返回并存入新token,过期时间90分钟");
-            // todo 1.管理页编辑商品 2.优惠券有效期 3.后台管理首页
+            // todo 1.管理端管理优惠券 2.优惠券有效期 3.后台管理首页 4.订单状态变更
             userVO.setToken(token);
             userVO.setUserId(userService.getUserByOpenId(openid).getId());
             return userVO;
@@ -115,7 +115,6 @@ public class UserController {
         }
 
         log.info("返回新token");
-
         userVO.setToken(token);
         userVO.setUserId(user.getId());
         return userVO;
